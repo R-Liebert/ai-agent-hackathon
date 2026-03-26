@@ -217,17 +217,15 @@ function MenuPage() {
     const handleClick = () => {
       if (!isReleased) return;
 
-      const chatSource = CHAT_INTEGRATIONS[item.link];
-      if (chatSource) {
-        navigate(`/dsb-chat?source=${chatSource}`);
-        return;
-      }
-
-      if (item.isExternalLink) {
-        window.open(item.link, "_blank");
-      } else {
+      if (item.link === "dsb-chat") {
+        const chatSource = CHAT_INTEGRATIONS[item.link];
+        if (chatSource) {
+          navigate(`/dsb-chat?source=${chatSource}`);
+          return;
+        }
         navigate(`/${item.link}`);
       }
+      // Everything else is static/does nothing
     };
 
     return (

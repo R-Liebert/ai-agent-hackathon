@@ -688,338 +688,49 @@ export const ChatComponent: React.FC<ChatComponentProps> = ({
     message: ChatMessage,
     isEditing: boolean = false
   ) => {
-    if (streamController.current) {
-      streamController.current.abort();
-      streamController.current = null;
-    }
-    streamController.current = new AbortController();
-    const currentStreamId = uuidv4();
-    activeStreamIdRef.current = currentStreamId;
-
-    // Clear any previous reasoning tags at the start of a new request
-    setReasoningTags([]);
-
-    // Track if we've already cleared the editing state for this stream
-    let editingStateCleared = false;
-    let reasoningTagsCleared = false;
-
-    const clearReasoningTags = () => {
-      if (reasoningTagsCleared) return;
-      reasoningTagsCleared = true;
-      setReasoningTags([]);
-    };
-
-    const enabledTools = getEnabledTools(selectedValue?.trim() || "", chatType);
-
-    // Transform files for backend: map blobUrl to fileIdentifier, remove previewUrl
-    const filesForBackend = message.files?.map(
-      ({ previewUrl, blobUrl, ...rest }) => ({
-        ...rest,
-        fileIdentifier: blobUrl || rest.fileIdentifier, // Map blobUrl to fileIdentifier for backend API
-      })
-    );
-
-    const isNormalNonCanvasChat = chatType === "Normal" && !isCanvasMode;
-    const modelProfileKey =
-      selectedValue === "GPT-5.1" ? "deep-reflection" : "fast-response";
-    const shouldHandleReasoningTags =
-      chatType === "Workspace" ||
-      (isNormalNonCanvasChat
-        ? modelProfileKey === "deep-reflection"
-        : getModelIsReasoningModel(selectedValue?.trim() || ""));
-    const toolsMetadata = getToolsMetadata(enabledTools, imageGenerationEnabled);
-
-    const chatMessageRequest = {
-      chatId: currentChat?.id,
-      messageId: message.id,
-      content: btoa(unescape(encodeURIComponent(message.content))),
-      chatType: chatType,
-      ...(isNormalNonCanvasChat
-        ? { modelProfileKey }
-        : { model: selectedValue }),
-      workspaceId: workspaceId,
-      agentId: selectedAgent?.id || null,
-      files:
-        filesForBackend && filesForBackend.length > 0
-          ? btoa(unescape(encodeURIComponent(JSON.stringify(filesForBackend))))
-          : null,
-      enabledTools: enabledTools,
-      // Signal image generation intent at top-level (backend owns the directive)
-      imageGenerationForced: imageGenerationEnabled,
-      metadataJson: btoa(
-        unescape(
-          encodeURIComponent(
-            JSON.stringify(toolsMetadata)
-          )
-        )
-      ),
-    };
-
     setLoading(true);
     setisStreaming(true);
-    const agentSnapshot = selectedAgent || undefined;
 
     const placeholderMessage = new ChatMessage(
-      "",
+      uuidv4(),
       "",
       MessageRoleString[MessageRole.Assistant],
       new Date().toISOString(),
-      false, // error flag
-      [], // files
-      undefined, // images
-      agentSnapshot // <-- set the agent snapshot
+      false
     );
 
     setCurrentChatMessages((prevState) => [...prevState, placeholderMessage]);
 
-    const controller =
-      chatType == "Normal" ? "chat" : `${chatType.toLowerCase()}chat`;
-    const url = !isEditing
-      ? `${config.apiUrl}api/${controller}/conversation?isNewChatRequest=${isNewChatRequest}`
-      : `${config.apiUrl}api/${controller}/conversation/${currentChat?.id}/messages/${message.id}`;
-    let newChatId: string | undefined;
+    try {
+      const response = await axiosInstance.post(`/chat/${currentChat?.id}/message`, {
+        content: message.content,
+        role: "user"
+      });
 
-    fetchEventSource(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(chatMessageRequest),
-      signal: streamController.current.signal,
-      onclose: () => {
-        if (activeStreamIdRef.current !== currentStreamId) return;
-        handleCloseStream();
-        streamController.current = null;
-        activeStreamIdRef.current = null;
-      },
-      onmessage(event) {
-        if (activeStreamIdRef.current !== currentStreamId) {
-          return;
-        }
-        try {
-          const eventData = JSON.parse(event.data);
-          const incomingMessageId = eventData.MessageId ?? eventData.messageId;
-          const incomingContent = eventData.Content ?? eventData.content;
+      const { content, completed } = response.data;
 
-          if (handleImageGenerationEvent(eventData)) {
-            return;
-          }
+      setCurrentChatMessages((prevMessages) => {
+        const updatedMessages = [...prevMessages];
+        const lastMessage = updatedMessages[updatedMessages.length - 1];
+        updatedMessages[updatedMessages.length - 1] = {
+          ...lastMessage,
+          content: content
+        };
+        return updatedMessages;
+      });
 
-          // Legacy fallback: handle image generation error from backend
-          if (eventData.imageGenerationError) {
-            console.error(
-              "[Chat] Image generation error:",
-              eventData.imageGenerationError
-            );
-            setLoading(false);
-            failPendingImageGenerations(eventData.imageGenerationError);
-            handleCloseStream();
-            return;
-          }
-
-          if (eventData.chatId) {
-            newChatId = eventData.chatId;
-            if (isNewChatRequest && currentChat?.id == eventData.chatId) {
-              let newChat: ChatHistoryDto = {
-                id: eventData.chatId,
-                title: "New Chat",
-                type: chatType,
-                createdAt: eventData.createdAt,
-                updatedAt: eventData.createdAt,
-              };
-              if (hasHistory) {
-                chatHistoryRef.current?.addNewChatEntry(newChat);
-              }
-              setCurrentChat(newChat);
-              setIsNewChatRequest(false);
-            }
-
-            // Only render reasoning tags for reasoning-capable flows.
-            if (shouldHandleReasoningTags && eventData.reasoningTags) {
-              if (!reasoningTagsCleared) {
-                setReasoningTags(eventData.reasoningTags);
-              }
-            }
-
-            if (
-              incomingContent &&
-              incomingContent !== null &&
-              incomingContent !== ""
-            ) {
-              setLoading(false);
-              clearReasoningTags();
-              handleNewMessage(incomingMessageId, incomingContent);
-              // Clear editing state only once after successfully receiving first content
-              if (isEditing && !editingStateCleared) {
-                setEditedMessageId(null);
-                setEditRestoreData(null); // Clear the backup as edit succeeded
-                editingStateCleared = true;
-              }
-            }
-            return;
-          }
-
-          // Check for FilesReferenced and process file links
-          if (
-            eventData.FilesReferenced &&
-            eventData.FilesReferenced.length > 0 &&
-            (advancedFileAnalysis || chatType === "Normal")
-          ) {
-            // Process the current message to replace sandbox links with download links
-            setCurrentChatMessages((prevMessages) => {
-              const updatedMessages = [...prevMessages];
-              const lastMessage = updatedMessages[updatedMessages.length - 1];
-              let updatedContent = lastMessage.content;
-
-              // For each referenced file, replace its sandbox link
-              eventData.FilesReferenced.forEach(
-                (file: { externalId: string; fileName: string }) => {
-                  // Replace with the correct download link format
-                  updatedContent = updatedContent.replace(
-                    file.fileName,
-                    `${config.apiUrl}api/chat/code-interpreter/download/${file.externalId}`
-                  );
-                }
-              );
-
-              if (updatedContent !== lastMessage.content) {
-                updatedMessages[updatedMessages.length - 1] = {
-                  ...lastMessage,
-                  content: updatedContent,
-                };
-              }
-
-              return updatedMessages;
-            });
-            return;
-          }
-
-          // Handle reasoning tags
-          if (shouldHandleReasoningTags && eventData.reasoningTags) {
-            if (!reasoningTagsCleared) {
-              setReasoningTags(eventData.reasoningTags);
-            }
-          }
-
-          // Handle citations event for Leader Chat and History Chat
-          if (
-            eventData.citations &&
-            (chatType === "Manager" || chatType === "History")
-          ) {
-            setCurrentChatMessages((prevMessages) => {
-              if (prevMessages.length === 0) return prevMessages;
-
-              const updatedMessages = [...prevMessages];
-              const lastMessage = updatedMessages[updatedMessages.length - 1];
-
-              // Add citations to the last assistant message
-              updatedMessages[updatedMessages.length - 1] = {
-                ...lastMessage,
-                citations: eventData.citations,
-              };
-
-              return updatedMessages;
-            });
-            return;
-          }
-
-          let newContent = incomingContent;
-          const messageId = incomingMessageId;
-
-          if (newContent == "stream-ended") {
-            clearReasoningTags();
-            if (newChatId && eventData.Title && hasHistory) {
-              // LastAgent* fields,  push them now:
-              const lastAgentSnapshot = selectedAgent
-                ? {
-                    lastAgentId: selectedAgent.id,
-                    lastAgentName: selectedAgent.name,
-                    lastAgentDescription: selectedAgent.description,
-                    lastAgentImage: selectedAgent.image,
-                  }
-                : {};
-
-              chatHistoryRef.current?.updateConversation(
-                { id: newChatId, ...lastAgentSnapshot } as any,
-                eventData.Title
-              );
-            }
-
-            handleCloseStream();
-
-            if (chatType === "Workspace" && workspaceId) {
-              updateWorkspaceInteractionMutation.mutate({
-                workspaceId,
-                lastInteraction: new Date(),
-              });
-            }
-            return;
-          }
-          if (newContent !== null && newContent !== undefined) {
-            setLoading(false);
-            clearReasoningTags();
-            handleNewMessage(messageId, newContent);
-            // Also clear editing state here if this is the first content
-            if (isEditing && !editingStateCleared) {
-              setEditedMessageId(null);
-              setEditRestoreData(null);
-              editingStateCleared = true;
-            }
-          }
-        } catch (error) {
-          console.error("Error parsing SSE data:", error);
-          handleCloseStream();
-        }
-      },
-      onerror(error) {
-        if (activeStreamIdRef.current !== currentStreamId) return;
-        const failedAgentSnapshot = selectedAgent
-          ? { id: selectedAgent.id, name: selectedAgent.name }
-          : undefined;
-        const shouldAttemptAgentReconcile =
-          chatType === "Normal" &&
-          !isEditing &&
-          Boolean(failedAgentSnapshot?.id) &&
-          Boolean((error as any)?.status);
-
-        handleCloseStream();
-
-        if (shouldAttemptAgentReconcile) {
-          void (async () => {
-            const handled = await reconcileUnavailableSelectedAgent(
-              failedAgentSnapshot
-            );
-            if (!handled) {
-              handleErrorNotification(error);
-            }
-          })();
-        } else {
-          handleErrorNotification(error);
-        }
-
-        // Restore original messages and reset editing state on error
-        if (isEditing) {
-          if (editRestoreData) {
-            setCurrentChatMessages((prevMessages) => {
-              const messagesBeforeEdit = prevMessages.slice(
-                0,
-                editRestoreData.messageIndex
-              );
-              return [
-                ...messagesBeforeEdit,
-                ...editRestoreData.affectedMessages,
-              ];
-            });
-            setEditRestoreData(null);
-          }
-          setEditedMessageId(null);
-        }
-        streamController.current = null;
-        activeStreamIdRef.current = null;
-        console.error("Network Error: Failed to fetch. Stopping retries.");
-        throw new Error("Network Error: Stopping retries.");
-      },
-    });
+      setLoading(false);
+      setisStreaming(false);
+      
+      if (completed) {
+        // Handle completion if needed
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+      handleErrorNotification(error);
+      setLoading(false);
+      setisStreaming(false);
+    }
   };
 
   const handleCloseStream = (userInvoked: boolean = false) => {
@@ -1102,12 +813,7 @@ export const ChatComponent: React.FC<ChatComponentProps> = ({
     chatId: string
   ) => {
     try {
-      const safeType = (chatType || "Normal").toString();
-      const controller =
-        safeType.toLowerCase() === "normal"
-          ? "chat"
-          : `${safeType.toLowerCase()}chat`;
-      const response = await axiosInstance.get(`/${controller}/${chatId}`);
+      const response = await axiosInstance.get(`/chat/${chatId}`);
       return response.data;
     } catch (error) {
       console.error("Error fetching messages for chat:", error);
@@ -1426,32 +1132,51 @@ export const ChatComponent: React.FC<ChatComponentProps> = ({
       chatHistoryRef.current?.resetActiveChat();
     }
 
-    // Create a temporary chat with just an ID
-    const temporaryChat: ChatHistoryDto = {
-      id: uuidv4(),
-      title: "New Chat",
-      type: chatType,
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-    };
+    try {
+      const response = await axiosInstance.post("/chat/start");
+      const { conversation_id, message } = response.data;
 
-    setCurrentChat(temporaryChat);
-    setCurrentChatMessages([]);
-    setIsNewChatRequest(true);
-    setResetFiles(true);
-    // Reset total file count to 0 for new chat
-    setTotalFileCount(0);
-    setHasAttachedFiles(false);
-    setConversationHasDocuments(false);
-    setConversationHasImages(false);
+      const newChat: ChatHistoryDto = {
+        id: conversation_id,
+        title: "New Chat",
+        type: chatType,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      };
 
-    // Reset all agents
-    resetAgents();
-
-    if (hasHistory) {
-      chatHistoryRef.current?.resetActiveChat();
+      setCurrentChat(newChat);
+      
+      const welcomeMsg = new ChatMessage(
+        uuidv4(),
+        message,
+        MessageRoleString[MessageRole.Assistant],
+        new Date().toISOString()
+      );
+      
+      setCurrentChatMessages([welcomeMsg]);
+      setIsNewChatRequest(false);
+      setResetFiles(true);
+      setTotalFileCount(0);
+      setHasAttachedFiles(false);
+      setConversationHasDocuments(false);
+      setConversationHasImages(false);
+      resetAgents();
+      setShowWelcomeScreen(false);
+    } catch (error) {
+      console.error("Error starting new chat session:", error);
+      // Fallback to local behavior if backend fails
+      const temporaryChat: ChatHistoryDto = {
+        id: uuidv4(),
+        title: "New Chat",
+        type: chatType,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      };
+      setCurrentChat(temporaryChat);
+      setCurrentChatMessages([]);
+      setIsNewChatRequest(true);
+      setShowWelcomeScreen(true);
     }
-    setShowWelcomeScreen(true);
   };
 
   const deleteConversation = async (

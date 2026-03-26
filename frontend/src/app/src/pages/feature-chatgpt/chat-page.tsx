@@ -60,6 +60,7 @@ export const ChatPage: React.FC = () => {
         userWorkspaces={workspaces}
         showWelcome={true}
         entrySource={source ?? undefined}
+        isModelSelectable={false}
         // Uncomment the following line to enable predefined prompts
         // predefinedPrompts={
         //   t("dsb-chat:predefinedPrompts", { returnObjects: true }) as any[]

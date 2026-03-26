@@ -186,7 +186,7 @@ export default function Sidebar({
               if (!isOpen) {
                 handleSidebarOpen();
               } else {
-                changeRoute("/");
+                // Do nothing or toggle? Let's just do nothing to keep it static.
               }
             }}
             aria-label={

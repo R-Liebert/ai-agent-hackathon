@@ -373,7 +373,7 @@ export default function MainNav({
       {
         label: t("components:mainNavigation.menu.label"),
         Icon: TbApiApp,
-        onClick: () => changeRoute("/"),
+        onClick: () => {},
         tooltipText: "components:mainNavigation.menu.tooltipText",
       },
       // {
@@ -394,13 +394,13 @@ export default function MainNav({
       {
         label: t("components:mainNavigation.newJobPost.label"),
         Icon: TbSchool,
-        onClick: () => changeRoute("/job-post-creator"),
+        onClick: () => {},
         tooltipText: "components:mainNavigation.newJobPost.tooltipText",
       },
       {
         label: t("components:mainNavigation.workspacesList.label"),
         Icon: TbStack2,
-        onClick: () => changeRoute("/workspaces"),
+        onClick: () => {},
         tooltipText: "components:mainNavigation.workspacesList.tooltipText",
       },
       ...(canUseTrafficInformation
@@ -408,7 +408,7 @@ export default function MainNav({
             {
               label: t("components:mainNavigation.aiTrafficInformation.label"),
               Icon: TbTrafficCone,
-              onClick: () => changeRoute("/ai-traffic-information"),
+              onClick: () => {},
               tooltipText:
                 "components:mainNavigation.aiTrafficInformation.tooltipText",
             },
@@ -429,7 +429,7 @@ export default function MainNav({
       {
         label: t("components:mainNavigation.modelsDiscovery.label"),
         Icon: TbSparkles,
-        onClick: () => changeRoute("/maas"),
+        onClick: () => {},
         tooltipText: "components:mainNavigation.modelsDiscovery.tooltipText",
       },
       ...(isAdmin
@@ -437,7 +437,7 @@ export default function MainNav({
             {
               label: t("components:mainNavigation.adminDashboard.label"),
               Icon: TbDashboard,
-              onClick: () => changeRoute("/maas/dashboard"),
+              onClick: () => {},
               tooltipText:
                 "components:mainNavigation.adminDashboard.tooltipText",
             },

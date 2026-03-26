@@ -10,7 +10,7 @@ window.env = {
     "Group.Read.All",
     "Directory.Read.All",
   ],
-  apiUrl: "https://launchpad-api-ext.prd.tog.azure.dsb.dk/",
+  apiUrl: "http://localhost:8000/",
   clientUrl:
     "https://login.microsoftonline.com/f44c53ea-a4c3-499c-bf1e-a1891b565e1d",
   authorizedUserIds: [

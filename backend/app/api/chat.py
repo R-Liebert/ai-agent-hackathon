@@ -85,11 +85,42 @@ async def send_message(conversation_id: str, message: MessageCreate):
     
     return {"content": clean_content, "completed": is_completed}
 
-@router.get("/{conversation_id}/history")
-async def get_history(conversation_id: str):
+@router.post("/history")
+async def get_all_conversations():
+    query = """
+    MATCH (c:Conversation)
+    OPTIONAL MATCH (c)-[:HAS_MESSAGE]->(m:Message)
+    WITH c, m
+    ORDER BY m.timestamp ASC
+    WITH c, COLLECT(m)[0] as first_msg
+    RETURN c.id as id, 
+           COALESCE(first_msg.content, 'New Conversation') as title,
+           'Normal' as type,
+           c.started_at as createdAt,
+           c.started_at as updatedAt,
+           c.started_at as date
+    ORDER BY c.started_at DESC
+    """
+    conversations = graph_service.run_query(query)
+    # Wrap in results for frontend compatibility
+    return {"results": conversations, "continuationToken": None}
+
+@router.delete("/{conversation_id}")
+async def delete_conversation(conversation_id: str):
+    query = """
+    MATCH (c:Conversation {id: $id})
+    OPTIONAL MATCH (c)-[:HAS_MESSAGE]->(m:Message)
+    DETACH DELETE c, m
+    """
+    graph_service.run_query(query, {"id": conversation_id})
+    return {"status": "success"}
+
+@router.get("/{conversation_id}")
+async def get_conversation(conversation_id: str):
+    # This is a bit redundant but the frontend uses it
     query = """
     MATCH (c:Conversation {id: $conv_id})-[:HAS_MESSAGE]->(m:Message)
-    RETURN m.id as id, m.role as role, m.content as content, m.timestamp as timestamp
+    RETURN m.id as id, m.role as role, m.content as content, m.timestamp as timestamp, m.timestamp as date
     ORDER BY m.timestamp ASC
     """
     history = graph_service.run_query(query, {"conv_id": conversation_id})
