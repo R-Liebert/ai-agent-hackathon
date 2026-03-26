@@ -9,5 +9,9 @@ dependencies = [
     "neo4j",
     "openai",
     "pydantic",
-    "uvicorn"
+    "uvicorn",
+    "pydantic-settings",
+    "python-dotenv",
+    "python-multipart",
+    "httpx"
 ]
