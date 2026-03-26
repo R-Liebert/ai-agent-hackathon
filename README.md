@@ -21,11 +21,12 @@ The **AI Painpoint Discovery Assistant** is a chat application where managers de
 
 ### Prerequisites
 *   Python 3.9+
+*   Node.js and npm
 *   uv (Fast Python package and project manager)
 *   Docker and Docker Compose
 *   OpenAI-compatible Gateway credentials
 
-### 1. Installation & Environment
+### 1. Backend Installation & Environment
 Navigate to the backend directory and use `uv` to install the dependencies:
 
 ```bash
@@ -33,7 +34,7 @@ cd backend
 uv sync
 ```
 
-Create a `.env` file in the root directory (for Docker) and in the `backend` directory (for local development) with your credentials:
+Create a `.env` file in the `backend` directory with your credentials:
 
 ```env
 # OpenAI / LiteLLM Config
@@ -42,32 +43,44 @@ OPENAI_BASE_URL=https://aiml-llmgateway-litellm-api-ai-tooling.dev.aiml.azure.ds
 OPENAI_MODEL_NAME=gpt-4o-standard_flow11
 
 # Neo4j Graph Database
-NEO4J_URI=bolt://localhost:7687  # Use bolt://neo4j:7687 inside Docker
+NEO4J_URI=bolt://localhost:7687
 NEO4J_USERNAME=neo4j
-NEO4J_PASSWORD=              # Leave blank if authentication is disabled
+NEO4J_PASSWORD=your_password
 ```
 
-### 2. Run the Application
-
-#### Option A: Run everything with Docker (Recommended)
-You can start the entire stack (Neo4j + Backend) using Docker Compose:
+### 2. Frontend Installation
+Navigate to the frontend application directory and install dependencies:
 
 ```bash
-docker compose up -d --build
+cd frontend/src/app
+npm install
 ```
 
-#### Option B: Run locally with uv
-If you have a local Neo4j instance running, you can start the backend directly:
+### 3. Run the Application
 
+#### Start the Backend
 ```bash
 cd backend
-uv sync
 uv run uvicorn app.main:app --reload
 ```
 
-**Automatic Data Seeding:** Upon startup, the application will automatically connect to your Neo4j database and seed the initial constraints, capability domains, departments, and teams.
+#### Start the Frontend
+```bash
+cd frontend/src/app
+npm start
+```
 
-The interactive API documentation (Swagger UI) will be available at: http://localhost:8000/docs
+The frontend will be available at: http://localhost:5173 (or as indicated by Vite).
+
+**Note:** The frontend is configured to point to the local backend at `http://localhost:8000/`. Most non-chat features (Job Post Creator, Workspaces, etc.) have been made static (dummy icons) as the focus is on the AI Painpoint Discovery Chat integration.
+
+## Testing the Chat UI
+
+1.  Open the frontend in your browser.
+2.  Navigate to **DSB Chat**.
+3.  The chat will automatically start a new session with the backend.
+4.  Type your pain point and interact with the assistant.
+5.  Your chat history is saved in the Neo4j database and can be accessed via the sidebar.
 
 ## API Endpoints Overview
 
