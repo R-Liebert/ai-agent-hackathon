@@ -71,3 +71,25 @@ The interactive API documentation (Swagger UI) will be available at: http://loca
 *   `POST /finalize/{conversation_id}` - Triggers the LLM to summarize the conversation, structures the JSON output, and persists the Issue/Domain/Team relationships to Neo4j.
 *   `GET /` - Browse issues (supports filtering by domain, team, status, and text search).
 *   `GET /{issue_id}` - Fetch detailed issue context, relationships, and classifications.
+
+## Testing Locally
+
+Once your local server is running and your `.env` file is properly configured with your LLM endpoint (Azure OpenAI) and Neo4j credentials, you can test the entire flow using the automatically generated Swagger UI.
+
+### Simulating a Discovery Session
+
+1. **Open Swagger UI:** Navigate to http://localhost:8000/docs in your browser.
+2. **Start a Conversation:** Find the `POST /api/chat/start` endpoint. Click "Try it out" and "Execute". 
+   * *Save the `conversation_id` returned in the response body.*
+3. **Send Messages:** Find the `POST /api/chat/{conversation_id}/message` endpoint. Click "Try it out". 
+   * Paste the `conversation_id` into the parameter field.
+   * Modify the request body to describe a problem. For example:
+     ```json
+     {
+       "content": "Our HR team is spending too much time manually reviewing candidate resumes. We need to automatically extract skills and categorize them.",
+       "role": "user"
+     }
+     ```
+   * "Execute" to get the LLM's follow-up questions. Repeat this until the assistant indicates it has enough information (e.g., outputs `[COMPLETE]`).
+4. **Finalize the Issue:** Find the `POST /api/issues/finalize/{conversation_id}` endpoint. Paste your `conversation_id` and execute. This calls the LLM one last time to output the structured JSON based on your chat history and saves it to the Neo4j database.
+5. **Verify:** Use the `GET /api/issues/` endpoint to retrieve and verify the newly structured issue in your local graph database.
