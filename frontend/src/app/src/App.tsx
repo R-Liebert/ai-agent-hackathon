@@ -145,9 +145,10 @@ export default function App() {
                           <DndContextProvider>
                             <CanvasProvider>
                               <Routes>
-                                <Route index element={<MenuPage />} />
+                                <Route element={<MenuPage />} />
                                 <Route
-                                  path="dsb-chat/*"
+                                  index
+                                  path="/*"
                                   element={
                                     <SelectedValueProvider>
                                       <ChatPage />
