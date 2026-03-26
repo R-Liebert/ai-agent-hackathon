@@ -21,15 +21,16 @@ The **AI Painpoint Discovery Assistant** is a chat application where managers de
 
 ### Prerequisites
 *   Python 3.9+
+*   uv (Fast Python package and project manager)
 *   Neo4j instance (running locally or via Docker container)
 *   Azure OpenAI credentials
 
 ### 1. Installation
-Navigate to the backend directory and install the required dependencies:
+Navigate to the backend directory and use `uv` to install the dependencies and set up the virtual environment:
 
 ```bash
 cd backend
-pip install -r requirements.txt
+uv sync
 ```
 *(Note: Ensure you have `fastapi`, `uvicorn`, `neo4j`, `openai`, and `pydantic` in your requirements.txt)*
 
