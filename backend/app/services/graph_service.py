@@ -8,9 +8,13 @@ class GraphService:
     def __init__(self):
         self.driver = None
         try:
+            auth = None
+            if settings.NEO4J_PASSWORD:
+                auth = (settings.NEO4J_USERNAME, settings.NEO4J_PASSWORD)
+            
             self.driver = GraphDatabase.driver(
                 settings.NEO4J_URI,
-                auth=(settings.NEO4J_USERNAME, settings.NEO4J_PASSWORD)
+                auth=auth
             )
             self.driver.verify_connectivity()
             logger.info("Successfully connected to Neo4j")

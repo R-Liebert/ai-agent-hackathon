@@ -14,7 +14,7 @@ The **AI Painpoint Discovery Assistant** is a chat application where managers de
 ## Tech Stack
 *   **Backend:** Python, FastAPI
 *   **Database:** Neo4j (Local Graph Database)
-*   **LLM:** Azure OpenAI
+*   **LLM:** OpenAI-compatible Gateway (LiteLLM)
 *   **Data Validation:** Pydantic
 
 ## Setup Instructions
@@ -23,7 +23,7 @@ The **AI Painpoint Discovery Assistant** is a chat application where managers de
 *   Python 3.9+
 *   uv (Fast Python package and project manager)
 *   Docker and Docker Compose
-*   Azure OpenAI credentials
+*   OpenAI-compatible Gateway credentials
 
 ### 1. Installation & Environment
 Navigate to the backend directory and use `uv` to install the dependencies:
@@ -36,16 +36,15 @@ uv sync
 Create a `.env` file in the root directory (for Docker) and in the `backend` directory (for local development) with your credentials:
 
 ```env
-# Azure OpenAI Service
-AZURE_OPENAI_API_KEY=your_api_key_here
-AZURE_OPENAI_API_VERSION=2024-02-15-preview
-AZURE_OPENAI_ENDPOINT=https://your-resource-name.openai.azure.com/
-AZURE_OPENAI_DEPLOYMENT_NAME=gpt-4o
+# OpenAI / LiteLLM Config
+OPENAI_API_KEY=your_api_key_here
+OPENAI_BASE_URL=https://aiml-llmgateway-litellm-api-ai-tooling.dev.aiml.azure.dsb.dk
+OPENAI_MODEL_NAME=gpt-4o-standard_flow11
 
 # Neo4j Graph Database
 NEO4J_URI=bolt://localhost:7687  # Use bolt://neo4j:7687 inside Docker
 NEO4J_USERNAME=neo4j
-NEO4J_PASSWORD=your_secure_password
+NEO4J_PASSWORD=              # Leave blank if authentication is disabled
 ```
 
 ### 2. Run the Application
@@ -84,7 +83,7 @@ The interactive API documentation (Swagger UI) will be available at: http://loca
 
 ## Testing Locally
 
-Once your local server is running and your `.env` file is properly configured with your LLM endpoint (Azure OpenAI) and Neo4j credentials, you can test the entire flow using the automatically generated Swagger UI.
+Once your local server is running and your `.env` file is properly configured with your LLM gateway credentials and Neo4j credentials, you can test the entire flow using the automatically generated Swagger UI.
 
 ### Simulating a Discovery Session
 

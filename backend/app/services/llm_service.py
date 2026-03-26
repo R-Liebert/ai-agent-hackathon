@@ -1,4 +1,4 @@
-from openai import AzureOpenAI
+from openai import OpenAI
 from app.config import settings
 import json
 import logging
@@ -7,12 +7,13 @@ logger = logging.getLogger(__name__)
 
 class LLMService:
     def __init__(self):
-        self.client = AzureOpenAI(
-            api_key=settings.AZURE_OPENAI_API_KEY,
-            api_version=settings.AZURE_OPENAI_API_VERSION,
-            azure_endpoint=settings.AZURE_OPENAI_ENDPOINT
+        # We use a custom base URL and a custom header for LiteLLM as per the curl example.
+        self.client = OpenAI(
+            api_key=settings.OPENAI_API_KEY,
+            base_url=settings.OPENAI_BASE_URL,
+            default_headers={"x-litellm-api-key": settings.OPENAI_API_KEY}
         )
-        self.deployment_name = settings.AZURE_OPENAI_DEPLOYMENT_NAME
+        self.model_name = settings.OPENAI_MODEL_NAME
 
     async def get_chat_response(self, messages):
         """Get a response from the LLM for the conversation."""
@@ -41,7 +42,7 @@ class LLMService:
 
         try:
             response = self.client.chat.completions.create(
-                model=self.deployment_name,
+                model=self.model_name,
                 messages=messages,
                 temperature=0.7
             )
@@ -73,7 +74,7 @@ class LLMService:
 
         try:
             response = self.client.chat.completions.create(
-                model=self.deployment_name,
+                model=self.model_name,
                 messages=[system_prompt, user_prompt],
                 response_format={"type": "json_object"},
                 temperature=0.0
