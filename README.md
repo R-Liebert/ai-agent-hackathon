@@ -22,39 +22,48 @@ The **AI Painpoint Discovery Assistant** is a chat application where managers de
 ### Prerequisites
 *   Python 3.9+
 *   uv (Fast Python package and project manager)
-*   Neo4j instance (running locally or via Docker container)
+*   Docker and Docker Compose
 *   Azure OpenAI credentials
 
-### 1. Installation
-Navigate to the backend directory and use `uv` to install the dependencies and set up the virtual environment:
+### 1. Installation & Environment
+Navigate to the backend directory and use `uv` to install the dependencies:
 
 ```bash
 cd backend
 uv sync
 ```
-*(Note: Ensure you have `fastapi`, `uvicorn`, `neo4j`, `openai`, and `pydantic` in your requirements.txt)*
 
-### 2. Environment Variables
-Create a `.env` file in the `backend` directory to store your configuration securely:
+Create a `.env` file in the root directory (for Docker) and in the `backend` directory (for local development) with your credentials:
 
 ```env
-# Neo4j Graph Database
-NEO4J_URI=bolt://localhost:7687
-NEO4J_USERNAME=neo4j
-NEO4J_PASSWORD=your_secure_password
-
 # Azure OpenAI Service
 AZURE_OPENAI_API_KEY=your_api_key_here
-AZURE_OPENAI_API_VERSION=2023-05-15
+AZURE_OPENAI_API_VERSION=2024-02-15-preview
 AZURE_OPENAI_ENDPOINT=https://your-resource-name.openai.azure.com/
-AZURE_OPENAI_DEPLOYMENT_NAME=your_model_deployment_name
+AZURE_OPENAI_DEPLOYMENT_NAME=gpt-4o
+
+# Neo4j Graph Database
+NEO4J_URI=bolt://localhost:7687  # Use bolt://neo4j:7687 inside Docker
+NEO4J_USERNAME=neo4j
+NEO4J_PASSWORD=your_secure_password
 ```
 
-### 3. Run the Application
-Start the FastAPI server using `uv run`:
+### 2. Run the Application
+
+#### Option A: Run everything with Docker (Recommended)
+You can start the entire stack (Neo4j + Backend) using `uv`:
 
 ```bash
-uv run uvicorn app.main:app --reload
+cd backend
+uv run docker-up
+```
+
+#### Option B: Run locally with uv
+If you have a local Neo4j instance running, you can start the backend directly:
+
+```bash
+cd backend
+uv run start
 ```
 
 **Automatic Data Seeding:** Upon startup, the application will automatically connect to your Neo4j database and seed the initial constraints, capability domains, departments, and teams.
