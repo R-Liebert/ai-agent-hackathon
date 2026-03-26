@@ -1,0 +1,35 @@
+{
+  "menuAppBar": {
+    "title": "Leader Chat",
+    "button": {
+      "title": "Vis chathistorik"
+    }
+  },
+  "chatDialogueBox": {
+    "title": "Leader Chat",
+    "ratingDialogMessageheader": "Feedback på svar",
+    "ratingDialogMessage": "Giv feedback på svaret fra LeaderChat. Hvis kilderne er forkerte, bedes du angive de korrekte til opdatering af vores database.",
+    "description": "Spørg om HR-relaterede emner hos DSB."
+  },
+  "predefinedPrompts": [
+    {
+      "icon": "bulb",
+      "description": "Fortæl mig hvordan vi i DSB bruger vores insights værktøj"
+    },
+    {
+      "icon": "steps",
+       "description": "Beskriv hvordan jeg som leder forbereder mig på MUS-samtale"
+     
+    },
+    {
+      "icon": "graduation",
+      "description": "Forklar mig hvordan jeg opretter en anmodning om rekruttering"
+    
+    },
+    {
+      "icon": "report",
+      "description": "Fortæl mig hvad processen er for at indmelde en arbejdsulykke"
+     
+    }
+  ]
+}

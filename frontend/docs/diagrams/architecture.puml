@@ -1,0 +1,56 @@
+@startuml
+footer Lanuchpad Solutiion Architecture
+scale max 1024 width
+skinparam linetype polyline
+skinparam nodesep 10
+skinparam ranksep 10
+
+' Azure
+!define AzurePuml https://raw.githubusercontent.com/RicardoNiepel/Azure-PlantUML/release/2-1/dist
+
+!includeurl AzurePuml/AzureCommon.puml
+!includeurl AzurePuml/AzureSimplified.puml
+
+!includeurl AzurePuml/Compute/AzureAppService.puml
+!includeurl AzurePuml/Databases/AzureCosmosDb.puml
+!includeurl AzurePuml/Identity/AzureActiveDirectory.puml
+!includeurl AzurePuml/Security/AzureKeyVault.puml
+!includeurl AzurePuml/Storage/AzureBlobStorage.puml
+!includeurl AzurePuml/Web/AzureSearch.puml
+!includeurl AzurePuml/AIMachineLearning/all.puml
+
+
+' Kubernetes
+!define KubernetesPuml https://raw.githubusercontent.com/dcasati/kubernetes-PlantUML/master/dist
+
+!includeurl KubernetesPuml/kubernetes_Common.puml
+!includeurl KubernetesPuml/kubernetes_Context.puml
+!includeurl KubernetesPuml/kubernetes_Simplified.puml
+
+!includeurl KubernetesPuml/OSS/KubernetesApi.puml
+!includeurl KubernetesPuml/OSS/KubernetesIng.puml
+!includeurl KubernetesPuml/OSS/KubernetesPod.puml
+
+collections "Lanuchpad UI" as ui
+
+left to right direction
+
+AzureAppService(api, "Lanuchpad API","")
+AzureActiveDirectory(aad, "\nAzure\nActive Directory", "Global")
+AzureCosmosDb(cosmos, "\nCosmos DB", "Global")
+AzureKeyVault(keyvault, "\nAzure\nKey Vault", "Global")
+AzureBlobStorage(blob, "\nAzure\nBlob Storage", "Global")
+AzureSearch(azuresearch, "Azure Search", "Global")
+AzureTranslatorText(translator, "Azure Translator", "Global")
+
+ui ---> api
+ui --> aad
+
+api --> cosmos
+api --> aad
+api --> keyvault
+api --> blob
+api ---> azuresearch
+api ---> translator
+
+@enduml

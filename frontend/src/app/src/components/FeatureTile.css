@@ -1,0 +1,309 @@
+/* ═══════════════════════════════════════════
+   Feature Grid
+   ═══════════════════════════════════════════ */
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.875rem;
+  width: 100%;
+  margin-top: 1.75rem;
+  margin-bottom: 2rem;
+  align-items: stretch;
+}
+
+.feature-grid__hero,
+.feature-grid__standard {
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .feature-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.125rem;
+  }
+
+  /* Large tiles: 3 of 6 cols → 2 per row */
+  .feature-grid__hero {
+    grid-column: span 3;
+  }
+
+  /* Small tiles: 2 of 6 cols → 3 per row */
+  .feature-grid__standard {
+    grid-column: span 2;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   Base Tile
+   ═══════════════════════════════════════════ */
+
+.feature-tile {
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background:
+    linear-gradient(145deg, rgba(var(--tile-rgb), 0.06) 0%, transparent 50%),
+    #252527;
+  cursor: pointer;
+  text-align: left;
+  font-family: "Nunito Sans", sans-serif;
+  width: 100%;
+  height: 100%;
+  min-height: 170px;
+  transition:
+    transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.feature-tile:hover {
+  transform: translateY(-4px);
+  border-color: rgba(var(--tile-rgb), 0.25);
+  box-shadow:
+    0 12px 40px -8px rgba(var(--tile-rgb), 0.15),
+    0 0 0 1px rgba(var(--tile-rgb), 0.08);
+}
+
+.feature-tile:active {
+  transform: translateY(-1px);
+  transition-duration: 0.1s;
+}
+
+.feature-tile:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(var(--tile-rgb), 0.5);
+}
+
+/* ═══════════════════════════════════════════
+   Hero Tile
+   ═══════════════════════════════════════════ */
+
+.feature-tile--hero {
+  padding: 2rem;
+  min-height: 200px;
+}
+
+@media (min-width: 768px) {
+  .feature-tile--hero {
+    min-height: 240px;
+    padding: 2.5rem;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   Mouse-tracking Spotlight
+   ═══════════════════════════════════════════ */
+
+.feature-tile__spotlight {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    500px circle at var(--mouse-x) var(--mouse-y),
+    rgba(var(--tile-rgb), 0.07),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.feature-tile:hover .feature-tile__spotlight {
+  opacity: 1;
+}
+
+/* ═══════════════════════════════════════════
+   Icon
+   ═══════════════════════════════════════════ */
+
+.feature-tile__icon {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.875rem;
+  color: #f9f9f9;
+  flex-shrink: 0;
+  transition:
+    transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.35s ease;
+}
+
+.feature-tile__icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.feature-tile:hover .feature-tile__icon {
+  transform: scale(1.1);
+}
+
+.feature-tile--hero .feature-tile__icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 1rem;
+}
+
+.feature-tile--hero .feature-tile__icon svg {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .feature-tile--hero .feature-tile__icon {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .feature-tile--hero .feature-tile__icon svg {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   Content
+   ═══════════════════════════════════════════ */
+
+.feature-tile__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.feature-tile__title {
+  color: #f9f9f9;
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  margin: 0;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.feature-tile--hero .feature-tile__title {
+  font-size: 1.375rem;
+}
+
+@media (min-width: 768px) {
+  .feature-tile--hero .feature-tile__title {
+    font-size: 1.625rem;
+  }
+}
+
+.feature-tile__desc {
+  color: #89898e;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.feature-tile--hero .feature-tile__desc {
+  font-size: 0.9375rem;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .feature-tile--hero .feature-tile__desc {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   Edge Accent Line
+   ═══════════════════════════════════════════ */
+
+.feature-tile__accent {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(
+      90deg,
+      rgba(var(--tile-rgb), 1) 0%,
+      rgba(var(--tile-rgb), 0.65) 35%,
+      rgba(var(--tile-rgb), 0) 100%
+    )
+    left bottom / 100% 1.5px no-repeat;
+}
+
+.feature-tile__accent::before,
+.feature-tile__accent::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.feature-tile__accent::before {
+  top: 0;
+  width: 1.5px;
+  background: linear-gradient(
+    180deg,
+    rgba(var(--tile-rgb), 0) 0%,
+    rgba(var(--tile-rgb), 0.45) 56%,
+    rgba(var(--tile-rgb), 1) 100%
+  );
+}
+
+.feature-tile__accent::after {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-left: 1.5px solid rgba(var(--tile-rgb), 1);
+  border-bottom: 1.5px solid rgba(var(--tile-rgb), 1);
+  border-bottom-left-radius: 1.25rem;
+  box-sizing: border-box;
+}
+
+.feature-tile:hover .feature-tile__accent {
+  opacity: 1;
+}
+
+/* ═══════════════════════════════════════════
+   Reduced Motion
+   ═══════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  .feature-tile,
+  .feature-tile__icon,
+  .feature-tile__spotlight,
+  .feature-tile__accent {
+    transition: none !important;
+  }
+
+  .feature-tile:hover {
+    transform: none;
+  }
+
+  .feature-tile:hover .feature-tile__icon {
+    transform: none;
+  }
+}

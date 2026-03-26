@@ -1,0 +1,36 @@
+{
+  "moduleName": "Meeting Notes Creator",
+  "menuAppBar": {
+    "title": "Meeting Notes Creator",
+    "tagline": "Opsummer møder ved hjælp af transskriptioner"
+  },
+  "defaultContent": {
+    "placeholder": "Klik her for at indsætte transskription",
+    "selectButton": "Indsæt transskription"
+  },
+  "welcomeText": "Oversigt over dine noter med detaljerede handlingspunkter vil blive vist her.",
+  "chatDialogueBox": {
+    "pasteTranscription": {
+      "label": "Transskription",
+      "placeholder": "Indsæt transskription",
+      "tokenCount": "Nuværende antal tokens:"
+    },
+    "selectLanguage": "Vælg sprog for output"
+  },
+  "buttons": {
+    "generate": "Generer noter",
+    "reGenerate": "Regenerer noter",
+    "copy": "Kopier",
+    "upload": "Indsæt transskription",
+    "download": "Download noter",
+    "generating": "Genererer noter"
+  },
+  "downloadSuccess": "Dine noter blev downloadet",
+  "downloadError": "Noget gik galt i download af noter",
+  "outputHeader": "Genererede Noter",
+  "startGenerate": "Dine noter bliver genereret",
+  "errorGenerate": "Noget gik galt i genereringen af noter",
+  "tooltipRegenerate": "Regenerer",
+  "errorTranscription": "Transskriptionsfeltet må ikke være tomt",
+  "errorTokenCount": "Transskriptionen er for lang. Juster venligst"
+}

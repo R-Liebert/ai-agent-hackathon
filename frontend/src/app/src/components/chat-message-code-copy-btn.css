@@ -1,0 +1,27 @@
+.code-copy-btn {
+  position: absolute;
+  right: 10px; 
+  color: #a5a7a5;
+}
+
+.code-copy {
+  margin-bottom: -8px;
+  background: #2f2f2f;
+  position: sticky;
+  height: 30px;
+  cursor: pointer;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.code-copy-btn svg {
+  height: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.code-copy-btn .icon-text {
+  font-size: 12px;
+  padding: 4px 2px;
+  display: inline-block;
+}

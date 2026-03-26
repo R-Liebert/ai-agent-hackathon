@@ -1,0 +1,107 @@
+.chat-input > div:first-child {
+  background: transparent !important;
+  border: 1px solid #797985;
+  border-radius: 10px !important;
+  padding: 8px 20px 8px !important;
+}
+
+.chat-outer-wrapper label {
+  color: #838383;
+}
+
+.chat-outer-wrapper label:focus {
+  color: #838383;
+}
+
+.input-change-field {
+  max-height: 300px;
+  overflow: hidden;
+  position: relative;
+  color: white;
+  border: 1px solid #636363;
+  border-radius: 0.5rem;
+}
+
+.input-change-field {
+  max-height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.input-change-field-wrapper {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.input-change-field-wrapper textarea {
+  color: #f0f1f5;
+}
+
+.input-change-field-wrapper.visible {
+  transform: translateY(0);
+  opacity: 1;
+  display: flex;
+  width: 100%;
+  border: 1px solid #51525d;
+  border-radius: 12px;
+  padding: 12px 13px 12px 18px;
+  margin-top: 8px;
+}
+
+.input-change-field-wrapper .MuiInputBase-root {
+  padding: 0px;
+}
+
+.no-valid-message {
+  color: #ff4df8;
+  padding-left: 18px;
+}
+
+.input-change-field-wrapper.no-valid {
+  border: 1px solid #d600cd;
+}
+
+.input-change-field-wrapper .placeholder-color {
+  color: #a1a1aa;
+}
+
+.input-edit-state {
+  width: 100%;
+  position: relative;
+}
+
+.input-edit-state textarea {
+  font-size: 15px;
+}
+
+.input-edit-state .MuiInputBase-inputMultiline {
+  min-height: 30px;
+}
+
+.text-field-input {
+  width: 100%;
+}
+
+.MuiInputBase-root input::placeholder {
+  margin: 0;
+  padding: 0;
+}
+
+.input-edit-state .edit-actions {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  right: 0;
+  bottom: 0;
+}
+
+.input-change-field-wrapper .MuiInputBase-input {
+  margin: 0;
+  padding: 0;
+}
+
+.input-change-field-wrapper .MuiOutlinedInput-notchedOutline {
+  border: none;
+}

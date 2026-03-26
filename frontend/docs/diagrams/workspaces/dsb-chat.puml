@@ -1,0 +1,19 @@
+@startuml
+
+actor       User       as User
+participant "Launchpad UI" as LaunchpadUI
+participant "Launchpad API" as LaunchpadAPI
+database    "Launchpad DB"    as LaunchpadDB
+participant "Azure Open AI" as AzureOpenAI
+
+User -> LaunchpadUI : navigate to launchpad
+LaunchpadUI -> LaunchpadAPI : POST: input message
+LaunchpadAPI -> LaunchpadDB : retrieves conversation details + chat history
+LaunchpadDB -> LaunchpadAPI : return conversation chat history
+LaunchpadAPI -> AzureOpenAI : prepare the request & send chat completion request to the azure open ai service 
+AzureOpenAI ->  LaunchpadAPI: stream completion request
+
+LaunchpadAPI ->  LaunchpadUI: stream completion request
+LaunchpadUI ->  User: update chat ui
+
+@enduml

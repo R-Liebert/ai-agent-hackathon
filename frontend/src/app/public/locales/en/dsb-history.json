@@ -1,0 +1,34 @@
+{
+  "menuAppBar": {
+    "title": "History Chat (Beta)"
+  },
+  "chatDialogueBox": {
+    "title": "History Chat (Beta)",
+    "description": "A test version to assist with DSB history topics, errors may occur.",
+    "welcomeMessage": [
+      "I'm the beta version of History Chat. Don't hesitate to ask about various topics, and I'll strive to assist you to the best of my ability.",
+      "&nbsp;",
+      "Keep in mind, this is a beta version, prone to errors and mistakes."
+    ]
+  },
+  "predefinedPrompts": [
+    {
+      "icon": "train",
+      "description": "Tell me what our vision for the S-train was back in 2004"
+    },
+    {
+      "icon": "globe",
+      "description": "Describe for me DSB's relationship with Sweden through the years"
+       
+    },
+    {
+      "icon": "card",
+      "description": "When was the decision to introduce the travel card system made?"
+    },
+    {
+      "icon": "document",
+      "description": "How did air quality complaints evolve from 2017 to 2020?"
+
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "moduleName": "Meeting Notes Creator",
+  "menuAppBar": {
+    "title": "Meeting Notes Creator",
+    "tagline": "Summarize meetings using transcripts"
+  },
+  "defaultContent": {
+    "placeholder": "Click here to paste transcription",
+    "selectButton": "Paste Transcription"
+  },
+  "welcomeText": "Summary of your notes with detailed action items will be displayed here.",
+  "chatDialogueBox": {
+    "pasteTranscription": {
+      "label": "Transcription:",
+      "placeholder": "Insert transcription",
+      "tokenCount": "Current token count:"
+    },
+    "selectLanguage": "Select output language:"
+  },
+  "buttons": {
+    "generate": "Generate Notes",
+    "reGenerate": "Regenerate Notes",
+    "copy": "Copy",
+    "upload": "Upload Transcription",
+    "download": "Download Notes",
+    "generating": "Generating Notes"
+  },
+  "downloadSuccess": "Your notes were downloaded",
+  "downloadError": "Something went wrong when downloading notes",
+  "outputHeader": "Generated Notes",
+  "startGenerate": "Your notes are being generated",
+  "errorGenerate": "Something went wrong when generating notes",
+  "tooltipRegenerate": "Regenerate",
+  "errorTranscription": "Meeting transcription textarea can not be empty.",
+  "errorTokenCount": "Meeting transcription is too long. Please re-adjust"
+}

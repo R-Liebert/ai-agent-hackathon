@@ -1,0 +1,37 @@
+name: Delete workload
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Workload name'
+        required: true
+        default: ''
+      environments:
+        description: 'Environments (list or all)'
+        required: true
+        default: ''
+
+jobs:
+  vars:
+    name: 'Pass vars'
+    runs-on:
+      - dsb-ubuntu-dind
+    
+    outputs:
+      name: ${{ inputs.name }}
+      environments: ${{ inputs.environments }}
+    steps:
+      - name: Set output
+        run: | 
+          echo "Name ${{inputs.name}}"
+          echo "Environments ${{inputs.environments}}"
+  
+  deploy:
+    needs: vars
+    name: 'Deploy'
+    uses: DanskeStatsbaner/max-workflow/.github/workflows/delete-workload.yaml@main
+    secrets: inherit
+    with:
+      name: ${{ needs.vars.outputs.name }}
+      environments: ${{ needs.vars.outputs.environments }}

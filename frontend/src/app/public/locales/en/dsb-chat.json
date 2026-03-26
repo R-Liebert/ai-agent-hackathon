@@ -1,0 +1,105 @@
+{
+  "menuAppBar": {
+    "showHistory": {
+      "title": "Show chat history"
+    },
+    "title": "DSB Chat"
+  },
+  "chatContent": {
+    "chatDialogueBox": {
+      "welcomeMessage": "{{firstName}}, how can I help you today?"
+    },
+    "predefinedWelcomeMessages": [
+      " What can I do for you today?",
+      "Need help with something?",
+      "Let's get started!",
+      "Need assistance? I'm here to help",
+      "Let's make your day easier!"
+    ]
+  },
+  "predefinedPrompts": [
+    {
+      "description": "Create New Job Post"
+    },
+    {
+      "description": "Generate Meeting Notes"
+    },
+    {
+      "description": "Convert Document"
+    },
+    {
+      "description": "Create Presentation"
+    },
+    {
+      "description": "Report a Bug"
+    },
+    {
+      "description": "Request a New Feature"
+    },
+    {
+      "description": "Rate Launchpad"
+    }
+  ],
+  "exportChat": {
+    "successNotification": "Your chat has been successfully downloaded",
+    "errorNotification": "Error when downloading the chat"
+  },
+  "fileUpload": {
+    "dragDrop": {
+      "title": "Add Files",
+      "description": "Drop your files here to add them to the conversation"
+    }
+  },
+  "textToSpeech": {
+    "errors": {
+      "emptyText": "Cannot read empty text",
+      "playbackError": "Error playing audio",
+      "textTooLong": "Text is too long to convert to speech",
+      "tooManyRequests": "Too many requests. Please try again later",
+      "conversionError": "Error converting text to speech",
+      "generalError": "An error occurred. Please try again"
+    },
+    "tooltips": {
+      "loading": "Loading audio...",
+      "resume": "Resume",
+      "pause": "Pause",
+      "readAloud": "Read aloud",
+      "stop": "Stop"
+    }
+  },
+  "featureIntegration": {
+    "buttonText": "Got it",
+    "imageCreator": {
+      "appName": "Image Creator",
+      "welcome": {
+        "title": "🎨 Image Creator Integrated!",
+        "description": "This feature has been integrated into DSB Chat.<br>Describe what you want to create and AI will generate an image for you."
+      },
+      "prompt": "Generate a modern illustration of a Danish train at sunset."
+    },
+    "docChat": {
+      "appName": "Document Chat",
+      "welcome": {
+        "title": "📃 Document Chat Integrated!",
+        "description": "This feature has been integrated into DSB Chat.<br>Upload PDF file to analyze, summarize, or extract information from it"
+      },
+      "prompt": "Analyze the content of the document and summarize the key points clearly."
+    },
+    "meetingNotes": {
+      "appName": "Meeting Notes",
+      "welcome": {
+        "title": "📃 Meeting Notes Integrated!",
+        "description": "This feature has been integrated into DSB Chat.<br>Upload meeting transcription to generate structured action items and meeting summaries."
+      },
+      "prompt": "Generate actionable notes and a structured summary from the meeting transcript."
+    },
+    "docConverter": {
+      "appName": "Document Converter",
+      "welcome": {
+        "title": "📃 Document Converter Integrated!",
+        "description": "This feature has been integrated into DSB Chat.<br>Upload a PDF file to convert it into searchable format."
+      },
+      "prompt": "Convert the uploaded file into a searchable PDF"
+    }
+  }
+}

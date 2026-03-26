@@ -1,0 +1,31 @@
+@startuml
+
+actor       User       as User
+participant "Launchpad UI" as LaunchpadUI
+participant "Launchpad API" as LaunchpadAPI
+control "Background worker" as BackgroundWorker
+database    "Launchpad DB"    as LaunchpadDB
+participant "Azure AI Search" as AzureAISearch
+participant "Azure Open AI" as AzureOpenAI
+collections  "Azure Storage"    as AzureStorage
+
+User -> LaunchpadUI : navigate to launchpad
+LaunchpadUI -> LaunchpadAPI : POST: input message
+LaunchpadAPI -> LaunchpadDB : retrieves conversation details + chat history
+LaunchpadDB -> LaunchpadAPI : return conversation + chat history
+
+LaunchpadAPI -> AzureAISearch : "Conversation" RAG search
+AzureAISearch -> LaunchpadAPI : RAG search result
+
+LaunchpadAPI -> AzureOpenAI : prepare the request & send chat completion request to the azure open ai service
+AzureOpenAI ->  LaunchpadAPI: stream completion request
+
+LaunchpadAPI ->  LaunchpadUI: stream completion request
+LaunchpadUI ->  User: update chat ui
+
+LaunchpadAPI ->  BackgroundWorker: trigger file processing   
+BackgroundWorker ->  AzureStorage: retrieve conversation files
+BackgroundWorker ->  AzureAISearch: update search index
+BackgroundWorker ->  LaunchpadDB: update database
+
+@enduml

@@ -1,0 +1,279 @@
+{
+  "moduleName": "Job Post Creator",
+  "description": "UPDATE THIS",
+  "maintenance": {
+    "title": "Job Post Creator er midlertidigt utilgængelig",
+    "description": "Vi udfører planlagt vedligeholdelse for at forbedre Job Post Creator. Tak for din tålmodighed – prøv igen om lidt.",
+    "pageTitle": "Job Post Creator - Vedligeholdelse",
+    "cta": {
+      "heading": "Brug for adgang med det samme?",
+      "description": "Som en midlertidig løsning kan du stadig åbne den tidligere version af Job Post Creator.",
+      "button": "Åbn tidligere Job Post Creator",
+      "note": "Kræver forbindelse til DSB Wi-Fi."
+    }
+  },
+  "menuAppBar": {
+    "title": "Job Post Creator"
+  },
+  "newJobPostButton": "Opret nyt jobopslag",
+  "streamingChatNotification": "Genererer den ønskede stilling...",
+  "generatedPositionChatNotification": "Jobopslaget for stillingen {{positionTitle}} er blevet oprettet. Giv endelig besked, hvis du ønsker at tilpasse det yderligere—f.eks. til en bestemt branche, virksomhedstone eller lokation.",
+  "form": {
+    "buttons": {
+      "submitButton": "Generer Jobopslag",
+      "regenerateButton": "Opdater Jobopslag"
+    },
+    "notifications": {
+      "onFormSubmit": {
+        "success": "skal opdateres",
+        "error": "Noget gik galt ved indsendelse af din formular. Prøv venligst igen.",
+        "validationError": "Udfyld venligst alle obligatoriske felter, før du genererer jobopslaget."
+      }
+    },
+    "positionLevel": {
+      "label": "Vælg Stillingsniveau",
+      "options": {
+        "junior": "Juniorkonsulent/Studerende",
+        "senior": "Manager/Specialist",
+        "shortpost": "Indsnævret jobopslag"
+      },
+      "validationMessage": "Vælg venligst et stillingsniveau"
+    },
+    "jobTitle": {
+      "label": "Jobtitel",
+      "tooltip": "Indsæt den fulde titel for den profil du søger efter. \nF.eks. Account manager, Udbudsjurist, Planner...",
+      "placeholder": "f.eks. Account Manager",
+      "validationMessage": "Udfyld venligst jobtitlen."
+    },
+    "departmentTeam": {
+      "label": "Afdeling og Team",
+      "placeholder": "Beskriv afdeling og team",
+      "tooltip": "1. Beskriv kort hvorfor du har behov for en ny medarbejder og hvad denne kan forvente at bidrage med. \n2. Fortæl om afdelingens navn og jeres bidrag til DSB, om teamet (antal medarbejdere) og jeres kultur, samt hvor I holder til arbejdsmæssigt.",
+      "validationMessage": "Beskriv venligst afdeling og team"
+    },
+    "jobScope": {
+      "label": "Job og Opgaver",
+      "placeholder": "Beskriv stillingen og opgaverne",
+      "tooltip": "1. Beskriv kortfattet en typisk hverdag/opgaver i rollen, beskriv i nutid.\n2. Angiv de vigtigste primære opgaver og ansvarsområder i rollen (maksimalt 4 punkter).",
+      "validationMessage": "Beskriv venligst stillingen og opgaverne"
+    },
+    "qualifications": {
+      "label": "Faglige og Personlige Kvalifikationer",
+      "placeholder": "Beskriv afdeling og team",
+      "tooltip": "1. Beskriv kort de forventede kvalifikationer og forventninger til den ideelle kandidat. \n2. Angiv maksimalt 4 punkter med forventninger til faglige kvalifikationer.\n3. Forventninger til personlige kvalifikationer (maksimalt 4 sætninger, undgå floskler og lange adjektivremsende beskrivelser).",
+      "validationMessage": "Beskriv venligst afdeling og team"
+    },
+    "language": {
+      "label": "Vælg Output-Sprog",
+      "options": {
+        "da": "Dansk",
+        "en": "Engelsk"
+      },
+      "validationMessage": "Vælg venligst et sprog"
+    }
+  },
+  "instructions": {
+    "title": "Instruktioner til Jobopslagsgenerator",
+    "description": "Jobopslagsgeneratoren er designet til at hjælpe dig med at skabe et første udkast til dit jobopslag, som følger DSB's skabelon og layout for en effektiv jobannonce.",
+    "accordion": {
+      "form": {
+        "title": "Udfyld formularfelterne",
+        "description": [
+          "Angiv detaljerede oplysninger om jobbet og afdelingen.",
+          "Beskriv teamet, arbejdskulturen og en typisk arbejdsdag.",
+          "List nøgleopgaver og ansvarsområder.",
+          "Angiv de faglige og personlige kvalifikationer, der kræves til stillingen.",
+          "Vælg sproget for jobopslaget (dansk eller engelsk)."
+        ]
+      },
+      "edit": {
+        "title": "Gennemgå og rediger",
+        "description": "Rediger udkastet ved hjælp af canvas-redigeringsfunktionen for at sikre nøjagtighed og overensstemmelse med jobbeskrivelsen. Juster eventuelle forkerte sætninger, tilføj indhold eller gendan indhold om nødvendigt; brug versionsfunktionen til at vælge den bedste version."
+      },
+      "collaboration": {
+        "title": "Download og del",
+        "description": "Download den oprettede jobopslagsskabelon og del udkastet med din Rekrutteringspartner for yderligere behandling og opdatering."
+      },
+      "evaluation": {
+        "title": "Upload til evaluering",
+        "description": "Upload den færdige og gennemgåede jobopslagsfil som input til AI-baseret evaluering og forbedring. Det indsendte dokument vil blive brugt af systemet til at analysere indhold, struktur og tone for at generere en forbedret version af jobopslaget. Sørg for, at filen afspejler dit bedste udkast og indeholder alle ønskede detaljer, da det vil guide AI'en i at skabe et mere effektivt og overbevisende jobopslag."
+      }
+    }
+  },
+  "navigationIconButtons": {
+    "upload": "Upload til Evaluering",
+    "uploaded": "Fil uploadet",
+    "copy": "Kopiér",
+    "download": "Download",
+    "edit": "Redigeringstilstand"
+  },
+  "deleteJobPostModal": {
+    "title": "Slet Jobopslag - er du sikker?",
+    "paragraph": "Dette vil slette alle referencer til jobopslaget {{positionTitle}}. Denne handling kan ikke fortrydes.",
+    "cancelBtn": "Annuller",
+    "deleteBtn": "Slet",
+    "notifications": {
+      "success": "Jobopslaget {{positionTitle}} er blevet slettet med succes.",
+      "error": "Der opstod en fejl under sletningen af jobopslaget. Prøv igen senere.",
+      "errorNoId": "Jobopslaget {{positionTitle}}, som du forsøgte at slette, kunne ikke findes. Det kan allerede være blevet slettet."
+    }
+  },
+  "temporaryContent": {
+    "positionTitle": "Senior UI Udvikler",
+    "placeholderText": "Tilføj indhold..",
+    "content": [
+      {
+        "header": "Overskrift",
+        "text": "Senior UI Udvikler"
+      },
+      {
+        "header": "Appetitvækker",
+        "text": "Er du passioneret omkring at skabe smukke, brugervenlige grænseflader, som millioner af brugere vil interagere med dagligt? Bliv en del af os som Senior UI Udvikler og vær med til at forme fremtidens digitale oplevelser hos DSB."
+      },
+      {
+        "header": "Kort Introduktion",
+        "text": "Vi søger en talentfuld Senior UI Udvikler til at slutte sig til vores team af innovatører. I denne rolle vil du arbejde på banebrydende projekter og samarbejde med tværfaglige teams for at levere enestående brugeroplevelser. Din ekspertise i moderne UI-rammer og designprincipper vil være afgørende for vores succes."
+      },
+      {
+        "header": "Team Beskrivelse",
+        "text": "Du bliver en del af et dynamisk og mangfoldigt team af udviklere, designere og produktledere, der er dedikeret til at levere løsninger af høj kvalitet. Vores team værdsætter samarbejde, kreativitet og kontinuerlig læring. Vi arbejder i et agilt miljø, hvor dine idéer og bidrag vil gøre en reel forskel."
+      },
+      {
+        "header": "Jobbeskrivelse",
+        "text": "- Udvikle og vedligeholde brugergrænseflader ved hjælp af moderne rammer som React og Tailwind CSS.\n- Samarbejde med UX/UI-designere for at implementere responsive og tilgængelige designs.\n- Optimere applikationer for maksimal hastighed og skalerbarhed.\n- Skrive ren, vedligeholdelsesvenlig og testbar kode.\n- Deltage i kodegennemgange og give konstruktiv feedback til teammedlemmer.\n- Holde dig opdateret med de nyeste UI-trends, teknikker og teknologier."
+      },
+      {
+        "header": "Kvalifikationer",
+        "text": "- Dokumenteret erfaring som UI-udvikler med en stærk portefølje af projekter.\n- Kompetence i JavaScript, TypeScript, React og Tailwind CSS.\n- Solid forståelse af responsive designprincipper og tilgængelighedsstandarder.\n- Fortrolighed med designværktøjer som Figma eller Adobe XD.\n- Stærke problemløsningsevner og sans for detaljer.\n- Fremragende kommunikations- og samarbejdsevner.\n- En passion for at skabe enestående brugeroplevelser."
+      }
+    ]
+  },
+  "notifications": {
+    "copy": {
+      "success": "Jobopslaget er blevet kopieret med succes",
+      "error": "Der opstod en fejl under kopieringen af jobopslaget. Prøv venligst igen."
+    },
+    "download": {
+      "success": "Jobopslaget {{positionTitle}} er blevet downloadet med succes",
+      "error": "Der opstod en fejl under download af jobopslaget. Prøv venligst igen."
+    },
+    "stream": {
+      "success": "Jobbet er blevet sendt til generering med succes",
+      "error": "Der opstod en fejl under genereringen af jobopslaget. Prøv venligst igen."
+    },
+    "generated": {
+      "success": "Jobbet er blevet genereret med succes",
+      "error": "Der opstod en fejl under genereringen af jobopslaget. Prøv venligst igen."
+    },
+    "upload": {
+      "success": "Filen {{fileName}} blev succesfuldt uploadet til evaluering.",
+      "error": {
+        "uploadFailed": "Der opstod en fejl under upload af filen. Prøv venligst igen.",
+        "invalidFileType": "Kun .docx eller .txt filer er tilladt til evaluering upload.",
+        "noFile": "Der blev ikke tilføjet nogen fil - prøv venligst at uploade filen igen."
+      }
+    },
+    "undo": {
+      "error": "Fortrydelse mislykkedes. Prøv igen."
+    },
+    "redo": {
+      "error": "Gendan mislykkedes. Prøv igen."
+    },
+    "versioning": {
+      "contention": "En anden opdatering er i gang – henter seneste status.",
+      "conflict": "Indholdet er ændret et andet sted – henter seneste version.",
+      "refreshFailed": "Kunne ikke hente seneste version. Prøv igen."
+    },
+    "sectionUpdate": {
+      "error": "Opdatering mislykkedes. Prøv igen."
+    },
+    "rename": {
+      "error": "Omdøbning mislykkedes. Prøv igen."
+    },
+    "delete": {
+      "success": "{{positionTitle}} jobopslag blev slettet med succes",
+      "error": "Der opstod en fejl under sletning af {{positionTitle}} jobopslag. Prøv venligst igen."
+    },
+    "archive": {
+      "success": "{{positionTitle}} jobopslag blev med succes tilføjet til chat-historikken",
+      "error": "Der opstod en fejl under forsøget på at {{positionTitle}} jobopslag. Prøv venligst igen."
+    },
+    "shortpost": {
+      "retryAvailable": "Noget indhold kunne ikke genereres. Du kan prøve at generere igen."
+    }
+  },
+  "chatDialogueBox": {
+    "welcomeMessage": [
+      "",
+      "&nbsp;",
+      "Job Post Creator er designet til at lave et udkast til et stillingsopslag, som følger DSB’s skabelon og layout.",
+      "",
+      "&nbsp;",
+      "Udfyld nedenstående felter med information om jobbet og afdelingen. Vær beskrivende når du skriver om teamet, kulturen og en typisk hverdag i jobbet. Vær specifik og indsæt de vigtigste opgaver samt faglige- og personlige kompetencer og vælg om opslaget skal være på dansk eller engelsk. <a href='https://dsbintranet.sharepoint.com/sites/trAIn_/_layouts/15/stream.aspx?id=%2Fsites%2FtrAIn%5F%2FtrAIn%20Videoer%2FHow%20to%20Draft%20Job%20Posts%2Emov&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E9dad0a6c%2D241b%2D40ef%2D9f7f%2D8cd604b2c312' target='_blank'><u>Klik her for at lære mere.</u><a/>",
+      "",
+      "&nbsp;",
+      "Ret teksten for sætninger som ikke afspejler jobbet. Herefter sender du udkastet til din rekrutteringspartner, som indhenter citat mm. og færdiggør stillingsopslaget."
+    ],
+    "prompts": [
+      {
+        "id": "title",
+        "title": "Titel",
+        "placeholder": "Indsæt den fulde titel for den profil du søger efter. \nF.eks. Account manager, Udbudsjurist, Planner..."
+      },
+      {
+        "id": "teamDescription",
+        "title": "Beskriv din afdeling og team",
+        "placeholder": "1. Beskriv kort hvorfor du har behov for en ny medarbejder og hvad denne kan forvente at bidrage med. \n2. Fortæl om afdelingens navn og jeres bidrag til DSB, om teamet (antal medarbejdere) og jeres kultur, samt hvor I holder til arbejdsmæssigt."
+      },
+      {
+        "id": "jobDetails",
+        "title": "Om jobbet og opgaverne",
+        "placeholder": "1. Beskriv kortfattet en typisk hverdag/opgaver i rollen, beskriv i nutid.\n2. Angiv de vigtigste primære opgaver og ansvarsområder i rollen (maksimalt 4 punkter)."
+      },
+      {
+        "id": "qualifications",
+        "title": "Faglige og personlige kvalifikationer",
+        "placeholder": "1. Beskriv kort de forventede kvalifikationer og forventninger til den ideelle kandidat. \n2. Angiv maksimalt 4 punkter med forventninger til faglige kvalifikationer.\n3. Forventninger til personlige kvalifikationer (maksimalt 4 sætninger, undgå floskler og lange adjektivremsende beskrivelser)."
+      }
+    ],
+    "language": "Sprog",
+    "templateType": {
+      "label": "Vælg stillingsniveau",
+      "options": {
+        "0": "Leder/specialist",
+        "1": "Juniorkonsulent/Studerende",
+        "2": "Indsnævret jopopslag"
+      }
+    },
+    "student": {
+      "prompts": [
+        {
+          "id": "title",
+          "title": "Hvilken afdeling eller team",
+          "placeholder": "Skriv navnet på afdelingen eller teamet, som juniorkonsulenten eller den studerende skal arbejde i."
+        },
+        {
+          "id": "qualifications",
+          "title": "Faglige og personlige kvalifikationer",
+          "placeholder": "1. Beskriv kort de forventede kvalifikationer og forventninger til den ideelle kandidat.\n2.Angiv maksimalt 4 punkter med faglige kvalifikationsforventninger.\n3.Forventninger til personlige kvalifikationer (maksimalt 2 sætninger, undgå floskler og lange adjektivremsende beskrivelser)."
+        }
+      ]
+    }
+  },
+  "preview": {
+    "heading": "Forhåndsvisning",
+    "description": "Her kan du se det genererede jobopslag",
+    "sections": {
+      "header": "Overskrift",
+      "appetizer": "Teaser",
+      "shortIntroduction": "Introduktion",
+      "teamDescription": "Team beskrivelse",
+      "jobDescription": "Job beskrivelse",
+      "qualifications": "Kvalifikationer"
+    }
+  },
+  "buttons": {
+    "generate": "Generer",
+    "export": "Eksporter"
+  }
+}

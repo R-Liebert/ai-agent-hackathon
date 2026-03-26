@@ -1,0 +1,36 @@
+{
+  "menuAppBar": {
+    "title": "History Chat (Beta)"
+  },
+  "chatDialogueBox": {
+    "title": "History Chat (Beta)",
+    "description": "En testversion, her for at hjælpe med spørgsmål om DSB. Husk, da det er en testversion, kan der ske fejl.",
+    "welcomeMessage": [
+      "Jeg er betaversionen af ​​History Chat. Tøv ikke med at spørge om forskellige emner, og jeg vil hjælpe dig efter bedste evne",
+      "&nbsp;",
+      "Husk, dette er en betaversion, der kan ske fejl."
+    ]
+  },
+  "predefinedPrompts": [
+    {
+      "icon": "train",
+      "description": "Fortæl mig hvad vores vision for S-toget var tilbage i 2004"
+    
+    },
+    {
+      "icon": "globe",
+      "description": "Beskriv for mig DSB's forhold til sverige gennem årene"
+      
+    },
+    {
+      "icon": "card",
+      "description": "Hvornår blev beslutningen om at indføre rejsekortet taget?"
+      
+     
+    },
+    {
+      "icon": "document",
+      "description": "Hvordan udviklede ​​klager over luftkvalitet sig fra 2017 til 2020?"
+    }
+  ]
+}

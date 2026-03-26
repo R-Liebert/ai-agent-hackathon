@@ -1,0 +1,29 @@
+.App {
+  background-color: rgb(68, 70, 84);
+}
+
+.top-bar-wrapper {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 50px;
+  background-color: green;
+}
+
+.top-bar-row {
+  vertical-align: middle;
+  background-color: blue;
+}
+.top-bar-content {
+  padding: 15px;
+}
+
+.message-text a {
+  text-decoration-line: underline;
+  font-weight: bold;
+}
+.avatar {
+  float: right;
+  margin-right: 30px;
+}

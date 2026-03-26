@@ -1,0 +1,19 @@
+@startuml
+
+actor       User       as User
+participant "Launchpad UI" as LaunchpadUI
+participant "Launchpad API" as LaunchpadAPI
+database    "Launchpad DB"    as LaunchpadDB
+participant "Assistants API" as AssistantsAPI
+
+User -> LaunchpadUI : navigate to launchpad
+LaunchpadUI -> LaunchpadAPI : POST: input message
+LaunchpadAPI -> LaunchpadDB : retrieves settings + conversation details
+LaunchpadDB -> LaunchpadAPI : return settings + conversation details
+LaunchpadAPI -> AssistantsAPI : prepare new request & send to the assistans API
+AssistantsAPI ->  LaunchpadAPI: stream completion request
+
+LaunchpadAPI ->  LaunchpadUI: stream completion request
+LaunchpadUI ->  User: update chat ui
+
+@enduml

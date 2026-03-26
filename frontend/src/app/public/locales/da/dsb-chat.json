@@ -1,0 +1,105 @@
+{
+  "menuAppBar": {
+    "showHistory": {
+      "title": "Vis chathistorik"
+    },
+    "title": "DSB Chat"
+  },
+  "chatContent": {
+    "chatDialogueBox": {
+      "welcomeMessage": "{{firstName}}, hvordan kan jeg hjælpe dig i dag?"
+    },
+    "predefinedWelcomeMessages": [
+      "Hvad kan jeg gøre for dig i dag?",
+      "Har du brug for hjælp til noget?",
+      "Lad os komme i gang!",
+      "Har du brug for assistance? Jeg er her for at hjælpe.",
+      "Lad os gøre din dag lettere!"
+    ]
+  },
+  "predefinedPrompts": [
+    {
+      "description": "Opret nyt jobopslag"
+    },
+    {
+      "description": "Generer mødereferater"
+    },
+    {
+      "description": "Konverter dokument"
+    },
+    {
+      "description": "Opret præsentation"
+    },
+    {
+      "description": "Rapportér en fejl"
+    },
+    {
+      "description": "Anmod om en ny funktion"
+    },
+    {
+      "description": "Bedøm Launchpad"
+    }
+  ],
+  "exportChat": {
+    "successNotification": "Din chat er blevet downloadet",
+    "errorNotification": "Fejl ved download af chatten"
+  },
+  "fileUpload": {
+    "dragDrop": {
+      "title": "Tilføj filer",
+      "description": "Slip dine filer her for at tilføje dem til samtalen"
+    }
+  },
+  "textToSpeech": {
+    "errors": {
+      "emptyText": "Kan ikke læse tom tekst",
+      "playbackError": "Fejl ved afspilning af lyd",
+      "textTooLong": "Teksten er for lang til at konvertere til tale",
+      "tooManyRequests": "For mange anmodninger. Prøv igen senere",
+      "conversionError": "Fejl ved konvertering af tekst til tale",
+      "generalError": "Der opstod en fejl. Prøv igen"
+    },
+    "tooltips": {
+      "loading": "Indlæser lyd...",
+      "resume": "Fortsæt",
+      "pause": "Pause",
+      "readAloud": "Læs højt",
+      "stop": "Stop"
+    }
+  },
+  "featureIntegration": {
+    "buttonText": "Forstået",
+    "imageCreator": {
+      "appName": "Image Creator",
+      "welcome": {
+        "title": "🎨 Image Creator Integreret!",
+        "description": "Denne funktion er blevet integreret i DSB Chat. <br>Beskriv, hvad du ønsker at skabe, og AI vil generere et billede til dig."
+      },
+      "prompt": "Generer en moderne illustration af et dansk tog ved solnedgang."
+    },
+    "docChat": {
+      "appName": "Document Chat",
+      "welcome": {
+        "title": "📃 Document Chat Integreret!",
+        "description": "Denne funktion er blevet integreret i DSB Chat.<br>Upload en PDF-fil for at analysere, opsummere eller udtrække information fra den."
+      },
+      "prompt": "Analyser indholdet af dokumentet og opsummer de vigtigste punkter klart."
+    },
+    "meetingNotes": {
+      "appName": "Meeting Notes",
+      "welcome": {
+        "title": "📃 Meeting Notes Integreret!",
+        "description": "Denne funktion er blevet integreret i DSB Chat.<br>Upload en mødeudskrift for at generere strukturerede handlingspunkter og mødeopsummeringer."
+      },
+      "prompt": "Generer handlingsrettede noter og en struktureret opsummering fra mødeudskriften."
+    },
+    "docConverter": {
+      "appName": "Document Converter",
+      "welcome": {
+        "title": "📃 Document Converter Integreret!",
+        "description": "Denne funktion er blevet integreret i DSB Chat.<br>Upload en PDF-fil for at konvertere den til et søgbart format."
+      },
+      "prompt": "Konverter den uploadede fil til en søgbar PDF."
+    }
+  }
+}

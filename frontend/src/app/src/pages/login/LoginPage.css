@@ -1,0 +1,39 @@
+.login_paper {
+  position: relative;
+  min-height: 300px;
+  text-align: center;
+  width: 600px;
+  vertical-align: middle;
+}
+.wrapper .title_logo {
+  margin-bottom: 30px;
+}
+
+.wrapper .title_logo h2 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: white;
+}
+
+.wrapper .title_logo img {
+  height: 80px;
+}
+
+.madeby {
+  font-size: 14px;
+  color: #101010;
+}
+
+.bg-primary-dark {
+  color: white;
+  border-color: #bd0000 !important;
+  background-color: #bd0000 !important;
+}
+
+.app-info {
+  color: #8080804a;
+  font-size: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

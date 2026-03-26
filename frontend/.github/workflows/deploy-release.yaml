@@ -1,0 +1,47 @@
+name: Deploy release
+
+on:
+  workflow_dispatch:
+    inputs:
+      release:
+        description: 'Release (latest or name)'
+        required: true
+        default: 'latest'
+      type:
+        type: choice
+        description: Type
+        options:
+        - workloads
+        - resources
+        default: 'workloads'
+      environments:
+        description: 'Environments (list or all)'
+        required: true
+        default: ''
+
+jobs:
+  vars:
+    name: 'Pass vars'
+    runs-on:
+      - dsb-ubuntu-dind
+    
+    outputs:
+      release: ${{ inputs.release }}
+      environments: ${{ inputs.environments }}
+      type: ${{ inputs.type }}
+    steps:
+      - name: Set output
+        run: | 
+          echo "Release ${{inputs.release}}"
+          echo "Environments ${{inputs.environments}}"
+          echo "Type ${{inputs.type}}"
+  
+  deploy:
+    needs: vars
+    name: 'Deploy'
+    uses: DanskeStatsbaner/max-workflow/.github/workflows/deploy-release.yaml@main
+    secrets: inherit
+    with:
+      environments: ${{ needs.vars.outputs.environments }}
+      release: ${{ needs.vars.outputs.release }}
+      type: ${{ needs.vars.outputs.type }}

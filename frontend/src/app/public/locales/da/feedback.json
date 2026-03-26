@@ -1,0 +1,246 @@
+{
+  "title": "Send Feedback",
+  "description": "Indsend en funktionsanmodning, rapporter en fejl eller giv din vurdering af Launchpad. Kun felter markeret med * er påkrævet.",
+  "tabs": {
+    "feedbackChat": "Chat Assistent",
+    "applicationRating": "Launchpad vurdering",
+    "bugReport": "Rapportér en Fejl",
+    "featureRequest": "Ønsk ny funktion"
+  },
+  "chatDialogueBox": {
+    "title": "Viktor",
+    "description": "Jeg indsamler feedback om DSB Chat, Workspaces og Job Post Creator. Rapportér fejl, anmod om funktioner eller del dine tanker for at hjælpe os med at blive bedre!",
+    "welcomeMessage": "Hej! Jeg er Viktor, din feedback-assistent.",
+    "placeholderText": "Skriv din feedback her…",
+    "promptsTitle": "Choose one of the options below or describe your request in textarea"
+  },
+  "predefinedPrompts": [
+    {
+      "description": "Rapportér en fejl"
+    },
+    {
+      "description": "Anmod om en ny funktion"
+    },
+    {
+      "description": "Bedøm Launchpad"
+    }
+  ],
+  "forms": {
+    "buttons": {
+      "submit": "Send feedback",
+      "cancel": "Fortryd"
+    },
+    "workflowImpactLevel": {
+      "options": {
+        "veryLow": "Meget lav",
+        "low": "Lav",
+        "neutral": "Neutral",
+        "high": "Høj",
+        "critical": "Meget høj"
+      },
+      "validationMessage": "Vælg venligst, hvor meget dette påvirker dit arbejde."
+    },
+    "notifications": {
+      "onCancel": {
+        "success": "Din formular er blevet nulstillet.",
+        "error": "Noget gik galt under nulstilling af din formular. Prøv venligst at nulstille igen."
+      },
+      "onSubmit": {
+        "success": "Din feedback er blevet indsendt. Tak for din tid!",
+        "error": "Noget gik galt under indsendelse af din formular. Prøv venligst at nulstille og indsende igen."
+      },
+      "files": {
+        "removeFile": {
+          "textOne": "Fil",
+          "textTwo": "fjernet"
+        },
+        "fileValidations": {
+          "fileType": {
+            "textOne": "Filtypen for",
+            "textTwo": "understøttes ikke"
+          },
+          "maxQuantity": {
+            "textOne": "Du kan uploade maksimalt",
+            "textTwo": "filer"
+          },
+          "fileSize": {
+            "textOne": "Filen",
+            "textTwo": "overstiger den maksimalt tilladte størrelse på"
+          },
+          "maxQuota": "Den samlede filstørrelse overstiger den maksimalt tilladte kvote på",
+          "success": "Filen blev tilføjet."
+        }
+      }
+    },
+    "bugReportForm": {
+      "issueDescription": {
+        "label": "Beskrivelse af problemet *",
+        "placeholder": "Beskriv kort, hvad der gik galt.",
+        "tooltip": "Giv en detaljeret beskrivelse af det problem, du oplevede, inklusiv hvad du lavede, da det skete.",
+        "validationMessage": "Beskriv venligst problemet med mindst 10 tegn."
+      },
+      "expectedBehaviour": {
+        "label": "Forventet resultat *",
+        "placeholder": "Beskriv, hvad du forventede, der skulle ske",
+        "tooltip": "Forklar, hvad du forventede, at applikationen skulle gøre i stedet for det problem, du oplevede.",
+        "validationMessage": "Fortæl os venligst, hvad du forventede, der skulle ske."
+      },
+      "stepsToReproduceIssue": {
+        "label": "Genskab problemet *",
+        "placeholder": "Angiv venligst alle de trin, du tog, før du oplevede problemet",
+        "tooltip": "Angiv de præcise trin, du fulgte, som førte til problemet, så vi kan genskabe og undersøge det.",
+        "validationMessage": "Angiv venligst trinene til at genskabe problemet."
+      },
+      "errorFrequency": {
+        "label": "Hvor mange gange har du oplevet denne fejl *",
+        "tooltip": "Angiv, hvor ofte du har oplevet dette problem, uanset om det skete én gang, et par gange eller konsekvent.",
+        "once": "Én gang",
+        "fewTimes": "Et par gange",
+        "manyTimes": "Mange gange",
+        "always": "Sker altid",
+        "validationMessage": "Vælg venligst, hvor ofte dette problem opstår."
+      },
+      "workflowImpactDescription": {
+        "label": "Beskrivelse af påvirkningen på din arbejdsgang",
+        "placeholder": "Beskriv hvordan problemet påvirker din daglige arbejdsgang og launchpad oplevelse",
+        "tooltip": "Beskriv, hvordan dette problem påvirker din evne til at bruge applikationen eller fuldføre dine opgaver.",
+        "validationMessage": "Beskriv venligst, hvordan dette problem påvirker din arbejdsgang."
+      },
+      "workflowSeverityImpactLevel": {
+        "label": "Niveau for påvirkning af din arbejdsgang",
+        "tooltip": "Vurder, hvor meget problemet påvirker din arbejdsgang, fra lav (mindre ulempe) til kritisk (fuldstændigt blokerende for dit arbejde)."
+      },
+      "supportingReference": {
+        "label": "Understøttende reference",
+        "tooltip": "Vedhæft relevante filer, såsom skærmbilleder, logfiler eller videoer, der kan hjælpe os med at forstå og løse problemet.",
+        "placeholders": {
+          "title": "Træk og slip referencefiler",
+          "subtitle": "Tilføj fejl- eller logskærmbilleder, videoer"
+        }
+      },
+      "errorMessages": {
+        "label": "Fejlmeddelelser",
+        "placeholder": "Indsæt eventuelle fejlmeddelelser, du er stødt på"
+      },
+      "systemInformation": {
+        "label": "Systeminformation",
+        "deviceType": {
+          "label": "Enhed",
+          "desktop": "Desktop",
+          "mobile": "Mobil",
+          "tablet": "Tablet"
+        },
+        "operatingSystem": {
+          "label": "",
+          "windows": "Windows",
+          "macos": "macOS",
+          "linux": "Linux",
+          "android": "Android",
+          "ios": "iOS",
+          "other": "Andet"
+        },
+        "browserType": {
+          "label": "",
+          "chrome": "Chrome",
+          "firefox": "Firefox",
+          "safari": "Safari",
+          "edge": "Edge",
+          "opera": "Opera",
+          "other": "Andet"
+        }
+      }
+    },
+    "featureRequestForm": {
+      "featureDescription": {
+        "label": "Beskrivelse af funktion *",
+        "placeholder": "Detaljeret beskrivelse af funktionen, hvordan den ville fungere",
+        "tooltip": "Giv en detaljeret forklaring af den funktion, du anmoder om, hvordan den skal fungere, og hvad den skal gøre.",
+        "validationMessage": "Beskriv venligst funktionen med mindst 10 tegn."
+      },
+      "problemStatement": {
+        "label": "Problemformulering *",
+        "placeholder": "Beskriv hvilket problem du forsøger at løse med denne funktion",
+        "tooltip": "Forklar det specifikke problem eller den udfordring, du står overfor, som denne funktion ville adressere.",
+        "validationMessage": "Forklar venligst, hvilket problem denne funktion ville løse."
+      },
+      "useCaseScenario": {
+        "label": "Brugsscenarie *",
+        "placeholder": "Beskriv hvordan du ville bruge denne funktion i dit daglige arbejde",
+        "tooltip": "Giv eksempler på, hvordan du ville bruge denne funktion i dine daglige opgaver eller arbejde.",
+        "validationMessage": "Beskriv venligst hvordan du ville bruge denne funktion."
+      },
+      "otherInformation": {
+        "label": "Anden information",
+        "placeholder": "Tilføj anden information, som du finder nyttig"
+      },
+      "workflowSeverityImpactLevel": {
+        "label": "Påvirkning af arbejde *",
+        "tooltip": "Vurder vigtigheden af denne funktion i dit arbejde, fra lav (rart at have) til kritisk (essentiel for dit arbejde).",
+        "validationMessage": "Venligst vurder, hvordan dette problem påvirker din arbejdsproces."
+      },
+      "supportingReference": {
+        "label": "Understøttende reference",
+        "tooltip": "Vedhæft relevante filer, såsom mockups, skærmbilleder eller dokumenter, der kan hjælpe os med at forstå din ide.",
+        "placeholders": {
+          "title": "Træk og slip filer",
+          "subtitle": "Tilføj filer, skærmbilleder eller videoer"
+        }
+      }
+    },
+    "applicationRatingForm": {
+      "starRating": {
+        "label": "Hvordan vil du bedømme din oplevelse med Launchpad? *",
+        "tooltip": "Bedøm din oplevelse på en skala fra 1 til 5 stjerner, hvor 1 er lavest og 5 er højest.",
+        "validationMessage": "Vælg venligst en stjernevurdering."
+      },
+      "timeSavingData": {
+        "label": "Hvor mange timer om ugen vurderer du, at Launchpad sparer dig? *",
+        "options": {
+          "lessThanOne": "Mindre end 1",
+          "betweenOneAndTwo": "1-2",
+          "betweenThreeAndFive": "3-5",
+          "moreThanFive": "6-10",
+          "moreThanTen": "Mere end 10"
+        },
+        "validationMessage": "Vurder venligst, hvor meget tid Launchpad sparer dig hver uge."
+      },
+      "workQualityImpact": {
+        "label": "Hvordan vil du vurdere Launchpads indflydelse på kvaliteten af dit arbejde? *",
+        "options": {
+          "veryLow": "Meget lav",
+          "low": "Lav",
+          "neutral": "Neutral",
+          "high": "Høj",
+          "critical": "Meget høj"
+        },
+        "validationMessage": "Vurder venligst, hvordan Launchpad har påvirket kvaliteten af dit arbejde."
+      },
+      "jobSatisfaction": {
+        "label": "Hvordan har Launchpad påvirket din jobtilfredshed? *",
+        "options": {
+          "veryLow": "Meget lav",
+          "low": "Lav",
+          "neutral": "Neutral",
+          "high": "Høj",
+          "critical": "Meget høj"
+        },
+        "validationMessage": "Beskriv venligst, hvordan Launchpad har påvirket din jobtilfredshed."
+      },
+      "useCaseScenario": {
+        "label": "Kan du dele specifikke scenarier for, hvordan du bruger Launchpad i dit daglige arbejde? *",
+        "placeholder": "For eksempel, 'Jeg bruger Launchpad til at automatisere opgaver såsom dataindtastning.",
+        "tooltip": "Del eksempler på, hvordan du bruger Launchpad i dine daglige opgaver for at forbedre produktivitet eller effektivitet.",
+        "validationMessage": "Beskriv venligst, hvordan du bruger Launchpad."
+      },
+      "otherAiToolsUsed": {
+        "label": "Bruger du andre AI-værktøjer? Hvis ja, angiv dem venligst.",
+        "placeholder": "For eksempel, 'Gemini, Jasper AI, Grammarly."
+      },
+      "missingFeatureIndication": {
+        "label": "Hvilke funktioner har de andre AI-værktøjer, som Launchpad mangler?",
+        "placeholder": "For eksempel, 'lys og mørk tilstand eller avanceret analyse.",
+        "tooltip": "Angiv eventuelle funktioner, du føler mangler i Launchpad sammenlignet med andre AI-værktøjer, du bruger."
+      }
+    }
+  }
+}

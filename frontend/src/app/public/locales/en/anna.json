@@ -1,0 +1,28 @@
+{
+  "menuAppBar": {
+    "title": "Anna - Business Proposal Guide"
+  },
+  "chatDialogueBox": {
+    "title": "Anna",
+    "description": "I'll help you develop compelling one-pagers and transform your ideas into clear, professional business cases.",
+    "welcomeMessage": "Hi! I'm Anna, your business proposal guide."
+  },
+  "predefinedPrompts": [
+    {
+      "icon": "document",
+      "description": "Help me create a business case for a new project"
+    },
+    {
+      "icon": "lightbulb",
+      "description": "How do I structure a compelling one-pager?"
+    },
+    {
+      "icon": "chart",
+      "description": "What should I include in my value proposition?"
+    },
+    {
+      "icon": "target",
+      "description": "Help me identify stakeholder benefits"
+    }
+  ]
+}

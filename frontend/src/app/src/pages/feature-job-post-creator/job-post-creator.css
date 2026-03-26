@@ -1,0 +1,246 @@
+.job-post-creator-module ::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 9999px;
+  }
+  
+  .job-post-creator-module ::-webkit-scrollbar {
+    height: 1rem;
+    width: 0.5rem;
+  }
+  .job-post-creator-module ::-webkit-scrollbar-thumb {
+    --tw-border-opacity: 1;
+    background-color: hsla(0, 0%, 89%, 0.8);
+    border-color: rgba(255, 255, 255, var(--tw-border-opacity));
+    border-radius: 9999px;
+    border-width: 1px;
+  }
+  .job-post-creator-preview {
+    display: flex;
+    height: 100%;
+    border: 1px solid #51525d;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .job-post-creator-preview svg circle {
+    stroke: #fff;
+  }
+  
+  .job-post-creator-preview.with-data {
+    display: flex;
+    padding: 40px 20px 40px 40px;
+    height: 100%;
+    border: 1px solid #51525d;
+    border-radius: 8px;
+    align-items: flex-start;
+    justify-content: center;
+    overflow-y: scroll;
+  }
+  
+  .job-post-creator-preview p {
+    max-width: 218px;
+    font-size: 16px;
+    text-align: center;
+    color: #9a9aa0;
+  }
+  
+  .job-post-creator-preview-heading {
+    font-size: 14px;
+    color: #9a9aa0;
+  }
+  
+  .preview-right-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .job-post-creator-actions-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 37px;
+  }
+  
+  .job-post-creator-actions-wrapper fieldset {
+    border: 1px solid #51525d;
+  }
+  
+  .job-post-creator-actions-wrapper svg {
+    fill: #fff;
+  }
+  
+  .job-post-creator-module .MuiMenu-list li {
+    font-size: 15px !important;
+  }
+
+  /* Override Material-UI Select dropdown default styles to ensure dark theme */
+  .job-post-creator-module .MuiPaper-root {
+    background-color: #1a1a1a !important;
+  }
+
+  .job-post-creator-module .MuiMenuItem-root {
+    color: #E5E7EB !important;
+    background-color: transparent !important;
+  }
+
+  .job-post-creator-module .MuiMenuItem-root:hover {
+    background-color: #333333 !important;
+  }
+
+  .job-post-creator-module .MuiMenuItem-root.Mui-selected {
+    background-color: #2a2a2a !important;
+  }
+
+  .job-post-creator-module .MuiMenuItem-root.Mui-selected:hover {
+    background-color: #333333 !important;
+  }
+  
+  .job-post-primary-btn {
+    background-color: #fff !important;
+    border-radius: 8px !important;
+    color: #343442 !important;
+    font-size: 15px !important;
+    text-transform: capitalize !important;
+  }
+  
+  .job-post-primary-btn:disabled {
+    background-color: #fff !important;
+    color: #343442 !important;
+    pointer-events: auto !important;
+    cursor: wait !important;
+  }
+  
+  .job-post-primary-btn.full-width {
+    width: 100%;
+  }
+  
+  .job-post-secondary-btn {
+    background-color: #343442 !important;
+    border-radius: 8px !important;
+    font-size: 16px !important;
+    color: #f0f1f5 !important;
+    border-color: #f0f1f5 !important;
+    text-transform: capitalize !important;
+  }
+  
+  .job-post-creator-preview {
+    height: calc(100vh - 215px) !important;
+  }
+  
+  .job-post-creator-preview .preview-title {
+    color: #a1a1aa;
+    font-size: 13px;
+    text-align: left;
+  }
+  
+  .job-post-creator-preview .preview-description {
+    font-size: 15px;
+    color: #f0f1f5;
+    text-align: left;
+    margin-bottom: 16px;
+  }
+  
+  .job-post-creator-preview .preview-description.title {
+    font-size: 16px;
+  }
+  
+  .job-post-creator-preview-wrapper {
+    width: 100%;
+  }
+  
+  .job-post-creator-preview-wrapper p {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .job-post-creator-response-actions-wrapper {
+    margin-top: 25px;
+    margin-bottom: 30px;
+  }
+  
+  .chat-content-job-post {
+    height: calc(100vh - 74px) !important;
+    justify-content: space-between;
+  }
+  
+  .chat-content-job-post .content {
+    height: calc(100vh - 195px);
+  }
+  
+  .job-post-creator-module .chat-inner-wrapper {
+    margin: 0;
+  }
+  
+  .input-change-field-wrapper .input-edit-state .MuiInputBase-root svg {
+    fill: #fff;
+  }
+  
+  .input-edit-state .MuiOutlinedInput-input {
+    color: #fff;
+    font-size: 15px;
+  }
+  
+  .input-edit-state .MuiInputBase-root {
+    width: 100%;
+  }
+  
+  .input-edit-state .MuiFormControl-root {
+    width: 100%;
+  }
+  
+  .preview-generated-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    padding-right: 40px;
+  }
+  
+  .preview-generated-item:hover .preview-generated-pencil {
+    opacity: 1;
+  }
+  
+  .preview-generated-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .preview-generated-item .preview-generated-pencil {
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .generate-button-wrapper {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  
+  .generate-button-wrapper.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .job-post-creator-module .input-notes {
+    height: 40px;
+  }
+  
+  .job-post-creator .welcome-message .message .message-text div div p {
+    margin-bottom: 0 !important;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  @media (max-width: 1200px) {
+    .job-post-creator-module .chat-inner-wrapper {
+      max-width: 100% !important;
+    }
+  }
+  
