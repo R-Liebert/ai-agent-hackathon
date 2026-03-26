@@ -34,3 +34,7 @@ app.include_router(issues.router, prefix="/api/issues", tags=["Issues"])
 @app.get("/")
 async def root():
     return {"message": "AI Painpoint Discovery Assistant API is running"}
+
+def run_server():
+    import uvicorn
+    uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)

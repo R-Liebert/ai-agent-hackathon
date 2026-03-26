@@ -50,11 +50,10 @@ NEO4J_PASSWORD=              # Leave blank if authentication is disabled
 ### 2. Run the Application
 
 #### Option A: Run everything with Docker (Recommended)
-You can start the entire stack (Neo4j + Backend) using `uv`:
+You can start the entire stack (Neo4j + Backend) using Docker Compose:
 
 ```bash
-cd backend
-uv run docker-up
+docker compose up -d --build
 ```
 
 #### Option B: Run locally with uv
@@ -62,7 +61,8 @@ If you have a local Neo4j instance running, you can start the backend directly:
 
 ```bash
 cd backend
-uv run start
+uv sync
+uv run uvicorn app.main:app --reload
 ```
 
 **Automatic Data Seeding:** Upon startup, the application will automatically connect to your Neo4j database and seed the initial constraints, capability domains, departments, and teams.

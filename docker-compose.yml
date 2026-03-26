@@ -27,7 +27,7 @@ services:
       - NEO4J_AUTH=none
       - NEO4J_PLUGINS=["apoc"]
     healthcheck:
-      test: ["CMD", "cypher-shell", "RETURN 1"]
+      test: ["CMD-SHELL", "cat < /dev/tcp/localhost/7687 || exit 1"]
       interval: 10s
       timeout: 5s
       retries: 5

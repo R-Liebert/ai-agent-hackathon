@@ -8,9 +8,12 @@ ENV UV_LINK_MODE=copy
 
 WORKDIR /app
 
-# Install the project's dependencies using the lockfile and settings
+# Copy configuration files first for better caching
+COPY pyproject.toml /app/
+
+# Install the project's dependencies
+# We don't mount uv.lock here to avoid build failures if it hasn't been generated yet
 RUN --mount=type=cache,target=/root/.cache/uv \
-    --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
     uv sync --no-install-project --no-dev
 
 # Then, install the rest of the project
@@ -31,4 +34,7 @@ COPY . /app
 
 # Run the application
 ENV PATH="/app/.venv/bin:$PATH"
+# Ensure the backend uses the service name 'neo4j' when inside Docker
+ENV NEO4J_URI="bolt://neo4j:7687"
+
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
