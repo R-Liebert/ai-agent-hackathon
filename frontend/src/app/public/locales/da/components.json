@@ -1,0 +1,431 @@
+{
+  "pdfViewer": {
+    "document": {
+      "loading": "Indlæser PDF...",
+      "error": "Fejl ved indlæsning af PDF"
+    },
+    "page": {
+      "loading": "Indlæser side..."
+    },
+    "buttons": {
+      "previous": "Forrige",
+      "next": "Næste"
+    },
+    "pagination": {
+      "page": "Side",
+      "of": "af"
+    }
+  },
+  "modelSelector": {
+    "notAvailableWithAttachments": "Ikke tilgængelig med vedhæftede filer",
+    "notAvailableWithUnsentDocuments": "Ikke tilgængelig med ikke-sendte dokumentvedhæftninger",
+    "notAvailableConversationDocuments": "Ikke tilgængelig: samtalen indeholder dokumenter",
+    "notAvailableConversationImages": "Ikke tilgængelig: samtalen indeholder billeder"
+  },
+  "confirmGenerateModal": {
+    "title": "Er du sikker på, at du vil generere igen?",
+    "description": "Dit jobopslag vil blive erstattet med en ny version",
+    "buttons": {
+      "cancel": "Fortryd",
+      "confirm": "Bekræft"
+    }
+  },
+  "deleteHistoryButton": {
+    "tooltip": {
+      "title": "Slet samtale"
+    },
+    "dialog": {
+      "title": "Slet samtale",
+      "description": "Er du sikker på, at du vil slette denne samtale?"
+    },
+    "buttons": {
+      "cancel": "Fortryd",
+      "delete": "Bekræft"
+    }
+  },
+  "editResponseJobPoster": {
+    "titlePrefix": "Rediger",
+    "buttons": {
+      "regenerate": "Regenerer",
+      "cancel": "Fortryd",
+      "save": "Gem",
+      "customize": "Tilpas Chat GPT"
+    }
+  },
+  "feedbackComponent": {
+    "feedbackDialog": {
+      "title": "Send feedback",
+      "sentMessage": "Udfyld venligst formularen nedenfor for at sende din feedback",
+      "errorMessage": "Der opstod en fejl under forsøget på at sende feedback. Prøv venligst igen lidt senere.",
+      "thankYouMessage": "Tak! Din feedback er blevet sendt."
+    },
+    "feedbackCard": {
+      "title": "Er denne samtale hjælpsom indtil videre?",
+      "close": "Luk"
+    },
+    "exportDialog": {
+      "title": "Eksporter feedback",
+      "selectDate": {
+        "label": "Vælg dato for eksport"
+      },
+      "loadingMessage": "Indlæser - Dette kan tage op til flere minutter"
+    },
+    "form": {
+      "provideFeedbackType": "Vælg en feedback type.",
+      "provideFeedbackMessage": "Angiv venligst en feedback besked.",
+      "feedbackMessageTooLong": "Sørg for at beskeden er under 1500 tegn."
+    },
+    "buttons": {
+      "close": "Luk vindue",
+      "cancel": "Fortryd",
+      "send": "Send feedback",
+      "download": "Download"
+    }
+  },
+  "feedbackForm": {
+    "feedbackList": {
+      "option1": "Ønske om en ny funktion",
+      "option2": "Bugs/fejl"
+    },
+    "feedbackMessage": {
+      "label": "Feedback besked"
+    }
+  },
+  "inputChangeField": {
+    "errorMessage": "Udfyld venligst dette felt"
+  },
+  "messageRating": {
+    "dialog": {
+      "title": "Feedback på Chat besked",
+      "dialogMessage": "Giv venligst dine kommentarer til denne besked"
+    },
+    "userMessage": {
+      "label": "Dine kommentarer"
+    },
+    "assistantEdit": {
+      "label": "Redigér assistentens svar",
+      "helper": "Redigerer det gemte svar uden at generere på ny.",
+      "disabled": "Redigering er kun tilgængelig for gemte chats.",
+      "fieldLabel": "Redigeret assistentsvar",
+      "required": "Det redigerede svar må ikke være tomt."
+    },
+    "consent": {
+      "question": "Må vi bruge indholdet af din besked til at forbedre vores AI?",
+      "yes": "Ja, jeg giver samtykke",
+      "no": "Nej, jeg giver ikke samtykke",
+      "required": "Vælg venligst en mulighed for at fortsætte"
+    },
+    "buttons": {
+      "cancel": "Fortryd",
+      "send": "Send Feedback"
+    }
+  },
+  "codeCopyBtn": {
+    "icon": {
+      "label": "Kopier kode"
+    },
+    "message": "Kopieret!",
+    "copy": "Kopier",
+    "copyMarkdown": "Kopiér markdown"
+  },
+  "chatDialogueBox": {
+    "helloText": "Hej {{displayName}}, ",
+    "staticText": "Hvordan kan jeg hjælpe dig i dag?",
+    "createdBy": "Oprettet af:"
+  },
+  "chatHistoryComponent": {
+    "title": "Dine chats",
+    "titleAriaLabel": "Vis/skjul chathistorik",
+    "noChats": "Du har ingen chats endnu",
+    "loading": "Loading...",
+    "loadMore": "Læs mere",
+    "settings": "Indstillinger",
+    "selection": {
+      "today": "I dag",
+      "last7": "Sidste 7 dage",
+      "last30": "Ouder dan 30 dagen"
+    },
+    "noTitle": "Ingen titel tilgængelig",
+    "newChat": "Ny chat",
+    "popupPersonaConfig": {
+      "title": "Tilpas DSB Chat",
+      "tooltip": {
+        "title": "Tilpas din DSB Chat"
+      },
+      "systemMessage": "Hvilken rolle skal AI have",
+      "placeholderText": "Fortæl DSB Chat om dens rolle, for eksempel: 'Du er en rådgiver, der hjælper mig med rejsebeslutninger. Vær venlig, praktisk og brug klart sprog. Giv trin-for-trin vejledning for at gøre min rejse nem…",
+      "preferedTone": {
+        "label": "Vælg tonefald",
+        "casual": "Afslappet",
+        "default": "Standard",
+        "confident": "Selvsikker",
+        "enthusiastic": "Entusiastisk"
+      },
+      "responseLength": {
+        "label": "Vælg svarlængde",
+        "default": "Standard",
+        "concise": "Kort",
+        "long": "Langt"
+      },
+      "buttons": {
+        "reset": "Nulstil",
+        "cancel": "Fortryd",
+        "save": "Gem",
+        "customize": "Tilpas DSB Chat"
+      },
+      "feedbackMessages": {
+        "isError": "Noget gik galt. Prøv venligst igen senere.",
+        "isSent": "Tillykke! Du har med succes opdateret indstillingerne for GPT-beskeder."
+      }
+    }
+  },
+  "chatInput": {
+    "placeholder": "Spørg om hvad som helst",
+    "buttons": {
+      "cancel": "Fortryd",
+      "send": "Send"
+    },
+    "generateImage": "Generér billede",
+    "fileLimitReached": "Fil-grænse nået (20)",
+    "addFiles": "Tilføj filer",
+    "uploadFromDevice": "Upload fra din enhed",
+    "uploadImages": "Upload billeder",
+    "imagesOnly": "Kun billeder",
+    "addFromSharepoint": "Tilføj fra SharePoint",
+    "characterLimitExceeded": "Antallet af tegn er for stort og overstiger 50.000. Upload venligst en fil i stedet.",
+    "loadingFollowUps": "Indlæser forslag...",
+    "voiceRecording": {
+      "tooltip": "Diktere",
+      "startRecording": "Diktere",
+      "stopRecording": "Stop optagelse",
+      "saveRecording": "Gem optagelse",
+      "cancelRecording": "Annuller optagelse",
+      "recordingDisabled": "Stem optagelse deaktiveret",
+      "recording": "Optager...",
+      "processing": "Behandler lyd...",
+      "requestingPermission": "Anmoder om mikrofon adgang...",
+      "recordingStarted": "Stemmeoptagelse startet",
+      "recordingStopped": "Stemmeoptagelse stoppet",
+      "transcriptionSuccess": "Stemmebesked blev transskriberet succesfuldt",
+      "transcriptionError": "Kunne ikke transskribere stemmebesked",
+      "recordingCancelled": "Optagelse annulleret",
+      "recordingCancelledNotification": "Stemmeoptagelse er blevet annulleret.",
+      "recordingError": "Der opstod en optagelsesfejl",
+      "startError": "Kunne ikke starte optagelse",
+      "permissionDenied": "Mikrofon adgang nægtet. Venligst aktiver mikrofon tilladelser.",
+      "noMicrophone": "Ingen mikrofon fundet. Venligst tilslut en mikrofon.",
+      "microphoneInUse": "Mikrofonen bruges af en anden applikation.",
+      "microphoneError": "Kunne ikke få adgang til mikrofon",
+      "unsupportedBrowser": "Stemmeoptagelse understøttes ikke i denne browser",
+      "noSpeechDetected": "Ingen tale opdaget i optagelsen",
+      "maxDurationReached": "Maksimal optagelsesvarighed på {{duration}} sekunder nået"
+    },
+    "chooseAgent": "Vælg Agent",
+    "removeAgent": "Fjern valgt Agent",
+    "plusIconTooltip": "Tilføj filer og mere",
+    "removeFile": "Fjern"
+  },
+  "chatMessageComponent": {
+    "author": "Dig",
+    "assistant": "DSB Chat",
+    "messages": {
+      "error": "Noget gik galt. Hvis dette problem fortsætter, skal du bruge knappen 'Feedback' til at rapportere problemet.",
+      "analysing": "Analyserer"
+    }
+  },
+  "imagePreview": {
+    "labels": {
+      "generating": "Genererer billede...",
+      "loading": "Indlæser billede...",
+      "updatingPreview": "Opdaterer forhåndsvisning..."
+    },
+    "download": {
+      "tooltip": "Hent billede",
+      "missingUrl": "Kan ikke hente billedet: URL mangler.",
+      "failed": "Hentning af billedet mislykkedes. Prøv at højreklikke på billedet og vælg 'Gem billede som'."
+    }
+  },
+  "chatMessageImageGeneration": {
+    "generatedAlt": "Genereret billede",
+    "failedTitle": "Billedgenerering mislykkedes",
+    "failedDescription": "Billedgenerering mislykkedes. Prøv igen."
+  },
+  "chatMessageEdit": {
+    "editWarning": "Redigering af denne besked vil slette alle beskeder, der følger efter den i samtalen."
+  },
+  "chatNewBtn": {
+    "label": "Ny chat"
+  },
+  "chatComponent": {
+    "messages": {
+      "forbidden": "Du er ikke medlem af dette arbejdsområde.",
+      "deleteMessageSuccess": "Besked slettet med succes",
+      "deleteMessageError": "Fejl ved sletning af besked",
+      "checkingAccess": "Kontrollerer adgang...",
+      "agentUnavailable": "{{agentName}} er ikke tilgængelig for din konto lige nu.",
+      "selectedAgentFallback": "Valgt agent"
+    },
+    "processing": "Dette Workspace behandler stadig filer, resultaterne er muligvis ikke nøjagtige.",
+    "failedFiles": "Workspace kunne ikke behandle nogle af filerne. Prøv venligst at uploade dem igen."
+  },
+  "tooltips": {
+    "homeIcon": "Startside",
+    "sidebarIcon": "Åbn sidebjælke",
+    "sidebarIconClose": "Luk sidebjælke",
+    "newChatIcon": "Ny chat",
+    "profileIcon": "Indstillinger",
+    "sendIconInActive": "Indtast prompt",
+    "sendIconActive": "Send",
+    "regenerate": "Regenerer",
+    "viewFile": "Inspicer",
+    "exportChat": "Eksportér chat",
+    "deleteAllFiles": "Slet alle filer",
+    "edit": "Rediger"
+  },
+  "topBar": {
+    "incompatibleModelError": "Kan ikke skifte til denne model, mens filer er vedhæftet. Fjern venligst filerne først eller vælg en model, der understøtter vedhæftede filer."
+  },
+  "profileTabLinks": {
+    "profileTitle": "Profil",
+    "workspacesLink": "Mine Workspaces",
+    "customizeChatLink": "Tilpas DSB Chat",
+    "settingsLink": "Indstillinger",
+    "feedbackLink": "Send Feedback",
+    "guidelinesLink": "Retningslinjer",
+    "releaseNotesLink": "Udgivelses Notater",
+    "eventsLink": "Begivenheder",
+    "adminDashboardLink": "Admin Dashboard"
+  },
+  "featureHighlights": {
+    "newModels": {
+      "title": "Nye AI-modeller tilgængelige!",
+      "description": "Introduktion af GPT-5.1 - OpenAI's nyeste model med avancerede ræsonneringsevner til komplekse opgaver.",
+      "buttonText": "Forstået"
+    }
+  },
+  "settingsModal": {
+    "title": "Indstillinger",
+    "themeSetting": {
+      "label": "Tema",
+      "dark": "Mørk"
+    },
+    "languageSetting": {
+      "label": "Sprog",
+      "english": {
+        "label": "Engelsk",
+        "code": "en"
+      },
+      "danish": {
+        "label": "Dansk",
+        "code": "da"
+      }
+    },
+    "exportSetting": {
+      "label": "Eksporter",
+      "btn": "Eksporter Rapport"
+    },
+    "advancedSection": {
+      "title": "Avanceret",
+      "refreshPermissions": {
+        "label": "Opdater Tilladelser",
+        "description": "Opdater dine adgangstilladelser",
+        "button": "Opdater",
+        "refreshing": "Opdaterer...",
+        "success": "Tilladelser opdateret succesfuldt",
+        "error": "Kunne ikke opdatere tilladelser"
+      }
+    }
+  },
+  "sidebarOptions": {
+    "delete": "Slet chat",
+    "export": "Eksportér chat",
+    "download": "Hent"
+  },
+  "deleteChatModal": {
+    "title": "Slet chat - er du sikker?",
+    "paragraph": "Når du sletter et chat, er der ingen vej tilbage.",
+    "cancelBtn": "Fortryd",
+    "deleteBtn": "Slet",
+    "notifications": {
+      "success": "Chat er blevet slettet.",
+      "error": "Der opstod en fejl under sletning af chat. Prøv venligst igen senere.",
+      "errorNoId": "Chat, du forsøgte at slette, blev ikke fundet. Det er muligvis allerede blevet slettet."
+    }
+  },
+  "leavePageModal": {
+    "title": "Forlad side - er du sikker?",
+    "paragraph": "Når du forlader siden forsvinder indholdet.",
+    "cancelBtn": "Fortryd",
+    "confirmBtn": "Forlad Side"
+  },
+  "resetPageModal": {
+    "title": "Nulstil indhold - er du sikker",
+    "paragraph": "Når du nulstiller, vil dit indhold gå tabt.",
+    "cancelBtn": "Annuller",
+    "confirmBtn": "Nulstil indhold"
+  },
+  "mainNavigation": {
+    "menu": {
+      "label": "Menu Side",
+      "tooltipText": "Menu siden"
+    },
+    "search": {
+      "label": "Søg i Chats",
+      "tooltipText": "Søg i alle chats"
+    },
+    "newChat": {
+      "label": "Nyt DSB Chat",
+      "tooltipText": "Start en ny chat"
+    },
+    "newJobPost": {
+      "label": "Nyt Jobopslag",
+      "tooltipText": "Opret et nyt jobopslag"
+    },
+    "newWorkspace": {
+      "label": "Opret Workspace",
+      "tooltipText": "Opret et nyt workspace"
+    },
+    "workspacesList": {
+      "label": "Workspaces",
+      "tooltipText": "Alle Workspaces"
+    },
+    "codechat": {
+      "label": "Code Chat",
+      "tooltipText": "Generer kode-dokumentation"
+    },
+    "aiTrafficInformation": {
+      "label": "AI Traffic Information",
+      "tooltipText": "Generer trafikdokumentation"
+    },
+    "sidebar": {
+      "open": "Åbn sidepanelet",
+      "close": "Luk sidepanelet"
+    },
+    "createSubscription": {
+      "label": "Opret Nyt Abonnement",
+      "tooltipText": "Opret nyt abonnement"
+    },
+    "modelsDiscovery": {
+      "label": "Udforsk AI-modeller",
+      "tooltipText": "Udforsk AI-modeller"
+    },
+    "adminDashboard": {
+      "label": "Admin-Dashboard",
+      "tooltipText": "Admin-Dashboard"
+    }
+  },
+  "sessionExpiredDialog": {
+    "title": "Session udløbet",
+    "message": "Din loginsession er udløbet. Log venligst ind igen for at fortsætte.",
+    "buttons": {
+      "cancel": "Fortryd",
+      "signIn": "Log ind"
+    }
+  },
+  "handlePasteNotifications": {
+    "errorOCREvaluation": "Kunne ikke behandle billedet under OCR-evalueringen.",
+    "errorImageLoad": "Kunne ikke indlæse billedet",
+    "errorPasteHandling": "Kunne ikke indsætte indhold",
+    "placeholderText": "Behandler indsatte indhold"
+  }
+}

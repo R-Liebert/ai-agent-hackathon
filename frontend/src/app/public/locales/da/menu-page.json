@@ -1,0 +1,68 @@
+{
+  "textTitle": "DSB AI Launchpad",
+  "textTagline": "Udforsk hvad der er muligt med kunstig intelligens",
+  "searchBar": {
+    "placeholder": "Søg..."
+  },
+  "videos": {
+    "title": "Seneste videoer",
+    "returnHome": "Vend Tilbage"
+  },
+  "apps": [
+    {
+      "id": 1,
+      "title": "DSB Chat",
+      "description": "Få sparring, lav billeder, og samarbejd med dokumenter og agenter – alt samlet ét sted."
+    },
+    {
+      "id": 2,
+      "title": "Workspaces",
+      "description": "Skab jeres egne assistenter med viden fra jeres arbejdsområder – og inviter kollegaer med."
+    },
+    {
+      "id": 3,
+      "title": "Image Creator",
+      "description": "Generer billeder fra tekst"
+    },
+    {
+      "id": 4,
+      "title": "Document Chat",
+      "description": "Gør dokumenter til samtaler"
+    },
+    {
+      "id": 5,
+      "title": "Job Post Creator",
+      "description": "Opret jobopslag ved hjælp af AI"
+    },
+    {
+      "id": 6,
+      "title": "History Chat (Beta)",
+      "description": "Spørg ind til DSB's historie"
+    },
+    {
+      "id": 7,
+      "title": "Document Converter",
+      "description": "Skab OCR behandling"
+    },
+    {
+      "id": 8,
+      "title": "Meeting Notes Creator",
+      "description": "Møde med AI"
+    },
+    {
+      "id": 9,
+      "title": "Leader Chat",
+      "description": "Spørg om HR-relaterede emner"
+    },
+    {
+      "id": 10,
+      "title": "Code Chat",
+      "description": "AI genereret dokumentation"
+    },
+    {
+      "id": 11,
+      "title": "AI Traffic Information",
+      "description": "Trafikinformation med AI"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+workloads:
+  - name: launchpad
+    type: ui
+    plan: standard
+    file: DockerfileLaunchpadUI
+
+deploy:
+  branch: ["dev"]
+  pr: ["dev", "tst"]
+  main: ["tst", "prd"]
+
+checks:
+  - type: sonar
+    runtime-version: "22"
+    build-tool: npm
+
+aks:
+  space: tog
+  namespace: tooling
+  keyvault:
+    dev: https://kv-aiml-launchpad-dev.vault.azure.net/
+    tst: https://kv-aiml-launchpad-tst.vault.azure.net/
+    prd: https://kv-aiml-launchpad-prd.vault.azure.net/
+
+  firewall:
+    nonprod:
+      - fqdn: kv-aiml-launchpad-dev.vault.azure.net
+        protocol: https
+        ports: [443]
+      - fqdn: kv-aiml-launchpad-tst.vault.azure.net
+        protocol: https
+        ports: [443]
+    prod:
+      - fqdn: kv-aiml-launchpad-prd.vault.azure.net
+        protocol: https
+        ports: [443]

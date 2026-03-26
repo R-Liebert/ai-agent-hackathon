@@ -1,0 +1,262 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "ViaOffice-Regular";
+  src: local(ViaOffice-Regular),
+    url("./features/chatgpt/styles/fonts/ViaOffice-Regular.otf")
+      format("truetype");
+}
+
+@font-face {
+  font-family: "ViaOffice-Bold";
+  src: local(ViaOffice-Bold),
+    url("./features/chatgpt/styles/fonts/ViaOffice-Bold.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "ViaOffice-BoldItalic";
+  src: local(ViaOffice-BoldItalic),
+    url("./features/chatgpt/styles/fonts/ViaOffice-BoldItalic.otf")
+      format("truetype");
+}
+
+@font-face {
+  font-family: "ViaOffice-Italic";
+  src: local(ViaOffice-Italic),
+    url("./features/chatgpt/styles/fonts/ViaOffice-Italic.otf")
+      format("truetype");
+}
+
+@font-face {
+  font-family: "Sohne-Regular";
+  src: local(Sohne-Regular),
+    url("./features/chatgpt/styles/fonts/soehne-buch.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Sohne-Medium";
+  src: local(Sohne-Medium),
+    url("./features/chatgpt/styles/fonts/soehne-kraftig.woff2") format("woff2");
+}
+
+html {
+  height: 100%;
+  display: block;
+  scroll-behavior: smooth !important;
+}
+
+body {
+  display: block;
+  background-color: #212121;
+  font-size: 1rem;
+  color: #ececec;
+  font-weight: 400;
+  font-family: Söhne, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif, "Helvetica Neue", Arial,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji",
+    "Nunito Sans";
+  overflow-y: overlay;
+  overflow-x: hidden;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.katex {
+  position: relative;
+  overflow-y: hidden;
+}
+
+katex-error {
+  color: white;
+}
+.chat-option-btn {
+  font-family: Söhne, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif, "Helvetica Neue", Arial,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.875rem;
+}
+.text-ellipsis {
+  text-overflow: ellipsis;
+}
+
+#menutoggle {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 25px;
+}
+
+.App,
+#root,
+#test {
+  display: block;
+  height: 100%;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.horizontal-line {
+  height: 1px;
+  background-color: #6a6a6a;
+  width: 100%;
+}
+
+.vertical-line {
+  border-left: 1px solid #6a6a6a;
+  height: 100%;
+  margin-left: 10px;
+}
+
+.feedback-button {
+  position: fixed;
+  right: 61px;
+  bottom: 54px;
+  z-index: 1;
+}
+
+.feedback-button button {
+  background-color: #444654;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 49px;
+  border-radius: 10px;
+}
+
+.red-gradient-bg {
+  background-color: #ef4146;
+  background-image: url(https://cdn.openai.com/API/images/icon_bg_red.svg);
+  background-size: cover;
+}
+
+.feature-content {
+  margin-top: 80px;
+}
+
+.input-notes {
+  color: #b9b9b9;
+  margin-top: 10px;
+  font-weight: 400;
+  text-align: center;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+.input-notes a {
+  text-decoration: underline;
+}
+
+.select svg {
+  color: white;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+}
+
+.message {
+  code,
+  kbd,
+  samp,
+  pre {
+    white-space: break-spaces !important;
+  }
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar {
+  height: 1rem;
+  width: 0.5rem;
+}
+::-webkit-scrollbar-thumb {
+  --tw-border-opacity: 1;
+  background-color: hsla(0, 0%, 89%, 0.8);
+  border-color: rgba(255, 255, 255, var(--tw-border-opacity));
+  border-radius: 9999px;
+  border-width: 1px;
+}
+
+.katex .katex-mathml {
+  position: relative !important;
+}
+
+.mml-eqn-num {
+  display: none;
+}
+
+h1 {
+  line-height: 1.18;
+}
+
+textarea {
+  font-family: "Nunito Sans";
+}
+
+blockquote p {
+  margin: 0 !important;
+}
+
+hr {
+  margin: 1.5rem;
+  border: 0;
+  height: 1px;
+  background: #212121;
+  background-image: linear-gradient(to right, #212121, #696969, #212121);
+}
+
+p:has(+ hr),
+p:has(+ .code-container),
+.code-container:has(+ hr),
+.list-container:has(+ hr),
+p:has(+ .imagePreview) {
+  margin-bottom: 0 !important;
+}
+
+/* Global MUI Tooltip Styles */
+.MuiTooltip-tooltip {
+  background-color: #171717 !important;
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important;
+  font-family: "Nunito Sans", sans-serif !important;
+  color: #ededed !important;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
+}
+
+.MuiTooltip-arrow {
+  color: #171717 !important;
+}
+
+.highlight {
+  background-color: #347088; /*Tailwind blue-400 */
+}
+
+textarea::placeholder {
+  font-size: 16px !important; /* Ensure consistent font size */
+  transform: none !important; /* Prevent scaling */
+  transition: none !important; /* Disable animations */
+}

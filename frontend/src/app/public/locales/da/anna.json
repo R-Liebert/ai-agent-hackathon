@@ -1,0 +1,28 @@
+{
+  "menuAppBar": {
+    "title": "Anna - Forretningsforslag Guide"
+  },
+  "chatDialogueBox": {
+    "title": "Anna",
+    "description": "Jeg vil hjælpe dig med at udvikle overbevisende en-siders og omdanne dine ideer til klare, professionelle business cases.",
+    "welcomeMessage": "Hej! Jeg er Anna, din forretningsforslag guide."
+  },
+  "predefinedPrompts": [
+    {
+      "icon": "document",
+      "description": "Hjælp mig med at skabe et business case for et nyt projekt"
+    },
+    {
+      "icon": "lightbulb",
+      "description": "Hvordan strukturerer jeg en overbevisende en-sider?"
+    },
+    {
+      "icon": "chart",
+      "description": "Hvad skal jeg inkludere i mit værdiforslag?"
+    },
+    {
+      "icon": "target",
+      "description": "Hjælp mig med at identificere interessentfordele"
+    }
+  ]
+}

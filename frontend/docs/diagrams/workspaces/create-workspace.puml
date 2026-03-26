@@ -1,0 +1,52 @@
+@startuml
+start
+title Create workspace flow
+
+:Authorize request;
+
+if (jwt token is invalid) then  (yes)
+    #Red: Unathorized;
+    stop
+else  (no)
+
+    :Validate model:
+    - workspace name is required;
+
+    if (Modelstate is valid) then  (yes)
+
+        if(workspace with the same name already exist) then (yes)
+
+            #Red: BadRequest - Workspace with same namre already exist;
+            stop
+        else (no)
+
+            :Create an entry in the Workspaces container;
+            
+            :Create an entry in the UserWorkspaces container for the owner;
+            :Create entries in the UserWorkspaces container for each member;
+
+            :Create folder for the workspace in the azure blob storage account;
+
+            :Upload all files into that folder;
+
+            :Trigger indexing process:
+            - Create an index in the azure search index service for the active user
+            - Index all files for the workspace;
+
+            :Trigger email notification process
+            - notify all members about the new workspace;
+
+            #palegreen: Return Ok(workspace);
+            stop
+            end if
+
+
+            break
+
+            else (no)
+                #Red: BadRequest - Invalid request;
+                stop
+            endif
+        endif
+
+        @enduml

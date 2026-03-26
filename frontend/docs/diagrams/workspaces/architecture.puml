@@ -1,0 +1,37 @@
+@startuml
+!define RECTANGLE class
+
+LanuchpadUI -down-> ListWorkspacesPage
+
+ListWorkspacesPage -down-> WorkspaceCreationPage
+ListWorkspacesPage -down-> WorkspaceChatPage
+ListWorkspacesPage -down-> WorkspaceAboutPage
+
+ListWorkspacesPage -down-> LaunchpadAPI
+WorkspaceChatPage -down-> LaunchpadAPI
+WorkspaceCreationPage -down-> LaunchpadAPI
+WorkspaceAboutPage -down-> LaunchpadAPI
+
+LaunchpadAPI -down-> UsersController
+LaunchpadAPI -down-> WorkspacesController
+
+UsersController -down-> GraphService
+note on link 
+Search in Entra ID
+end note
+WorkspacesController -down-> WorkspaceService
+note on link 
+Workspace CRUD
+end note
+
+WorkspaceService -down-> WorkspaceRepository
+WorkspaceService -down-> AzureStorage
+WorkspaceService -down-> AzureAISearchService
+WorkspaceService -down-> GraphService
+
+WorkspaceRepository -down-> CosmosDB
+GraphService -down-> Microsoft Entra ID
+AzureStorage -down-> Microsoft Azure Blob Storage
+AzureAISearchService -down-> Microsoft Azure AI Search
+
+@enduml

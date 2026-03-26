@@ -1,0 +1,22 @@
+@startuml
+start
+title Recent workspaces flow
+
+:Authorize request;
+
+if (jwt token is valid) then  (yes)
+
+:Retrieve active user details;
+:set  recentWorkspaces = retrieve all entries from the UserWorkspaces container related to the active user 
+and filter them where IsActive = true and IsHidden = false
+then order them by LastAccessed date descending
+finally take last 2 entries from this sequence;
+
+#LightGreen: Ok(recentWorkspaces);
+else  (no)
+#Red: Unathorized;
+endif
+
+stop
+
+@enduml

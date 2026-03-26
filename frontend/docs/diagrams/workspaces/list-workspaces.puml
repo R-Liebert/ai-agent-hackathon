@@ -1,0 +1,20 @@
+@startuml
+start
+title List workspaces flow
+
+:Authorize request;
+
+if (jwt token is valid) then  (yes)
+
+:Retrieve active user details;
+:set  userWorkspaces = retrieve all entries from the UserWorkspaces container related to the active user 
+and enrich them with details about the workspace like list of files and members;
+
+#LightGreen: Ok(userWorkspaces);
+    stop
+else  (no)
+#Red: Unathorized;
+stop
+endif
+
+@enduml

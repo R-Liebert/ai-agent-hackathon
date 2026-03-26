@@ -1,0 +1,41 @@
+.file-upload {
+  .root {
+    cursor: pointer;
+  }
+}
+
+/* root: {
+    cursor: "pointer",
+    textAlign: "center",
+    display: "flex",
+    "&:hover p,&:hover svg,& img": {
+      opacity: 1,
+    },
+    "& p, svg": {
+      opacity: 0.4,
+    },
+    "&:hover img": {
+      opacity: 0.3,
+    },
+  },
+  noMouseEvent: {
+    pointerEvents: "none",
+  },
+  iconText: {
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column",
+    alignItems: "center",
+    position: "absolute",
+  },
+  hidden: {
+    display: "none",
+  },
+  onDragOver: {
+    "& img": {
+      opacity: 0.3,
+    },
+    "& p, svg": {
+      opacity: 1,
+    },
+  }, */

@@ -1,0 +1,20 @@
+{
+  "menuAppBar": {
+    "title": "Document Converter"
+  },
+  "welcomemessage": "Upload documents or images of text and convert them into readable PDFs",
+  "dropzone": {
+    "description": "Drag and drop a PDF, JPG, or PNG file here, or click to select a file",
+    "activeText": "Drop the file here ..."
+  },
+  "buttons": {
+    "process": "Process and Download",
+    "processing": "Processing..."
+  },
+  "messages": {
+    "success": "File processed succesfully",
+    "error": "Error ocurred"
+  },
+  "moduleName": "Document Converter",
+  "welcomeMessage": " welcome to Document Converter! Upload a file to convert it into a readable PDF. Ideal for digitizing scanned documents or images like meeting notes. Keep in mind that large files can cause issues."
+}

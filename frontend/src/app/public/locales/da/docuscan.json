@@ -1,0 +1,20 @@
+{
+  "menuAppBar": {
+    "title": "Document Converter"
+  },
+  "welcomemessage": "Upload dokumenter eller billeder af tekst, og konverter dem til læsbare PDF'er",
+  "dropzone": {
+    "description": "Træk og slip eller vælg filer",
+    "activeText": "Træk og slip filen her..."
+  },
+  "buttons": {
+    "process": "Scan og download",
+    "processing": "Scanner..."
+  },
+  "messages": {
+    "success": "Fil scannet succesfuldt",
+    "error": "Fejl opstod"
+  },
+  "moduleName": "Document Converter",
+  "welcomeMessage": " velkommen til Document Converter! Upload en fil for at konvertere den til en læsbar PDF. Ideel til digitalisering af scannede dokumenter eller billeder af mødenoter. Husk, at store filer kan forårsage problemer."
+}

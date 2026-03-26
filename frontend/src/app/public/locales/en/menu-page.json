@@ -1,0 +1,69 @@
+{
+  "textTitle": "DSB AI Launchpad",
+  "textTagline": "Explore what’s possible with artificial intelligence",
+  "searchBar": {
+    "placeholder": "Search..."
+  },
+  "videos": {
+    "title": "Latest videos",
+    "returnHome": "Return Home"
+  },
+  "apps": [
+    {
+      "id": 1,
+      "title": "DSB Chat",
+      "description": "Get insights, create images, and collaborate on documents and agents – all in one place."
+    },
+    {
+      "id": 2,
+      "title": "Workspaces",
+      "description": "Create your own assistants with knowledge from your work areas – and invite colleagues to join."
+    },
+
+    {
+      "id": 3,
+      "title": "Image Creator",
+      "description": "Generate images from text"
+    },
+    {
+      "id": 4,
+      "title": "Document Chat",
+      "description": "Turn documents into conversations"
+    },
+    {
+      "id": 5,
+      "title": "Job Post Creator",
+      "description": "Create job posts using AI"
+    },
+    {
+      "id": 6,
+      "title": "History Chat (Beta)",
+      "description": "Inquire about the history of DSB"
+    },
+    {
+      "id": 7,
+      "title": "Document Converter",
+      "description": "Create OCR processing"
+    },
+    {
+      "id": 8,
+      "title": "Meeting Notes Creator",
+      "description": "Meeting notes with AI"
+    },
+    {
+      "id": 9,
+      "title": "Leader Chat",
+      "description": "Ask about HR-related topics"
+    },
+    {
+      "id": 10,
+      "title": "Code Chat",
+      "description": "AI generated documentation"
+    },
+    {
+      "id": 11,
+      "title": "AI Traffic Information",
+      "description": "Traffic information with AI"
+    }
+  ]
+}

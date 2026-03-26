@@ -1,0 +1,152 @@
+{
+  "pageTitle": "DSB AI Launchpad",
+  "stickyWarning": {
+    "azureConnectivity": "We are currently experiencing intermittent connectivity with Azure services. Our team is actively working to restore full functionality."
+  },
+  "and": "and",
+  "models": [
+    {
+      "key": "GPT-4o",
+      "name": "Fast Response",
+      "description": "Responds immediately. Optimized for speed."
+    },
+    {
+      "key": "GPT-5.1",
+      "name": "Deep Reflection",
+      "description": "Thinks longer to deliver better answers."
+    }
+  ],
+  "languageOptions": {
+    "danish": "Danish",
+    "english": "English"
+  },
+  "sharePointPicker": {
+    "tabs": {
+      "recent": "Recent",
+      "teams": "Teams"
+    },
+    "breadcrumbs": {
+      "myFiles": "My Files"
+    }
+  },
+  "surveys": {
+    "buttons": {
+      "yes": "Yes",
+      "no": "No",
+      "remindme": "Remind me later"
+    }
+  },
+  "inputNotes": "Find more infomation about",
+  "guidelines": "guidelines",
+  "releaseNotes": "release notes",
+  "footerNotes": {
+    "description": "AI can make mistakes. Double-check the information and read",
+    "linkText": "the guidelines here",
+    "descriptionMobile": "AI can make mistakes: read the"
+  },
+  "copyContent": {
+    "error": "Failed to copy content",
+    "success": "Content successfully copied to clipboard"
+  },
+  "genericPages": {
+    "notFound": {
+      "title": "Oops! The page doesn't seem to exist",
+      "description": "We can't seem to find the page you're looking for."
+    },
+    "accessDenied": {
+      "title": "Permission Required",
+      "description": "You do not have permission to view this page."
+    },
+    "serverError": {
+      "title": "Server Error – Please Try Again",
+      "description": "We've detected an error. Please try again in a moment."
+    },
+    "newChatButton": "Start New Chat",
+    "menuPageButton": "View Applications",
+    "errorText": "Error"
+  },
+  "chatActionIconTooltips": {
+    "regenerate": "Regenerate",
+    "edit": "Edit",
+    "copyOutput": "Copy Output",
+    "danish": "Switch to Danish",
+    "english": "Switch to English",
+    "download": "Download",
+    "delete": "Delete",
+    "cannotDelete": "Cannot delete the only message",
+    "goodResponse": "Good response",
+    "badResponse": "Bad response"
+  },
+  "chatMessage": {
+    "deleteModal": {
+      "title": "Delete this message?",
+      "warningMessage": "Do you want to remove your last question and the AI's response?",
+      "whatWillHappen": "What will happen:",
+      "bulletPoint1": "Your last question will be deleted",
+      "bulletPoint2": "The AI's response will also be removed",
+      "additionalInfo": "This action cannot be undone.",
+      "buttons": {
+        "cancel": "Keep it",
+        "confirm": "Delete"
+      }
+    }
+  },
+  "chatEditMessageButtons": {
+    "cancel": "Cancel",
+    "save": "Send"
+  },
+  "canvasNavigationIconButtons": {
+    "regenerate": "Regenerate",
+    "previous": "Previous",
+    "noPrevious": "No Previous Version",
+    "next": "Next",
+    "noNext": "No Next Version",
+    "copy": "Copy",
+    "download": "Download",
+    "close": "Close Canvas",
+    "options": "Options",
+    "archive": "Archive",
+    "delete": "Delete"
+  },
+  "canvasTitleEdit": "Rename",
+  "canvasEditIconButtons": {
+    "suggestEdits": "Suggest Edits",
+    "textLength": "Text Length",
+    "finalPolish": "Add Final Polish",
+    "keepCurrent": "Keep Current",
+    "shorter": "Shorter",
+    "longer": "Longer",
+    "stopGenerating": "Stop Generating"
+  },
+  "canvasDotIcon": {
+    "label": "Options",
+    "options": {
+      "delete": "Delete",
+      "archive": "Archive"
+    }
+  },
+  "canvasNotifications": {
+    "copy": {
+      "success": "Canvas content copied successfully",
+      "error": "There was an error when copying content, please try again later"
+    },
+    "regenerate": {
+      "success": "Canvas content regenerated successfully",
+      "error": "There was an error when regenerating content, please try again later"
+    },
+    "polish": {
+      "success": "",
+      "error": ""
+    },
+    "makeContentShorter": {
+      "success": "",
+      "error": ""
+    },
+    "makeContentLonger": {
+      "success": "",
+      "error": ""
+    }
+  },
+  "updating": "Updating…",
+  "saving": "Saving…"
+}

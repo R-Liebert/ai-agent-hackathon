@@ -1,0 +1,27 @@
+@startuml
+start
+title Delete workspace flow
+
+:Authorize request;
+
+if (jwt token is valid) then  (yes)
+    :get workspace details;
+    if(active user is owner of the workspace) then (yes)
+
+    :delete workspace;
+    :delete all UserWorkspaces entries for all members of the workspace;
+    :delete all files from the blob storage;
+    :delete all files from the owner search index;
+
+#LightGreen: Ok;
+    else (no)
+        #Red: BadRequest("You are not authorized to delete this workspace");
+    endif
+stop
+    
+else  (no)
+    #Red: Unathorized;
+    stop
+endif
+
+@enduml

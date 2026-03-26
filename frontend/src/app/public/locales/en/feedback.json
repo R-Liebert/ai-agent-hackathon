@@ -1,0 +1,246 @@
+{
+  "title": "Give Feedback",
+  "description": "Submit feature request, report a bug or provide your rating of Launchpad. Only fields marked with * are required.",
+  "tabs": {
+    "feedbackChat": "Chat Assistant",
+    "applicationRating": "Launchpad Rating",
+    "bugReport": "Report a Bug",
+    "featureRequest": "Feature Request"
+  },
+  "chatDialogueBox": {
+    "title": "Viktor",
+    "description": "I collect feedback on DSB Chat, Workspaces, and Job Post Creator. Report bugs, request features, or share your thoughts to help us improve!",
+    "welcomeMessage": "Hi! I'm Viktor, your feedback assistant.",
+    "placeholderText": "Write your feedback here…",
+    "promptsTitle": "Choose one of the options below or describe your request in textarea"
+  },
+  "predefinedPrompts": [
+    {
+      "description": "Report a Bug"
+    },
+    {
+      "description": "Request a New Feature"
+    },
+    {
+      "description": "Rate Launchpad"
+    }
+  ],
+  "forms": {
+    "buttons": {
+      "submit": "Submit Feedback",
+      "cancel": "Cancel"
+    },
+    "workflowImpactLevel": {
+      "options": {
+        "veryLow": "Very Low",
+        "low": "Low",
+        "neutral": "Neutral",
+        "high": "High",
+        "critical": "Very High"
+      },
+      "validationMessage": "Please select how much this impacts your work."
+    },
+    "notifications": {
+      "onCancel": {
+        "success": "Your form has been successfully reset.",
+        "error": "Something went wrong when resetting your form. Please try to reset again."
+      },
+      "onSubmit": {
+        "success": "Your feedback has been successfully submitted. Thank you for your time!",
+        "error": "Something went wrong when submitting your form. Please try to reset and submit again."
+      },
+      "files": {
+        "removeFile": {
+          "textOne": "File",
+          "textTwo": "removed."
+        },
+        "fileValidations": {
+          "fileType": {
+            "textOne": "The file type of",
+            "textTwo": "is not supported"
+          },
+          "maxQuantity": {
+            "textOne": "You can upload a maximum of",
+            "textTwo": "files"
+          },
+          "fileSize": {
+            "textOne": "The file",
+            "textTwo": "exceeds the maximum allowed size of"
+          },
+          "maxQuota": "The total file size exceeds the maximum allowed quota of",
+          "success": "File was successuly added"
+        }
+      }
+    },
+    "bugReportForm": {
+      "issueDescription": {
+        "label": "Description of the Issue *",
+        "placeholder": "Briefly describe what went wrong.",
+        "tooltip": "Provide a detailed description of the issue you encountered, including what you were doing when it happened.",
+        "validationMessage": "Please describe the issue in at least 10 characters."
+      },
+      "expectedBehaviour": {
+        "label": "Expected Behaviour *",
+        "placeholder": "Describe what you expected to happend",
+        "tooltip": "Explain what you expected the application to do instead of the issue you encountered.",
+        "validationMessage": "Please tell us what you expected to happen."
+      },
+      "stepsToReproduceIssue": {
+        "label": "Reproduce the Issue *",
+        "placeholder": "Please list all the steps you took before you encountered the issue",
+        "tooltip": "List the exact steps you followed that led to the issue, so we can reproduce and investigate it.",
+        "validationMessage": "Please list the steps to reproduce the issue."
+      },
+      "errorFrequency": {
+        "label": "How many times have you encoutered this error *",
+        "tooltip": "Indicate how frequently you have experienced this issue, whether it happened once, a few times, or consistently.",
+        "once": "Once",
+        "fewTimes": "Few Times",
+        "manyTimes": "Many Times",
+        "always": "Happens Always",
+        "validationMessage": "Please select how often this issue occurs."
+      },
+      "workflowImpactDescription": {
+        "label": "Workflow Impact Description",
+        "placeholder": "Describe how the issue affects your daily workflow and launchpad experience",
+        "tooltip": "Describe how this issue is impacting your ability to use the application or complete your tasks.",
+        "validationMessage": "Please describe how this issue impacts your workflow."
+      },
+      "workflowSeverityImpactLevel": {
+        "label": "Workflow Impact Level",
+        "tooltip": "Rate the impact the issue's has on your workflow, from low (minor inconvenience) to critical (completely blocking your work)."
+      },
+      "supportingReference": {
+        "label": "Supporting Reference",
+        "tooltip": "Attach any relevant files, such as screenshots, logs, or videos, that can help us understand and resolve the issue.",
+        "placeholders": {
+          "title": "Drag & Drop Reference Files",
+          "subtitle": "Add error or logs screenshots, videos"
+        }
+      },
+      "errorMessages": {
+        "label": "Error Messages",
+        "placeholder": "Paste any error message you have encountered"
+      },
+      "systemInformation": {
+        "label": "System Information",
+        "deviceType": {
+          "label": "Device Type",
+          "desktop": "Desktop",
+          "mobile": "Mobile",
+          "tablet": "Tablet"
+        },
+        "operatingSystem": {
+          "label": "Operating System",
+          "windows": "Windows",
+          "macos": "macOS",
+          "linux": "Linux",
+          "android": "Android",
+          "ios": "iOS",
+          "other": "Other"
+        },
+        "browserType": {
+          "label": "Browser Type",
+          "chrome": "Chrome",
+          "firefox": "Firefox",
+          "safari": "Safari",
+          "edge": "Edge",
+          "opera": "Opera",
+          "other": "Other"
+        }
+      }
+    },
+    "featureRequestForm": {
+      "featureDescription": {
+        "label": "Feature Description *",
+        "placeholder": "Detailed description of the feature, how it would work",
+        "tooltip": "Provide a detailed explanation of the feature you are requesting, including how it should work and what it should do.",
+        "validationMessage": "Please describe the feature in at least 10 characters."
+      },
+      "problemStatement": {
+        "label": "Problem Statement *",
+        "placeholder": "Describe what problem are your trying to solve with this feature",
+        "tooltip": "Explain the specific problem or challenge you are facing that this feature would address.",
+        "validationMessage": "Please explain the problem this feature would solve."
+      },
+      "useCaseScenario": {
+        "label": "Use Case Scenario *",
+        "placeholder": "Describe how would you use this feature in your daily work",
+        "tooltip": "Provide examples of how you would use this feature in your daily tasks or work.",
+        "validationMessage": "Please describe how you would use this feature."
+      },
+      "otherInformation": {
+        "label": "Other Information",
+        "placeholder": "Add other information you may find useful"
+      },
+      "workflowSeverityImpactLevel": {
+        "label": "Workflow Impact *",
+        "tooltip": "Rate the importance of this feature to your workflow, from low (nice to have) to critical (essential for your work).",
+        "validationMessage": "Please evaluate how this issue impacts your workflow."
+      },
+      "supportingReference": {
+        "label": "Supporting Reference",
+        "tooltip": "Attach any relevant files, such as mockups, screenshots, or documents, that can help us understand your feature request.",
+        "placeholders": {
+          "title": "Drag & Drop Files",
+          "subtitle": "Add files, screenshots or videos"
+        }
+      }
+    },
+    "applicationRatingForm": {
+      "starRating": {
+        "label": "How would you like to rate your experience for Launchpad *",
+        "tooltip": "Rate your experience on a scale of 1 to 5 stars, where 1 is the lowest and 5 is the highest.",
+        "validationMessage": "Please select a star rating."
+      },
+      "timeSavingData": {
+        "label": "How many hours per week do you estimate Launchpad saves you? *",
+        "options": {
+          "lessThanOne": "Less than 1",
+          "betweenOneAndTwo": "1–2",
+          "betweenThreeAndFive": "3–5",
+          "moreThanFive": "6–10",
+          "moreThanTen": "More than 10"
+        },
+        "validationMessage": "Please estimate how much time Launchpad saves you each week."
+      },
+      "workQualityImpact": {
+        "label": "How would you rate the impact of Launchpad on the quality of your work? *",
+        "options": {
+          "veryLow": "Very Low",
+          "low": "Low",
+          "neutral": "Neutral",
+          "high": "High",
+          "critical": "Very High"
+        },
+        "validationMessage": "Please rate how Launchpad has impacted the quality of your work."
+      },
+      "jobSatisfaction": {
+        "label": "How has Launchpad impacted your job satisfaction? *",
+        "options": {
+          "veryLow": "Very Low",
+          "low": "Low",
+          "neutral": "Neutral",
+          "high": "High",
+          "critical": "Very High"
+        },
+        "validationMessage": "Please describe how Launchpad has impacted your job satisfaction."
+      },
+      "useCaseScenario": {
+        "label": "Can you share specific use cases on how you use Launchpad in your daily work? *",
+        "placeholder": "For example, 'I use Launchpad to automate repetitive tasks like data entry'",
+        "tooltip": "Share examples of how you use Launchpad in your daily tasks to improve productivity or efficiency.",
+        "validationMessage": "Please describe how you use Launchpad."
+      },
+      "otherAiToolsUsed": {
+        "label": "Are you using other AI tools? If yes, please list them.",
+        "placeholder": "For example, 'Gemini, Jasper AI, Grammarly."
+      },
+      "missingFeatureIndication": {
+        "label": "What features do the other AI tools have that Launchpad is missing?",
+        "placeholder": "For example, 'light and dark mode, or advanced analytics.'",
+        "tooltip": "List any features you feel are lacking in Launchpad compared to other AI tools you use."
+      }
+    }
+  }
+}

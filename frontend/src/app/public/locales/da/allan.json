@@ -1,0 +1,28 @@
+{
+  "menuAppBar": {
+    "title": "Allan - AI Lærer"
+  },
+  "chatDialogueBox": {
+    "title": "Allan",
+    "description": "Jeg er her for at hjælpe dig med at lære ansvarlig AI-brug og udvikle stærke AI-kompetencer.",
+    "welcomeMessage": "Hej! Jeg er Allan, din AI-lærer."
+  },
+  "predefinedPrompts": [
+    {
+      "icon": "brain",
+      "description": "Hvad er de vigtigste principper for ansvarlig AI-brug?"
+    },
+    {
+      "icon": "shield",
+      "description": "Hvordan kan jeg beskytte følsomme data når jeg bruger AI?"
+    },
+    {
+      "icon": "book",
+      "description": "Hvad skal jeg vide om AI-etik?"
+    },
+    {
+      "icon": "users",
+      "description": "Hvordan forklarer jeg AI-koncepter til mit team?"
+    }
+  ]
+}

@@ -1,0 +1,352 @@
+{
+  "listing": {
+    "textTitle": "Workspaces",
+    "textTagline": "Udforsk og opret workspaces",
+    "searchBar": {
+      "placeholder": "Søg i workspaces…"
+    },
+    "noWorkspacesText": "Du har ingen workspaces.",
+    "mainButton": "Opret Workspace",
+    "cardData": {
+      "filesQty": {
+        "single": "fil",
+        "plural": "filer"
+      },
+      "membersQty": {
+        "single": "medlem",
+        "plural": "medlemmer"
+      }
+    },
+    "filteringAndSorting": {
+      "filtering": {
+        "label": "Filtrering",
+        "options": {
+          "allWorkspaces": "Alle Workspaces",
+          "myWorkspaces": "Mine Workspaces",
+          "recentlyCreated": "Nyligt oprettet - Sidste 7 dage",
+          "recentlyUpdated": "Nyligt opdateret - Sidste 7 dage"
+        },
+        "messages": {
+          "notCreated": "Du har ikke oprettet et workspace de sidste 7 dage",
+          "notUpdated": "Du har ikke opdateret et workspace de sidste 7 dage"
+        }
+      },
+      "sorting": {
+        "label": "Sortering",
+        "options": {
+          "creationDateNewest": "Oprettelsesdato - Nyeste først",
+          "creationDateOldest": "Oprettelsesdato - Ældste først",
+          "nameAsc": "Navn A-Å",
+          "nameDesc": "Navn Å-A"
+        }
+      }
+    }
+  },
+  "create": {
+    "textTitle": "Opret Workspace",
+    "textTagline": "Opsæt dit workspace",
+    "createButton": "Opret Nyt Workspace",
+    "cancelButton": "Fortryd",
+    "notifications": {
+      "success": "Workspacet blev oprettet",
+      "error": "Der opstod en fejl under oprettelse af Workspacet. Prøv venligst igen senere"
+    }
+  },
+  "edit": {
+    "textTitle": "Rediger Workspace",
+    "textTagline": "Lav justeringer til dit workspace",
+    "editButton": "Opdater Workspace",
+    "cancelButton": "Fortryd",
+    "notifications": {
+      "success": "Workspacet er blevet opdateret.",
+      "error": "Vi stødte på en fejl i forsøget på at redigere workspacet. Prøv venligst igen senere.",
+      "atleastoneownerrequired": "Et workspace skal have mindst én ejer. Du kan ikke fjerne alle ejere.",
+      "concurrentupdateconflict": "Workspacet er blevet opdateret af en anden. Opdater venligst siden og prøv igen."
+    }
+  },
+  "singleWorkspace": {
+    "returnButton": "Tilbage",
+    "dropdownLinks": {
+      "about": "Om Workspace",
+      "files": "Workspace Filer",
+      "edit": "Rediger Workspace",
+      "delete": "Slet Workspace",
+      "leave": "Forlad Workspace",
+      "hide": "Skjul fra Sidebjælke",
+      "pin": "Vis på Sidebjælke",
+      "share": "Del Workspace"
+    },
+    "modals": {
+      "aboutModal": {
+        "title": "Om",
+        "ownerInfo": "Du er ejer af dette workspace",
+        "membersQty": {
+          "single": "medlem",
+          "plural": "medlemmer"
+        }
+      },
+      "filesModal": {
+        "title": "filer",
+        "manageBtn": "Administrer Filer",
+        "addBtn": "Tilføj filer",
+        "noWorkspaceFiles": "Der er ingen filer i dette workspace",
+        "noFoundFiles": "Ingen filer fundet"
+      },
+      "leaveWorkspaceModal": {
+        "title": "Forlad workspace - er du sikker?",
+        "paragraph": "Når du forlader et workspace, vil du ikke længere have adgang til workspacets data.",
+        "cancelBtn": "Fortryd",
+        "leaveBtn": "Forlad Workspace"
+      },
+      "deleteWorkspaceModal": {
+        "title": "Slet workspace - er du sikker?",
+        "paragraph": "Når du sletter et workspace, er der ingen vej tilbage.",
+        "cancelBtn": "Fortryd",
+        "deleteBtn": "Slet",
+        "notifications": {
+          "success": "Workspacet er blevet slettet.",
+          "error": "Der opstod en fejl under sletning af workspacet. Prøv venligst igen senere.",
+          "errorNoId": "Workspacet, du forsøgte at slette, blev ikke fundet. Det er muligvis allerede blevet slettet."
+        }
+      },
+      "shareWorkspace": {
+        "successNotification": "Workspace link blev kopieret",
+        "errorNotification": "Kunne ikke kopiere workspace link"
+      },
+      "filesUploadModal": {
+        "title": "Fil med samme navn er fundet",
+        "paragraph": {
+          "textOne": "Filen",
+          "textTwo": "eksisterer allerede.",
+          "textThree": "Hvad vil du?"
+        },
+        "buttons": {
+          "ignore": "Ignorer",
+          "add": "Tilføj",
+          "replace": "Erstat"
+        },
+        "notifications": {
+          "add": "Filen er blevet tilføjet og omdøbt til",
+          "replace": {
+            "textOne": "Filen",
+            "textTwo": "er blevet erstattet"
+          },
+          "addFilesSummary": "Alle filer blev tilføjet ",
+          "replaceFilesSummary": "Alle filer blev erstattet"
+        }
+      },
+      "removeAdvancedFilesModal": {
+        "title": "Deaktiver Avanceret Filanalyse",
+        "warningMessage": "Du har uploadede filer, som kræver Avanceret Filanalyse.",
+        "warningAction": "Hvis du fortsætter, vil disse filer blive fjernet.",
+        "buttons": {
+          "cancel": "Annuller",
+          "confirm": "Bekræft"
+        }
+      }
+    }
+  },
+  "common": {
+    "table": {
+      "headers": {
+        "status": "Status",
+        "name": "Fil Navn",
+        "size": "Størrelse",
+        "type": "Filtype",
+        "actions": "Handlinger"
+      }
+    },
+    "status": {
+      "uploaded": "Uploadet",
+      "inProgress": "I gang",
+      "processing": "Behandler",
+      "indexed": "Indekseret",
+      "cancelled": "Annulleret",
+      "failed": "Mislykket",
+      "pending": "Vedhæftet",
+      "replacing": "Udskiftning"
+    },
+    "tooltips": {
+      "customInstruction": "Chatinstruktioner fortæller chatbotten, hvordan den skal opføre sig, tale og svare, så den altid giver gode og klare svar.",
+      "toneOfVoice": "Tone of Voice refererer til stilen og måden, chatbotten svarer på under samtaler i workspacet.",
+      "image": "Vælg Workspace Billede",
+      "workspaceLink": "Oplysninger om workspace"
+    },
+    "notifications": {
+      "serverError": "Der skete en fejl. Prøv igen.",
+      "leaveWorkspace": "Du har forladt dette workspace.",
+      "removeFile": {
+        "textOne": "Fil",
+        "textTwo": "fjernet - husk at klikke på opdater workspace."
+      },
+      "fileValidations": {
+        "fileType": {
+          "textOne": "Filtypen for",
+          "textTwo": "understøttes ikke"
+        },
+        "maxQuantity": {
+          "textOne": "Du kan uploade maksimalt",
+          "textTwo": "filer"
+        },
+        "fileSize": {
+          "textOne": "Filen",
+          "textTwo": "overstiger den maksimalt tilladte størrelse på"
+        },
+        "maxQuota": "Den samlede filstørrelse overstiger den maksimalt tilladte kvote på",
+        "success": "Filen blev tilføjet."
+      }
+    },
+    "sidebarWorkspacesLink": "Udforsk Workspaces",
+    "form": {
+      "toggleButtons": {
+        "sources": {
+          "header": "Vis kilder",
+          "description": "Slå dette til for at vise kilderne eller referencerne til de oplysninger, som chatbotten giver."
+        },
+        "mode": {
+          "header": "Kildebaserede Svar",
+          "description": "Slå dette til for at få chatbotten til at give svar baseret på de uploadede dokumenter og kun fokusere på de specifikke områder."
+        },
+        "fileAccess": {
+          "header": "Begræns Filadgang",
+          "description": "Slå dette til for at begrænse medlemmers adgang til filer uploadet i arbejdsområdet."
+        },
+        "emailNotificationsDisabled": {
+          "header": "Deaktiver Email Invitationer",
+          "description": "Slå dette til, hvis du ikke vil sende invitationer til medlemmerne af dette workspace via e-mail."
+        },
+        "advancedFileAnalysis": {
+          "header": "Avanceret Analysetilstand",
+          "description": "Få adgang til detaljeret filanalyse med avanceret scanning. Analyser op til 20 filer samtidigt og aktiver understøttelse af Excel-filer. Bemærk: Vis kilder vil være deaktiveret i denne tilstand."
+        },
+        "systemMessageOverride": {
+          "header": "Tilsidesæt standard chatinstruktioner",
+          "description": "Hvis aktiveret bruges workspacets tilpassede chatinstruktioner uden standard identitet, sprogpolitik eller tone-/detaljeinstruktioner."
+        },
+        "applyToAll": "Anvend på alle duplikerede filer"
+      },
+      "systemMessageOverride": {
+        "note": "Når tilsidesættelse er aktiveret, er disse chatinstruktioner primære.",
+        "emptyWarning": "Tilsidesættelse er aktiveret, men chatinstruktionerne er tomme. Værktøjsinstruktioner og politikker gælder stadig, men der er ingen standard identitet eller sprogregler.",
+        "disabledHint": "Tilføj chatinstruktioner for at aktivere tilsidesættelse.",
+        "toneLengthDisabled": "Tilsidesættelse er aktiveret, så tonefald og svarlængde er deaktiveret.",
+        "confirmModal": {
+          "title": "Tilsidesættelse aktiveret med tomme chatinstruktioner",
+          "message": "Tilsidesættelse er aktiveret, men chatinstruktionerne er tomme. Hvis du fortsætter, vil workspacet ikke have standard identitet, sprogpolitik eller tone-/detaljeinstruktioner. Vil du fortsætte?",
+          "cancel": "Gå tilbage",
+          "confirm": "Fortsæt alligevel"
+        }
+      },
+      "labels": {
+        "image": "Vælg Workspace Billede",
+        "name": "Workspace navn",
+        "description": "Workspace beskrivelse",
+        "members": "Tilføj medlemmer",
+        "files": "Tilføj filer eller mapper",
+        "chatInstructions": "Chatinstruktioner",
+        "toneOfVoice": "Tonefald",
+        "responceLength": "Svarlængde",
+        "uploadFilesBtn": "Upload Filer",
+        "uploadFoldersBtn": "Upload Mapper",
+        "dropLabel": "Slip din fil eller mappe her"
+      },
+      "placeholders": {
+        "name": "Navngiv dit workspace…",
+        "description": "Beskriv dit workspace…",
+        "members": "Skriv navnet på et medlem…",
+        "files": {
+          "header": "Træk og slip filer eller mapper",
+          "subheader": "per fil",
+          "filesSubHeader": "Filtyper understøttet:"
+        },
+        "chatInstructions": "Fortæl AI'en om dens rolle, for eksempel: 'Du er en rådgiver, der hjælper mig med rejsebeslutninger. Vær venlig, praktisk og brug klart sprog. Giv trin-for-trin vejledning for at gøre min rejse nem…"
+      },
+      "nameValidations": {
+        "minCharacters": "Navnet skal være mindst 3 tegn langt.",
+        "maxCharacters": "Navnet må ikke overstige 50 tegn.",
+        "noData": "Angiv venligst et navn til dit arbejdsområde."
+      },
+      "navigationTabs": {
+        "general": "Generelle Oplysninger",
+        "files": "Filer",
+        "members": "Medlemmer",
+        "advanced": " Avancerede Indstillinger"
+      }
+    },
+    "saveChangesButton": "Gem ændringer",
+    "sharePointPicker": {
+      "title": "Vælg filer fra SharePoint",
+      "button": "Tilføj fra SharePoint",
+      "back": "Tilbage",
+      "cancel": "Annuller",
+      "confirm": "Tilføj valgte filer",
+      "recent": "Seneste filer",
+      "search": "Søg...",
+      "selectedFiles": "Valgte filer",
+      "inChannels": "I kanaler",
+      "inSiteLibrary": "I dokumentbibliotek",
+      "notifications": {
+        "filesAdded": "Filer blev tilføjet fra SharePoint",
+        "noFilesAdded": "Ingen filer blev tilføjet",
+        "errorLoadingMoreResults": "Kunne ikke indlæse flere søgeresultater"
+      },
+      "filters": {
+        "viewAll": "Vis alle",
+        "word": "Word",
+        "spreadsheets": "Regneark",
+        "pdfs": "PDF'er"
+      },
+      "columns": {
+        "fileName": "Filnavn",
+        "size": "Størrelse",
+        "lastModified": "Sidst ændret"
+      },
+      "sharePointsearch": {
+        "errorTitle": "Søgefejl",
+        "errorMessage": "Der opstod en fejl under søgningen. Prøv venligst igen.",
+        "noResultsTitle": "Ingen resultater fundet",
+        "noResultsMessage": "Ingen filer matcher dine søgekriterier."
+      }
+    },
+    "starterPrompts": {
+      "placeholder": "Eksempel: Lav en præsentation baseret på de tilgængelige dokumenter",
+      "label": "Start Prompts",
+      "labelTooltip": "Foreslå måder at starte samtaler på",
+      "dragTooltip": "Træk for at ændre rækkefølgen",
+      "btnText": "Tilføj Start Prompt",
+      "icons": {
+        "clearIcon": "Ryd Feltet",
+        "deleteIcon": "Slet Feltet"
+      },
+      "errorMessage": "Maksimal tilladt længde er 80 tegn"
+    }
+  },
+  "imagePicker": {
+    "selectButtonLabel": "Choose Avatar/Image",
+    "dialogTitle": "Vælg workspace billede",
+    "loadingText": "Indlæser billeder",
+    "noImagesText": "Ikke flere billeder at indlæse",
+    "loadMoreButton": "Indlæs flere billeder",
+    "uploadImage": "Upload billede",
+    "processing": "Behandler...",
+    "uploadSuccess": "Billedet blev behandlet!",
+    "uploadError": "Kunne ikke behandle billedet. Prøv venligst igen.",
+    "uploadLimitations": "Upload begrænsninger",
+    "allowedFileTypes": "Tilladte filtyper",
+    "maxFileSize": "Maks filstørrelse",
+    "errors": {
+      "invalidFileType": "Ugyldig filtype. Tilladte formater: {{allowedTypes}}",
+      "fileTooLarge": "Filen er for stor. Maksimal tilladt størrelse er {{maxSize}}MB"
+    }
+  },
+  "workspaceFiles": {
+    "modals": {
+      "deletAllFilesModal": {
+        "title": "Slet alle filer",
+        "message": "Er du sikker på, at du vil slette alle filer?",
+        "cancelBtn": "Fortryd",
+        "deleteBtn": "Bekræft"
+      }
+    }
+  }
+}

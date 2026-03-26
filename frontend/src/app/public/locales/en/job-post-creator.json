@@ -1,0 +1,283 @@
+{
+  "moduleName": "Job Post Creator",
+  "description": "Create a job post draft using DSB's template and layout for an effective job advertisement.",
+  "maintenance": {
+    "title": "Job Post Creator Under Maintenance",
+    "description": "We're performing a scheduled update to improve the Job Post Creator experience. Thanks for your patience—please check back soon.",
+    "pageTitle": "Job Post Creator Maintenance",
+    "cta": {
+      "heading": "Need access right away?",
+      "description": "As a temporary workaround, you can still reach the previous Job Post Creator experience.",
+      "button": "Open legacy Job Post Creator",
+      "note": "Available only when connected to DSB Wi-Fi."
+    }
+  },
+  "menuAppBar": {
+    "title": "Job Post Creator"
+  },
+  "newJobPostButton": "Create New Job Post",
+  "streamingChatNotification": "Generating requested position...",
+  "generatedPositionChatNotification": "The job post for the {{positionTitle}} role has been created. Let me know if you’d like to customize it further—such as tailoring it to a specific industry, company tone, or location.",
+  "form": {
+    "buttons": {
+      "submitButton": "Generate Job Post",
+      "regenerateButton": "Update Job Post"
+    },
+    "notifications": {
+      "onFormSubmit": {
+        "success": "Your form was successully sumitted",
+        "error": "Something went wrong when submitting your form. Please try to submit again.",
+        "validationError": "Please fill in all required fields before generating the job post."
+      }
+    },
+    "positionLevel": {
+      "label": "Select Position Level",
+      "options": {
+        "junior": "Junior Consultant",
+        "senior": "Manager/Specialist",
+        "shortpost": "Short Job Post"
+      },
+      "validationMessage": "Please select position level"
+    },
+    "jobTitle": {
+      "label": "Job Title",
+      "placeholder": "e.g. Account Manager",
+      "tooltip": "Insert the full title for the profile you are looking for.\nFor example, Account Manager, Procurement Lawyer, Planner….",
+      "validationMessage": "Please fill in the job title."
+    },
+    "departmentTeam": {
+      "label": "Department and the Team",
+      "placeholder": "Describe department and the team",
+      "tooltip": "1. Briefly describe why you need a new employee and what they can expect to contribute.\n2. Talk about the department's name and your contributions to DSB, about the team (number of employees) and your culture, and where you are located work-wise.",
+      "validationMessage": "Please describe describe department and the team"
+    },
+    "jobScope": {
+      "label": "Job and Tasks",
+      "placeholder": "Describe position and tasks",
+      "tooltip": "1. Briefly describe a typical day/tasks in the role, describe in present tense.\n2. State the most important primary tasks and responsibilities in the role (up to 4 points).",
+      "validationMessage": "Please describe position and tasks"
+    },
+    "qualifications": {
+      "label": "Professional and Personal Qualification",
+      "placeholder": "Describe department and the team",
+      "tooltip": "1. Briefly describe the expected qualifications and expectations of the ideal candidate.\n2. State up to 4 points with professional qualification expectations.\n3. Expectations for personal qualifications (maximum 2 sentences, avoid clichés and long adjective-laden descriptions).",
+      "validationMessage": "Please describe department and the team"
+    },
+    "language": {
+      "label": "Select Output Language",
+      "options": {
+        "da": "Danish",
+        "en": "English"
+      },
+      "validationMessage": "Please select language"
+    }
+  },
+  "instructions": {
+    "title": "Job Post Creator Instructions",
+    "description": "Job Post Creator is designed to help you create a first  draft of your job posting, following DSB's template and layout for an  effective job advertisement.",
+    "accordion": {
+      "form": {
+        "title": "Fill in the form fields",
+        "description": [
+          "Provide detailed information about the job and department.",
+          "Describe the team, workplace culture, and a typical day at work.",
+          "List key tasks and responsibilities.",
+          "Specify professional and personal qualifications required for the role.",
+          "Choose the language for the job posting (Danish or English)."
+        ]
+      },
+      "edit": {
+        "title": "Review and edit",
+        "description": [
+          "Edit the draft text using canvas editting feature to ensure accuracy and alignment with the job description.",
+          "Adjust any incorrect sentences, add text or regenerate content if necessary.",
+          "Use versioning feature to choose the best version."
+        ]
+      },
+      "collaboration": {
+        "title": "Download and share",
+        "description": "Download the created job post template and share the draft with your Recruitment Partner for further processing and update."
+      },
+      "evaluation": {
+        "title": "Upload for evaluation",
+        "description": "Upload the finalized and reviewed job post file to serve as input for AI-based evaluation and enhancement. The submitted document will be used by the system to analyze content, structure, and tone in order to generate an improved version of the job post. Ensure that the file reflects your best draft, incorporating all intended details, as it will guide the AI in generating a more effective and compelling job post."
+      }
+    }
+  },
+  "navigationIconButtons": {
+    "upload": "Upload for Evaluation",
+    "uploaded": "File Uploaded",
+    "copy": "Copy",
+    "download": "Download",
+    "edit": "Edit Mode"
+  },
+  "deleteJobPostModal": {
+    "title": "Delete Job Post - are you sure?",
+    "paragraph": "This will delete all references for {{positionTitle}} job post. This action cannot be undone.",
+    "cancelBtn": "Cancel",
+    "deleteBtn": "Delete",
+    "notifications": {
+      "success": "{{positionTitle}} job post has been successfully deleted.",
+      "error": "There was an error while deleting the job post. Please try again later.",
+      "errorNoId": "The {{positionTitle}} job post you attempted to delete could not be found. It may have already been deleted."
+    }
+  },
+  "temporaryContent": {
+    "positionTitle": "Senior UI Developer",
+    "placeholderText": "Add more content..",
+    "content": [
+      {
+        "header": "Header",
+        "text": "Senior UI Developer"
+      },
+      {
+        "header": "Appetizer",
+        "text": "Are you passionate about creating beautiful, user-friendly interfaces that millions of users will interact with daily? Join us as a Senior UI Developer and help shape the future of digital experiences at DSB."
+      },
+      {
+        "header": "Short Introduction",
+        "text": "We are looking for a talented Senior UI Developer to join our team of innovators. In this role, you will work on cutting-edge projects, collaborating with cross-functional teams to deliver exceptional user experiences. Your expertise in modern UI frameworks and design principles will be critical to our success."
+      },
+      {
+        "header": "Team Description",
+        "text": "You will be part of a dynamic and diverse team of developers, designers, and product managers who are committed to delivering high-quality solutions. Our team values collaboration, creativity, and continuous learning. We work in an agile environment where your ideas and contributions will make a real impact."
+      },
+      {
+        "header": "Job Description",
+        "text": "- Develop and maintain user interfaces using modern frameworks like React and Tailwind CSS.\n- Collaborate with UX/UI designers to implement responsive and accessible designs.\n- Optimize applications for maximum speed and scalability.\n- Write clean, maintainable, and testable code.\n- Participate in code reviews and provide constructive feedback to team members.\n- Stay up-to-date with the latest UI trends, techniques, and technologies."
+      },
+      {
+        "header": "Qualifications",
+        "text": "- Proven experience as a UI Developer with a strong portfolio of projects.\n- Proficiency in JavaScript, TypeScript, React, and Tailwind CSS.\n- Solid understanding of responsive design principles and accessibility standards.\n- Familiarity with design tools like Figma or Adobe XD.\n- Strong problem-solving skills and attention to detail.\n- Excellent communication and teamwork abilities.\n- A passion for creating exceptional user experiences."
+      }
+    ]
+  },
+  "notifications": {
+    "copy": {
+      "success": "Job post content was successfully copied",
+      "error": "There was an error while copying the job post content. Please try again."
+    },
+    "download": {
+      "success": "Job post {{positionTitle}} was successfully downloaded",
+      "error": "There was an error while downloading the job post. Please try again."
+    },
+    "stream": {
+      "success": "Job has been successfully submitted for generating",
+      "error": "An error occurred while generating the job post. Please try again."
+    },
+    "generated": {
+      "success": "Job has been successfully generated",
+      "error": "An error occurred while generating the job post. Please try again."
+    },
+    "upload": {
+      "success": "File {{fileName}} was successfully uploaded for evaluation.",
+      "error": {
+        "uploadFailed": "There was an error when uploading file. Please try again.",
+        "invalidFileType": "Only .docx or .txt files are allowed for evaluation upload.",
+        "noFile": "There was no file added - please try to upload file once again"
+      }
+    },
+    "undo": {
+      "error": "Undo failed. Please try again."
+    },
+    "redo": {
+      "error": "Redo failed. Please try again."
+    },
+    "versioning": {
+      "contention": "Another update in progress—refreshing latest state.",
+      "conflict": "Content changed elsewhere—refreshing latest version.",
+      "refreshFailed": "Unable to refresh the latest version. Please retry."
+    },
+    "sectionUpdate": {
+      "error": "Update failed. Please try again."
+    },
+    "rename": {
+      "error": "Unable to rename the job post. Please try again."
+    },
+    "delete": {
+      "success": "{{positionTitle}} job post was successfully deleted",
+      "error": "An error occurred while deleteing {{positionTitle}} job post. Please try again."
+    },
+    "archive": {
+      "success": "{{positionTitle}} job post was successfully added to chats history",
+      "error": "An error occurred while trying to {{positionTitle}} job post. Please try again."
+    },
+    "shortpost": {
+      "retryAvailable": "Some content could not be generated. You can retry generation."
+    }
+  },
+  "chatDialogueBox": {
+    "welcomeMessage": [
+      "",
+      "&nbsp;",
+      "Job Post Creator is designed to help you create a first draft of your job posting, following DSB's template and layout for an effective job advertisement.",
+      "",
+      "&nbsp;",
+      "Fill in the fields below with information about the job and department. Be descriptive when you write about the team, culture, and a typical day at work. Be specific and include key tasks as well as professional and personal qualifications and choose whether the job posting should be in Danish or English. <a href='https://dsbintranet.sharepoint.com/sites/trAIn_/_layouts/15/stream.aspx?id=%2Fsites%2FtrAIn%5F%2FtrAIn%20Videoer%2FHow%20to%20Draft%20Job%20Posts%2Emov&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E9dad0a6c%2D241b%2D40ef%2D9f7f%2D8cd604b2c312' target='_blank'><u>Click here to learn more.</u><a/>",
+      "",
+      "&nbsp;",
+      "Edit the text for any sentences that do not reflect the job accurately. Then send the draft to your recruitment partner who will obtain quotes etc. and finalize the job posting."
+    ],
+    "prompts": [
+      {
+        "id": "title",
+        "title": "Title",
+        "placeholder": "Insert the full title for the profile you are looking for.\nFor example, Account Manager, Procurement Lawyer, Planner…. "
+      },
+      {
+        "id": "teamDescription",
+        "title": "Describe your department and team",
+        "placeholder": "1. Briefly describe why you need a new employee and what they can expect to contribute.\n2. Talk about the department's name and your contributions to DSB, about the team (number of employees) and your culture, and where you are located work-wise."
+      },
+      {
+        "id": "jobDetails",
+        "title": "About the job and the tasks",
+        "placeholder": "1. Briefly describe a typical day/tasks in the role, describe in present tense.\n2. State the most important primary tasks and responsibilities in the role (up to 4 points)."
+      },
+      {
+        "id": "qualifications",
+        "title": "Professional and personal qualifications",
+        "placeholder": "1. Briefly describe the expected qualifications and expectations for the ideal candidate.\n2. State up to 4 points with professional qualification expectations.\n3. Expectations for personal qualifications (up to 4 sentences, avoid clichés and long strings of adjectives in descriptions)."
+      }
+    ],
+    "language": "Language",
+    "templateType": {
+      "label": "Select position level",
+      "options": {
+        "0": "Manager/specialist",
+        "1": "Junior Consultant/Student",
+        "2": "Short job post"
+      }
+    },
+    "student": {
+      "prompts": [
+        {
+          "id": "title",
+          "title": "Which department or team",
+          "placeholder": "Write the name of the department or team the junior consultant or student will work for."
+        },
+        {
+          "id": "qualifications",
+          "title": "Professional and personal qualifications",
+          "placeholder": "1. Briefly describe the expected qualifications and expectations of the ideal candidate.\n2. State up to 4 points with professional qualification expectations.\n3. Expectations for personal qualifications (maximum 2 sentences, avoid clichés and long adjective-laden descriptions)."
+        }
+      ]
+    }
+  },
+  "preview": {
+    "heading": "JobPost Preview",
+    "description": "Here you'll see the generated Job Post text preview",
+    "sections": {
+      "header": "Header",
+      "appetizer": "Appetizer",
+      "shortIntroduction": "Short Introduction",
+      "teamDescription": "Team Description",
+      "jobDescription": "Job Description",
+      "qualifications": "Qualifications"
+    }
+  },
+  "buttons": {
+    "generate": "Generate",
+    "export": "Export"
+  }
+}

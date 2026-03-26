@@ -1,0 +1,705 @@
+{
+  "createSubscription": {
+    "title": "Opret nyt abonnement",
+    "subtitle": "Opsæt et nyt abonnement for at få adgang til AI-modeller til dine applikationer.",
+    "subscriptionInformation": "Abonnementer er knyttet til applikationer eller brugsscenarier, ikke individuelle brugere. Hvert abonnement giver én API-nøgle til adgang til flere modeller med håndhævede rater og tokenkvoter.",
+    "subscriptionTypeCards": {
+      "label": "Vælg abonnementstype",
+      "SANDBOX": {
+        "title": "Sandbox",
+        "features": [
+          "Øjeblikkelig aktivering",
+          "Perfekt til test",
+          "Udløber om 6 måneder"
+        ]
+      },
+      "NORMAL": {
+        "title": "Applikation",
+        "features": ["Kræver godkendelse", "Høje kvoter", "Ingen udløbsdato"]
+      }
+    },
+    "fields": {
+      "subscriptionName": {
+        "label": "Abonnementsnavn",
+        "placeholder": "Navngiv dit abonnement",
+        "validation": {
+          "minLength": 3,
+          "maxLength": 50,
+          "messages": {
+            "required": "Abonnementsnavn er påkrævet.",
+            "minLength": "Abonnementsnavn skal være mindst {{minLength}} tegn.",
+            "maxLength": "Abonnementsnavn må højst være {{maxLength}} tegn."
+          }
+        }
+      },
+      "applicationRef": {
+        "label": "Applikationsreference",
+        "placeholder": "Vælg din applikation",
+        "validation": {
+          "required": "Applikationsreference er påkrævet.",
+          "messages": {
+            "required": "Applikationsreference er påkrævet."
+          }
+        }
+      },
+      "applicationRefFreeText": {
+        "label": "Applikationsreference",
+        "placeholder": "Beskriv din applikationsreference",
+        "validation": {
+          "minLength": 3,
+          "maxLength": 100,
+          "messages": {
+            "required": "Applikationsreference er påkrævet.",
+            "minLength": "Applikationsreference skal være mindst {{minLength}} tegn.",
+            "maxLength": "Applikationsreference må højst være {{maxLength}} tegn."
+          }
+        }
+      },
+      "subscriptionPurpose": {
+        "label": "Formål med abonnement",
+        "placeholder": "Forklar, hvad du skal bruge dette abonnement til",
+        "validation": {
+          "maxLength": 200,
+          "messages": {
+            "maxLength": "Formålet med abonnement må højst være {{maxLength}} tegn.",
+            "required": "Formål med abonnement er påkrævet."
+          }
+        }
+      },
+      "environment": {
+        "label": "Miljø",
+        "placeholder": "Vælg dit miljø",
+        "options": {
+          "PROD": "Produktion",
+          "NON_PROD": "Ikke-produktion"
+        },
+        "validation": {
+          "required": "Miljø er påkrævet.",
+          "messages": {
+            "required": "Miljø er påkrævet."
+          }
+        }
+      },
+      "department": {
+        "label": "Afdeling",
+        "placeholder": "Vælg din afdelingsreference",
+        "options": {
+          "IT": "IT",
+          "GENAI": "GenAI",
+          "FINANCE": "Økonomi",
+          "OPERATIONS": "Drift",
+          "DATA": "Data & Analyse",
+          "SECURITY": "Sikkerhed"
+        },
+        "validation": {
+          "required": "Afdeling er påkrævet.",
+          "messages": {
+            "required": "Afdeling er påkrævet."
+          }
+        }
+      },
+      "adGroup": {
+        "label": "AD-gruppe til administration",
+        "placeholder": "Vælg korrekt gruppe til abonnementsadministration",
+        "validation": {
+          "required": "AD-gruppe er påkrævet.",
+          "messages": {
+            "required": "AD-gruppe er påkrævet."
+          }
+        }
+      },
+      "expiryDate": {
+        "label": "Udløbsdato"
+      }
+    },
+    "cta": {
+      "createSubscription": "Opret abonnement",
+      "submitting": "Sender..."
+    },
+    "notifications": {
+      "successMessage": "Abonnement oprettet med succes!",
+      "errorMessage": "Der opstod en fejl under oprettelsen af abonnementet. Prøv igen."
+    }
+  },
+  "modelDetails": {
+    "title": "Modeldetaljer",
+    "metrix": {
+      "contextWindow": "Kontekstvindue",
+      "inputPricePerThousand": "Inputpris (DKK)",
+      "outputPricePerThousand": "Outputpris (DKK)",
+      "activeSubscriptionsForModel": "Aktive abonnementer"
+    },
+    "statusLabel": {
+      "active": "Aktiv",
+      "disabled": "Deaktiveret"
+    },
+    "notFound": {
+      "title": "Model ikke fundet",
+      "message": "Den model, du leder efter, kunne ikke findes."
+    },
+    "actions": {
+      "menu": "Handlinger",
+      "createSubscription": "Opret abonnement",
+      "requestAccess": "Anmod om adgang",
+      "modelsDiscovery": "Modelopdagelse"
+    },
+    "metrics": {
+      "contextWindow": "Kontekstvindue",
+      "contextWindowDesc": "Maksimalt antal tokens, som modellen kan behandle",
+      "pricingInput": "Inputpris",
+      "pricingInputDesc": "Pris pr. 1.000 inputtokens",
+      "pricingOutput": "Outputpris",
+      "pricingOutputDesc": "Pris pr. 1.000 outputtokens",
+      "activeSubscriptions": "Aktive abonnementer",
+      "activeSubscriptionsDesc": "Antal abonnementer, der bruger denne model"
+    },
+    "tabs": {
+      "overview": "Oversigt",
+      "subscriptions": "Abonnementer",
+      "guardrails": "Guardrails"
+    },
+    "sections": {
+      "modelOverview": "Modeloversigt",
+      "endpointUrl": "Endpoint URL",
+      "endpointUrlDesc": "API-endpoint for denne model",
+      "capabilities": "Detaljer og funktioner",
+      "activeSubscriptions": "Aktive abonnementer",
+      "guardrails": "Modelguardrails"
+    },
+    "fields": {
+      "contextWindow": "Kontekstvindue",
+      "pricingInput": "Inputpris",
+      "pricingOutput": "Outputpris",
+      "maxTokens": "Maksimale tokens"
+    },
+    "noActiveSubscriptions": "Du har ingen aktive abonnementer. Opret et nyt abonnement til din applikation.",
+    "noModelActiveSubscriptions": "Ingen aktive abonnementer bruger i øjeblikket denne model. Anmod om modeladgang til et af dine eksisterende abonnementer.",
+    "noGuardrails": "Ingen guardrails er konfigureret for denne model.",
+    "notifications": {
+      "noActiveSubscription": "Du skal have et aktivt abonnement for at anmode om adgang til modeller.",
+      "requestAccessSuccess": "Anmodning om modeladgang blev sendt med succes.",
+      "requestAccessError": "Kunne ikke sende anmodning om modeladgang."
+    }
+  },
+  "subscriptionCard": {
+    "created": "Oprettelsesdato",
+    "department": "Afdeling",
+    "tokenUsage": "Tokenforbrug",
+    "modelsEnabled": "Modeller",
+    "purpose": "Abonnementsformål",
+    "userLabel": "Brugeroplysninger",
+    "applicationRef": "Applikationsreference",
+    "environment": "Miljø",
+    "rejectionReason": "Afvisningsårsag",
+    "noRejectionReason": "Ingen begrundelse angivet.",
+    "id": "Abonnements-ID",
+    "expiryDate": "Udløbsdato",
+    "labelsForAdminActions": {
+      "approve": "Begrundelse for godkendelse",
+      "reject": "Begrundelse for afvisning",
+      "deactivate": "Begrundelse for deaktivering",
+      "activate": "Begrundelse for aktivering",
+      "delete": "Begrundelse for sletning",
+      "expiryDateUpdate": "Begrundelse for opdatering af udløbsdato",
+      "reactivate": "Begrundelse for reaktivering"
+    }
+  },
+  "subscriptionDetails": {
+    "title": "Abonnementsdetaljer",
+    "subtitle": "",
+    "actionsBtn": "Handlinger",
+    "dismissNotification": "Afvis notifikation",
+    "pendingApproval": {
+      "banner": {
+        "title": "Abonnementsanmodning sendt",
+        "message": "Din abonnementsanmodning for \"{{subscriptionName}}\" afventer godkendelse. Når den er godkendt, vil API-nøgler til adgang være tilgængelige her."
+      }
+    },
+    "noModels": "Der er i øjeblikket ingen modeller tilknyttet dette abonnement.",
+    "noUserRequests": "Der er ikke indsendt nogen brugerforespørgsler for dette abonnement.",
+    "requestCard": {
+      "labels": {
+        "quotaIncrease": "Kvoteforøgelse",
+        "modelAccess": "Modeladgang",
+        "createdAt": "Oprettet",
+        "newTokenLimit": "tokens",
+        "newRateLimit": "rater",
+        "newRequestLimit": "forespørgsler",
+        "requestType": {
+          "models": "Anmodet modeladgang",
+          "quota": "Anmodet kvoteforøgelse"
+        }
+      },
+      "status": {
+        "pending": "Afventer",
+        "approved": "Godkendt",
+        "declined": "Afvist",
+        "blocked": "Blokeret"
+      }
+    },
+    "apiRequestsTable": {
+      "simulate": "Simulér API-forespørgsel",
+      "empty": "Ingen API-forespørgsler for dette abonnement endnu.",
+      "headers": {
+        "timestamp": "Tidspunkt",
+        "model": "Model",
+        "tokens": "Tokens",
+        "latencyMs": "Latens (ms)",
+        "status": "Status"
+      },
+      "status": {
+        "success": "Succes",
+        "error": "Fejl"
+      }
+    },
+    "subscriptionStatusLabel": {
+      "active": "Aktiv",
+      "pendingApproval": "Afventer godkendelse",
+      "failed": "Fejlet",
+      "cancelled": "Annulleret",
+      "deactivated": "Deaktiveret",
+      "blocked": "Blokeret"
+    },
+    "sectionTitles": {
+      "modelUsageDistribution": "Fordeling af modelbrug",
+      "tokensUsage": "Tokenforbrug",
+      "activeGuardrails": "Aktive guardrails",
+      "endpointUrl": "Endpoint-URL",
+      "capabilities": "Funktioner"
+    },
+    "apiAccess": {
+      "label": "API-nøgle",
+      "noAPIKeyText": "Ingen API-nøglemetadata tilgængelig.",
+      "actions": {
+        "generate": "Generér API-nøgle",
+        "generating": "Genererer...",
+        "regenerate": "Regenerér API-nøgle",
+        "regenerating": "Regenererer...",
+        "view": "Vis API-nøgle",
+        "copyAPIKey": "Kopiér API-nøgle",
+        "copy": "Kopiér",
+        "loadingKey": "Henter...",
+        "hideKey": "Skjul API-nøgle",
+        "viewFull": "Vis fuld API-nøgle",
+        "viewFullToCopy": "Vis hele nøglen for at kopiere"
+      },
+      "notifications": {
+        "missingSubscriptionId": "Abonnements-ID mangler. Kan ikke udføre handlingen.",
+        "copyAPIKey": {
+          "success": "API-nøglen er kopieret.",
+          "error": "Kunne ikke kopiere API-nøglen."
+        },
+        "copyEndpointUrl": {
+          "success": "Endpoint-URL er kopieret.",
+          "error": "Kunne ikke kopiere endpoint-URL."
+        },
+        "generate": {
+          "success": "API-nøglen blev genereret.",
+          "error": "Kunne ikke generere API-nøglen."
+        },
+        "regenerate": {
+          "success": "API-nøglen blev regenereret.",
+          "error": "Kunne ikke regenerere API-nøglen."
+        }
+      }
+    },
+    "renameSubscriptionDialog": {
+      "title": "Omdøb abonnement",
+      "label": "Nyt abonnementsnavn",
+      "placeholder": "Indtast det nye abonnementsnavn",
+      "buttons": {
+        "cancel": "Annuller",
+        "save": "Gem"
+      },
+      "validation": {
+        "minLength": "Navnet skal være mindst {{minLength}} tegn.",
+        "maxLength": "Navnet må højest være {{maxLength}} tegn."
+      },
+      "notifications": {
+        "success": "Abonnementsnavnet er opdateret.",
+        "error": "Kunne ikke opdatere abonnementsnavnet."
+      },
+      "ariaLabel": "Omdøb abonnement"
+    },
+    "requestAccessToModelsDialog": {
+      "title": "Anmod om adgang til nye modeller",
+      "chooseModelsTitle": "Vælg de modeller, du ønsker adgang til – maks. 4",
+      "justifyAccessNeed": {
+        "label": "Hvorfor vil du have adgang til disse modeller?",
+        "placeholder": "Forklar hvorfor du har brug for adgang til disse modeller",
+        "validation": {
+          "maxLength": "Begrundelsen må højest være {{maxLength}} tegn.",
+          "required": "Begrundelse er påkrævet."
+        }
+      },
+      "validation": {
+        "modelsRequired": "Vælg mindst én model."
+      },
+      "limitHint": "Du kan vælge op til",
+      "remaining": "Tilbage",
+      "buttons": {
+        "cancel": "Annuller",
+        "requestAccess": "Anmod om adgang"
+      },
+      "notifications": {
+        "successMessage": "Anmodning om modeladgang er sendt!",
+        "errorMessage": "Der opstod en fejl under indsendelse af anmodningen om modeladgang. Prøv venligst igen."
+      }
+    },
+    "requestQuotaIncreaseDialog": {
+      "title": "Anmod om kvoteforøgelse",
+      "justifyQuotaIncrease": {
+        "label": "Hvorfor vil du øge kvoten for abonnementet?",
+        "placeholder": "Forklar hvordan denne forøgelse vil påvirke dit projekt",
+        "validation": {
+          "maxLength": "Forklaringen må højest være {{maxLength}} tegn.",
+          "required": "Forklaring er påkrævet."
+        }
+      },
+      "buttons": {
+        "cancel": "Annuller",
+        "requestAccess": "Anmod om godkendelse",
+        "tooltips": {
+          "increase": "Forøg",
+          "decrease": "Reducer"
+        },
+        "newTokenLimit": "Ny token-grænse",
+        "newRateLimit": "Ny rate-grænse",
+        "newRequestLimit": "Ny forespørgselsgrænse",
+        "tokens": "tokens",
+        "tokensPerRequest": "tokens/forespørgsel"
+      },
+      "notifications": {
+        "successMessage": "Anmodning om kvoteforøgelse er sendt!",
+        "errorMessage": "Der opstod en fejl under indsendelse af anmodning om kvoteforøgelse. Prøv venligst igen."
+      }
+    },
+    "deactivateSubscriptionDialog": {
+      "title": "Deaktiver abonnement",
+      "description": "Du er ved at deaktivere abonnementet {{subscriptionName}}. Deaktivering af dette abonnement vil:",
+      "bulletPoints": [
+        "Pause alle aktive processer, der bruger dette abonnement.",
+        "Midlertidigt suspendere alle tilknyttede modeller.",
+        "Markere abonnementet som inaktivt i systemet.",
+        "Beholde alle data, konfigurationer og indstillinger til senere reaktivering.",
+        "Gøre det muligt at reaktivere abonnementet når som helst."
+      ],
+      "confirmationMessage": "Er du sikker på, at du vil fortsætte?",
+      "buttons": {
+        "cancel": "Annuller",
+        "confirm": "Bekræft"
+      },
+      "notifications": {
+        "successMessage": "Dit abonnement er blevet deaktiveret.",
+        "errorMessage": "Der opstod en fejl under deaktivering af abonnementet. Prøv venligst igen."
+      }
+    },
+    "activateSubscriptionDialog": {
+      "title": "Aktivér abonnement",
+      "description": "Du er ved at aktivere abonnementet {{subscriptionName}}. Aktivering af dette abonnement vil:",
+      "bulletPoints": [
+        "Genoptage alle processer, der bruger dette abonnement.",
+        "Genskabe adgang til alle tilknyttede modeller.",
+        "Markere abonnementet som aktivt i systemet."
+      ],
+      "confirmationMessage": "Er du sikker på, at du vil fortsætte?",
+      "buttons": {
+        "cancel": "Annuller",
+        "confirm": "Bekræft"
+      },
+      "notifications": {
+        "successMessage": "Dit abonnement er blevet aktiveret.",
+        "errorMessage": "Der opstod en fejl under aktivering af abonnementet. Prøv venligst igen."
+      }
+    },
+    "extendSubscriptionDialog": {
+      "title": "Forlæng abonnement",
+      "description": "Du er ved at indsende en anmodning om at forlænge udløbsdatoen for abonnementet. Hvornår skal dette abonnement udløbe?",
+      "justificationLabel": "Begrund hvorfor du har brug for at forlænge abonnementet",
+      "justificationPlaceholder": "Forklar her, hvordan forlængelsen vil påvirke dit projekt",
+      "confirmationMessage": "Er du sikker på, at du vil fortsætte?",
+      "buttons": { "cancel": "Annuller", "confirm": "Bekræft" },
+      "notifications": {
+        "successMessage": "Anmodning om forlængelse af abonnementet er sendt.",
+        "errorMessage": "Noget gik galt. Prøv venligst igen."
+      }
+    },
+    "overviewDetails": {
+      "applicationReference": "Applikationsreference",
+      "subscriptionId": "Abonnements-ID",
+      "department": "Afdeling",
+      "environment": "Miljø",
+      "adGroup": "AD-gruppe",
+      "dateCreated": "Oprettelsesdato",
+      "expiryDate": "Udløbsdato",
+      "apiKey": "API-nøgle",
+      "endpointUrl": "Endpoint-URL",
+      "subscriptionPurpose": "Abonnementsformål"
+    },
+    "subscriptionActionButtons": {
+      "create": "Nyt abonnement",
+      "deactivate": "Deaktiver",
+      "activate": "Aktivér",
+      "increaseQuota": "Forøg kvote",
+      "requestNewModels": "Anmod om nye modeller",
+      "configure": "Konfigurér abonnement",
+      "discovery": "Modelopdagelse",
+      "extendSubscription": "Forlæng abonnement"
+    },
+    "tabs": {
+      "overview": "Overblik",
+      "Models": "Modeller",
+      "apiRequests": "API-forespørgsler"
+    },
+    "metrix": {
+      "totalTokens": "Samlet antal tokens",
+      "totalRequests": "Samlet antal forespørgsler",
+      "successfulRequests": "Succesfulde forespørgsler",
+      "failedRequests": "Fejlede forespørgsler",
+      "totalCost": "Samlet estimeret omkostning",
+      "averageTokensPerRequest": "Gennemsnitlige tokens pr. forespørgsel"
+    }
+  },
+  "adminDashboard": {
+    "title": "Admin Dashboard",
+    "search": {
+      "pending": "Søg i afventende abonnementer...",
+      "approved": "Søg i godkendte abonnementer...",
+      "sandbox": "Søg i sandbox-abonnementer...",
+      "rejected": "Søg i afviste abonnementer...",
+      "deactivated": "Søg i deaktiverede abonnementer..."
+    },
+    "metrix": {
+      "totalTokens": "Samlet antal tokens",
+      "totalRequests": "Samlet antal forespørgsler",
+      "totalCost": "Estimeret omkostning",
+      "averageTokensPerRequest": "Gns. tokens pr. forespørgsel",
+      "successfulRequests": "Succesfulde forespørgsler",
+      "failedRequests": "Fejlede forespørgsler"
+    },
+    "tabs": {
+      "pendingApproval": "Afventer godkendelse",
+      "approved": "Godkendt - Normal",
+      "sandbox": "Godkendt - Sandbox",
+      "rejected": "Afvist",
+      "deactivated": "Deaktiveret",
+      "modelManagement": "Modelstyring",
+      "guardrailsManagement": "Guardrail-styring",
+      "requests": "Anmodninger"
+    },
+    "emptyStates": {
+      "pending": "Ingen afventende abonnementer.",
+      "approved": "Ingen godkendte abonnementer.",
+      "sandbox": "Ingen aktive sandbox-abonnementer.",
+      "rejected": "Ingen afviste abonnementer.",
+      "deactivated": "Ingen deaktiverede abonnementer.",
+      "modelsNone": "Ingen modeller for dette abonnement.",
+      "guardrailsNone": "Ingen guardrails fundet for det valgte scope.",
+      "requestsNone": "Ingen anmodninger tilgængelige.",
+      "selectSubscription": "Vælg abonnement",
+      "selectSubscriptionDesc": "Vælg et abonnement for at se dets modeller.",
+      "selectScope": "Vælg abonnement eller model",
+      "selectScopeDesc": "Vælg et abonnement eller en model for at konfigurere guardrails for det relevante scope."
+    },
+    "actions": {
+      "approve": "Godkend",
+      "reject": "Afvis",
+      "confirmApproval": "Bekræft godkendelse",
+      "confirmRejection": "Bekræft afvisning",
+      "configure": "Konfigurér",
+      "deactivate": "Deaktiver",
+      "delete": "Slet",
+      "approveAgain": "Godkend igen",
+      "createCustomGuardrail": "Opret brugerdefineret guardrail",
+      "addNewModels": "Tilføj nye modeller",
+      "enable": "Aktivér",
+      "disable": "Deaktivér",
+      "requestModelsAccess": "Anmod om modeladgang",
+      "expiryDateUpdate": "Forlæng abonnement"
+    },
+    "adminActionModal": {
+      "titles": {
+        "approve": "Godkend abonnement",
+        "approveAgain": "Godkend abonnement igen",
+        "reject": "Afvis abonnement",
+        "deactivate": "Deaktiver abonnement",
+        "delete": "Slet abonnement",
+        "configure": "Konfigurér abonnement",
+        "expiryDateUpdate": "Opdater udløbsdato",
+        "reactivate": "Reaktivér abonnement"
+      },
+      "approveInfo": "Ved godkendelse aktiveres abonnementet {{subscriptionName}}, og brugeren {{subscriptionConsumer}} bliver notificeret.",
+      "approveAgainInfo": "Ved at godkende igen gøres abonnementet {{subscriptionName}} aktivt, og brugeren {{subscriptionConsumer}} bliver notificeret.",
+      "rejectInfo": "Ved at afvise annulleres abonnementet {{subscriptionName}}, og brugeren {{subscriptionConsumer}} bliver notificeret.",
+      "deactivateInfo": "Du er ved at deaktivere abonnementet {{subscriptionName}}. Deaktivering suspenderer adgangen men bevarer alle konfigurationer. Brugeren {{subscriptionConsumer}} bliver notificeret. Er du sikker på, at du vil fortsætte?",
+      "justifyPlaceholder": "Begrund din beslutning",
+      "expiryInfo": "Angiv en udløbsdato for dette abonnement. Efter denne dato vil abonnementet automatisk blive deaktiveret. Dette er nyttigt for midlertidige projekter eller testformål.",
+      "deleteInfo": {
+        "intro": "Sletning af dette abonnement fjerner det fra systemet. Sletning af dette abonnement medfører:",
+        "points": [
+          "Alle tilknyttede modeller og konfigurationer bliver permanent slettet.",
+          "Eventuelle igangværende API-kald stoppes med det samme.",
+          "Brugere med adgang til dette abonnement vil ikke længere kunne bruge dets modeller eller data."
+        ],
+        "summary": "Bemærk, at denne handling er permanent og ikke kan fortrydes. Er du sikker på, at du vil fortsætte?"
+      },
+      "reactivateInfo": "Reaktivering af dette abonnement gendanner dets aktive status og giver adgang til alle tilknyttede modeller, services og konfigurationer. Når abonnementet er reaktiveret, får alle tilknyttede applikationer igen adgang til dets funktioner. Er du sikker på, at du vil reaktivere dette abonnement?",
+      "setExpiryDate": "Angiv udløbsdato",
+      "expiryDateLabel": "Udløbsdato",
+      "unlimitedText": "Ubegrænset",
+      "unlimitedNotification": "Abonnementets udløbsdato er sat til ubegrænset.",
+      "expirySetTo": "Udløbsdato sat til:",
+      "subscriptionBlocked": "Abonnementet er blevet blokeret.",
+      "subscriptionRejected": "Abonnementet er blevet afvist.",
+      "subscriptionApproved": "Abonnementet er godkendt og er nu aktivt.",
+      "subscriptionApprovedWithoutJustification": "Abonnementet er godkendt og er nu aktivt.",
+      "buttons": {
+        "cancel": "Annuller",
+        "confirm": "Bekræft"
+      }
+    }
+  },
+  "addNewModel": {
+    "title": "Tilføj ny model til kataloget",
+    "subtitle": "Udvid tilgængelige AI-muligheder og forbedr funktionaliteten for brugerne"
+  },
+  "discovery": {
+    "title": "Modelopdagelse",
+    "subtitle": "Gennemse AI-modeller og dine abonnementer.",
+    "tabs": { "models": "Modeller", "subscriptions": "Abonnementer" },
+    "search": {
+      "placeholder": "Søg efter navn, udbyder/afdeling, beskrivelse/applikationsreference eller ID..."
+    },
+    "filters": {
+      "providers": "Udbyder",
+      "capabilities": "Funktioner",
+      "status": "Status",
+      "type": "Type",
+      "environment": "Miljø",
+      "all": "Alle"
+    },
+    "sort": {
+      "label": "Sortér efter",
+      "name": "Navn",
+      "provider": "Udbyder",
+      "status": "Status",
+      "created": "Oprettet",
+      "updated": "Opdateret",
+      "utilization": "Udnyttelse",
+      "activeModels": "Aktive modeller"
+    },
+    "noModelsFiltered": "Ingen modeller matcher dine filtre. Justér din søgning eller ryd filtrene.",
+    "noSubscriptions": "Ingen abonnementer fundet. Opret et for at komme i gang!",
+    "modelNotFoundTitle": "Model ikke fundet",
+    "modelNotFoundMsg": "Vi kunne ikke finde den model, du ledte efter.",
+    "detail": { "priceLabel": "Pris" },
+    "cards": {
+      "activeModels": "Aktive modeller",
+      "tokensUsage": "Tokenforbrug",
+      "tokensGranted": "Tildelte tokens",
+      "tokensUtilization": "Tokenudnyttelse"
+    }
+  },
+  "common": {
+    "cancel": "Annuller",
+    "confirm": "Bekræft",
+    "select": "Vælg...",
+    "validation": {
+      "justification": "Begrundelse er påkrævet og skal være inden for grænsen."
+    },
+    "emptyStatesDescriptions": {
+      "noModels": "Ingen aktive katalogmodeller tilgængelige."
+    },
+    "guardrails": {
+      "azure-prompt-shield": {
+        "title": "Azure Prompt Shield",
+        "description": "Beskytter mod prompt injection og jailbreak-forsøg, før prompten når modellen."
+      },
+      "azure-text-moderation": {
+        "title": "Azure tekstmoderation",
+        "description": "Tjekker input og output for skadeligt eller toksisk indhold."
+      },
+      "litellm-content-filter": {
+        "title": "LiteLLM indholdsfilter",
+        "description": "Maskerer e-mails, kreditkort og API-nøgler i prompts, før de sendes til modellen."
+      },
+      "bedrock-pre-guard": {
+        "title": "Bedrock Pre Guard",
+        "description": "Anvender Bedrock guardrails som f.eks. toksicitetsgrænser og PII-detektion før modelkald."
+      },
+      "safety-alignment": {
+        "title": "Sikkerhedstilpasning",
+        "description": "Sikrer, at modeladfærd er i overensstemmelse med sikkerhedspolitikker og reducerer skadelige eller policy-krænkende outputs."
+      },
+      "embedding-quality-assurance": {
+        "title": "Embedding kvalitetskontrol",
+        "description": "Validerer og overvåger embedding-kvalitet for at sikre pålidelig semantisk søgning og lighedsberegning."
+      }
+    }
+  },
+  "subscription-configuration": {
+    "title": "Konfigurer abonnement",
+    "subtitle": "Abonnements-ID:",
+    "sections": {
+      "models": {
+        "title": "Modeller",
+        "validationMessage": {
+          "noModelSelected": "Vælg mindst én model, før du gemmer"
+        }
+      },
+      "guardrails": {
+        "title": "Guardrails",
+        "chooseModelLabel": "Vælg en model for at konfigurere dens guardrails. Bemærk, at du skal aktivere modeller for abonnementet først for at se dem i denne sektion og gemme ændringer, hvis der er nogen. Inaktive abonnementsmodeller vises ikke.",
+        "validationMessage": {
+          "noModelSelected": "Vælg en model for at konfigurere dens guardrails i sektionen Modeller ovenfor.",
+          "noGuardrailsForModel": "Denne model har endnu ingen konfigurerede guardrails."
+        }
+      },
+      "actions": {
+        "deactivate": {
+          "title": "Deaktiver abonnement",
+          "description": "Deaktiverer midlertidigt en model, hvilket gør den inaktiv, mens alle data og konfigurationer bevares til mulig fremtidig reaktivering.",
+          "button": "Deaktiver"
+        },
+        "reactivate": {
+          "title": "Reaktiver abonnement",
+          "description": "Reaktiverer et tidligere deaktiveret abonnement, hvilket gør det aktivt og tilgængeligt igen.",
+          "button": "Reaktiver"
+        },
+        "delete": {
+          "title": "Slet abonnement",
+          "description": "Fjerner permanent en model og alle dens tilknyttede data, hvilket sikrer, at den ikke kan gendannes eller bruges igen.",
+          "button": "Slet"
+        }
+      }
+    },
+    "consumerNotifications": {
+      "subscriptionFieldLabels": {
+        "type": "type til -",
+        "name": "navn til -",
+        "purpose": "formål til -",
+        "departmnet": "afdeling til -",
+        "environment": "miljø til -",
+        "applicationRef": "applikationsreference til -",
+        "applicationRefText": "applikationsreference (tekst) til -",
+        "added": "tilføjet -",
+        "removed": "fjernet -",
+        "adGroup": "AD-gruppe til"
+      },
+      "notificationsTexts": {
+        "detailsUpdated": "Abonnementsdetaljer opdateret af administrator",
+        "modelsUpdated": "Modeller opdateret af administrator",
+        "modelsUpdatedGeneral": "Abonnementets modelkatalog er blevet opdateret",
+        "subscriptionApproved": "Abonnementet er blevet godkendt og er nu aktivt",
+        "subscriptionBlocked": "Abonnementet er blevet blokeret af administrator: {{justification}}",
+        "subscriptionReactivated": "Abonnementet er blevet reaktiveret af administrator",
+        "subscriptionActivated": "Abonnementet er blevet aktiveret af administrator: {{justification}}",
+        "expiryDateUpdate": "Abonnementets udløbsdato er blevet opdateret af administrator til {{date}}",
+        "consumerSubscriptionNameUpdate": "Du har opdateret abonnementsnavnet til"
+      }
+    },
+    "validationMessages": {
+      "noModelSelected": "Vælg mindst én model, før du gemmer"
+    }
+  }
+}

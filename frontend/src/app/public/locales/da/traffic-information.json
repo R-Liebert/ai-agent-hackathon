@@ -1,0 +1,70 @@
+{
+  "moduleName": "AI Trafikinformation",
+  "menuAppBar": {
+    "title": "AI Trafikinformation"
+  },
+  "welcomeMessage": "Hej",
+  "description": "indtast dine BOS-data",
+  "chatContent": {
+    "chatDialogueBox": {
+      "description": "Indsæt dine BOS-data for at generere trafikinformation til alle platforme"
+    }
+  },
+  "inputLabel": "BOS Data Input",
+  "inputPlaceholder": "Indsæt dine BOS-data her...",
+  "generating": "Genererer indhold...",
+  "promptSettingsActionDialog": {
+    "title": "Systemprompt Indstillinger",
+    "cancelBtn": "Annuller",
+    "confirmBtn": "Opdater Systemprompt",
+    "notifications": {
+      "success": "Systemprompten er blevet opdateret.",
+      "error": "Der opstod en fejl under opdatering af systemprompten. Prøv igen senere."
+    }
+  },
+  "outputInstructions": "Vælg det ønskede output for at se det genererede indhold til den platform. Indholdet vises med det samme efter valg.",
+  "generatingContent": "Genererer indhold...",
+  "noOutputContent": "Intet indhold tilgængeligt",
+  "regenerateNotifications": {
+    "success": "Indholdet blev regenereret med succes.",
+    "error": "Kunne ikke regenerere indhold. Prøv igen senere."
+  },
+  "editTabOutputActionDialog": {
+    "title": "Rediger",
+    "cancelBtn": "Annuller",
+    "confirmBtn": "Gem Ændringer",
+    "regenerateBtn": "Generer ny version",
+    "regeneratingContent": "Genererer indhold...",
+    "saveSuccess": "Indhold gemt for {{tab}} ({{language}})",
+    "notifications": {
+      "success": "Outputtet er blevet opdateret med succes.",
+      "error": "Der opstod en fejl under opdatering af outputtet. Prøv igen senere."
+    }
+  },
+  "inputForm": {
+    "settingsBtn": "Indstillinger",
+    "editMessageTooltip": "Rediger besked"
+  },
+  "languages": {
+    "Danish": "Dansk",
+    "English": "Engelsk"
+  },
+  "errors": {
+    "authentication": "Godkendelse påkrævet. Log venligst ind igen.",
+    "tooManyRequests": "For mange anmodninger. Vent et øjeblik og prøv igen.",
+    "serverError": "Serverfejl. Prøv igen senere.",
+    "connectionLost": "Forbindelse tabt. Tjek din internetforbindelse og prøv igen.",
+    "processingError": "Fejl ved behandling af serverrespons. Prøv igen.",
+    "loadSystemPrompts": "Kunne ikke indlæse systemprompter. Opdater siden.",
+    "updateSystemPrompt": "Kunne ikke opdatere systemprompt{{platform}}. Prøv igen.",
+    "generic": "Der opstod en fejl i {{context}}. Prøv igen.",
+    "regenerateTabContentParse": "Kunne ikke behandle regenereret indhold. Prøv igen.",
+    "regenerateTabContentStream": "Forbindelsesfejl under regenerering af indhold. Prøv igen.",
+    "regenerateTabContentRequest": "Kunne ikke starte regenerering af indhold. Prøv igen.",
+    "loading system prompts": "Kunne ikke indlæse systemprompter. Opdater siden.",
+    "updating system prompt": "Kunne ikke opdatere systemprompt. Prøv igen.",
+    "generating content": "Kunne ikke generere indhold. Prøv igen.",
+    "regenerating content": "Kunne ikke regenerere indhold. Prøv igen."
+  },
+  "returnToEditor": "Tilbage"
+}

@@ -1,0 +1,430 @@
+{
+  "pdfViewer": {
+    "document": {
+      "loading": "Loading PDF...",
+      "error": "Error loading PDF"
+    },
+    "page": {
+      "loading": "Loading page..."
+    },
+    "buttons": {
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "pagination": {
+      "page": "Page",
+      "of": "of"
+    }
+  },
+  "modelSelector": {
+    "notAvailableWithAttachments": "Not available with file attachments",
+    "notAvailableWithUnsentDocuments": "Not available with unsent document attachments",
+    "notAvailableConversationDocuments": "Not available: conversation has documents",
+    "notAvailableConversationImages": "Not available: conversation has images"
+  },
+  "confirmGenerateModal": {
+    "title": "Are you sure you want to generate again?",
+    "description": "Your job post will be replaced with a new version.",
+    "buttons": {
+      "cancel": "Cancel",
+      "confirm": "Confirm"
+    }
+  },
+  "deleteHistoryButton": {
+    "tooltip": {
+      "title": "Delete conversation"
+    },
+    "dialog": {
+      "title": "Delete conversation?",
+      "description": "Are you sure that you want to delete this conversation?"
+    },
+    "buttons": {
+      "cancel": "Cancel",
+      "delete": "Delete"
+    }
+  },
+  "editResponseJobPoster": {
+    "titlePrefix": "Edit",
+    "buttons": {
+      "regenerate": "Regenerate",
+      "cancel": "Cancel",
+      "save": "Save"
+    }
+  },
+  "feedbackComponent": {
+    "feedbackDialog": {
+      "title": "Send feedback",
+      "sentMessage": "Please fill out the form below to send your feedback",
+      "errorMessage": "An error occurred trying to send feedback. Please try again a bit later.",
+      "thankYouMessage": "Thank you! Your feedback has been successfully sent."
+    },
+    "feedbackCard": {
+      "title": "Is this conversation helpful so far?",
+      "close": "Close"
+    },
+    "exportDialog": {
+      "title": "Export feedback",
+      "selectDate": {
+        "label": "Select Date for Export"
+      },
+      "loadingMessage": "Loading - This can take up to few minutes"
+    },
+    "form": {
+      "provideFeedbackType": "Please select a valid feedback type.",
+      "provideFeedbackMessage": "Please provide a feedback message.",
+      "feedbackMessageTooLong": "Please ensure the feedback message is under 1500 characters."
+    },
+    "buttons": {
+      "close": "Close window",
+      "cancel": "Cancel",
+      "send": "Send feedback",
+      "download": "Download"
+    }
+  },
+  "feedbackForm": {
+    "feedbackList": {
+      "option1": "Feature requests",
+      "option2": "Bugs/Incidents"
+    },
+    "feedbackMessage": {
+      "label": "Feedback message"
+    }
+  },
+  "inputChangeField": {
+    "errorMessage": "Please, fill in this field"
+  },
+  "messageRating": {
+    "dialog": {
+      "title": "Feedback on Chat Message",
+      "dialogMessage": "Please provide your comments about this message."
+    },
+    "userMessage": {
+      "label": "Your Comments"
+    },
+    "assistantEdit": {
+      "label": "Edit assistant response",
+      "helper": "Edits the saved answer without regeneration.",
+      "disabled": "Editing is available only for saved chats.",
+      "fieldLabel": "Edited assistant response",
+      "required": "Edited response cannot be empty."
+    },
+    "consent": {
+      "question": "May we use the content of your message to improve our AI?",
+      "yes": "Yes, I consent",
+      "no": "No, I do not consent",
+      "required": "Please select an option to continue"
+    },
+    "buttons": {
+      "cancel": "Cancel",
+      "send": "Send Feedback"
+    }
+  },
+  "codeCopyBtn": {
+    "icon": {
+      "label": "Copy code"
+    },
+    "message": "Copied!",
+    "copy": "Copy",
+    "copyMarkdown": "Copy Markdown"
+  },
+  "chatDialogueBox": {
+    "helloText": "Hello {{displayName}}, ",
+    "staticText": "how can I help you today?",
+    "createdBy": "Created by:"
+  },
+  "chatHistoryComponent": {
+    "title": "Your chats",
+    "titleAriaLabel": "Toggle chat history",
+    "noChats": "You don't have any chats yet",
+    "loading": "Loading...",
+    "loadMore": "Load more",
+    "settings": "Settings",
+    "selection": {
+      "today": "Today",
+      "last7": "Previous 7 days",
+      "last30": "Older than 30 days"
+    },
+    "noTitle": "No title available",
+    "newChat": "New chat",
+    "popupPersonaConfig": {
+      "title": "Customize DSB Chat",
+      "tooltip": {
+        "title": "Describe your personality. Your likes/dislikes, expert/novice!"
+      },
+      "systemMessage": "What role should the AI have?",
+      "placeholderText": "Instruct DSB Chat on its role, for example: 'You are an advisor helping me with travel decisions. Be friendly, practical, and use clear language. Offer step-by-step guidance to make my travel easy…",
+      "preferedTone": {
+        "label": "Select tone of voice",
+        "casual": "Casual",
+        "default": "Default",
+        "confident": "Confident",
+        "enthusiastic": "Enthusiastic"
+      },
+      "responseLength": {
+        "label": "Set response lenght",
+        "default": "Default",
+        "concise": "Short",
+        "long": "Long"
+      },
+      "buttons": {
+        "reset": "Reset",
+        "cancel": "Cancel",
+        "save": "Save",
+        "customize": "Customize DSB Chat"
+      },
+      "feedbackMessages": {
+        "isError": "Something went wrong. Please try again later.",
+        "isSent": "Congratulations! You have successfully updated settings for GPT messages"
+      }
+    }
+  },
+  "chatInput": {
+    "placeholder": "Ask anything",
+    "buttons": {
+      "cancel": "Cancel",
+      "send": "Send"
+    },
+    "generateImage": "Generate Image",
+    "fileLimitReached": "File limit reached (20)",
+    "addFiles": "Add files",
+    "uploadFromDevice": "Upload from your device",
+    "uploadImages": "Upload Images",
+    "imagesOnly": "Images only",
+    "addFromSharepoint": "Add from SharePoint",
+    "characterLimitExceeded": "The amount of characters is too large, exceeding 50K. Please upload a file instead.",
+    "loadingFollowUps": "Loading suggestions...",
+    "voiceRecording": {
+      "tooltip": "Dictate",
+      "startRecording": "Dictate",
+      "saveRecording": "Save recording",
+      "stopRecording": "Stop recording",
+      "cancelRecording": "Cancel recording",
+      "recordingDisabled": "Voice recording disabled",
+      "recording": "Recording...",
+      "processing": "Processing audio...",
+      "requestingPermission": "Requesting microphone access...",
+      "recordingStarted": "Voice recording started",
+      "recordingStopped": "Voice recording stopped",
+      "transcriptionSuccess": "Voice message transcribed successfully",
+      "transcriptionError": "Failed to transcribe voice message",
+      "recordingCancelled": "Recording cancelled",
+      "recordingCancelledNotification": "Voice recording has been successfully cancelled.",
+      "recordingError": "Recording error occurred",
+      "startError": "Failed to start recording",
+      "permissionDenied": "Microphone access denied. Please enable microphone permissions.",
+      "noMicrophone": "No microphone found. Please connect a microphone.",
+      "microphoneInUse": "Microphone is being used by another application.",
+      "microphoneError": "Failed to access microphone",
+      "unsupportedBrowser": "Voice recording not supported in this browser",
+      "noSpeechDetected": "No speech detected in the recording",
+      "maxDurationReached": "Maximum recording duration of {{duration}} seconds reached"
+    },
+    "chooseAgent": "Choose Agent",
+    "removeAgent": "Remove selected Agent",
+    "plusIconTooltip": "Add files and more",
+    "removeFile": "Remove"
+  },
+  "chatMessageComponent": {
+    "author": "You",
+    "assistant": "DSB Chat",
+    "messages": {
+      "error": "Something went wrong. If this issue persists, please use the 'Feedback' button to report the problem.",
+      "analysing": "Analysing"
+    }
+  },
+  "imagePreview": {
+    "labels": {
+      "generating": "Generating image...",
+      "loading": "Loading image...",
+      "updatingPreview": "Updating preview..."
+    },
+    "download": {
+      "tooltip": "Download image",
+      "missingUrl": "Cannot download image: URL is missing.",
+      "failed": "Image download failed. Please try right-clicking the image and selecting 'Save Image As'."
+    }
+  },
+  "chatMessageImageGeneration": {
+    "generatedAlt": "Generated image",
+    "failedTitle": "Image generation failed",
+    "failedDescription": "Image generation failed. Please try again."
+  },
+  "chatMessageEdit": {
+    "editWarning": "Editing this message will delete all messages that follow it in the conversation."
+  },
+  "chatNewBtn": {
+    "label": "New chat"
+  },
+  "chatComponent": {
+    "messages": {
+      "forbidden": "You are not a member of this workspace.",
+      "deleteMessageSuccess": "Message deleted successfully",
+      "deleteMessageError": "Error deleting message",
+      "checkingAccess": "Checking access...",
+      "agentUnavailable": "{{agentName}} is currently unavailable for your account.",
+      "selectedAgentFallback": "Selected agent"
+    },
+    "processing": "This Workspace is still processing files, results may not be accurate.",
+    "failedFiles": "Workspace failed to process some of the files, please try to re-upload."
+  },
+  "tooltips": {
+    "homeIcon": "Return home",
+    "sidebarIcon": "Open sidebar",
+    "sidebarIconClose": "Close sidebar",
+    "newChatIcon": "New chat",
+    "profileIcon": "Settings and Options",
+    "sendIconInActive": "Provide prompt",
+    "sendIconActive": "Send",
+    "regenerate": "Regenerate",
+    "viewFile": "Inspect",
+    "exportChat": "Export chat",
+    "deleteAllFiles": "Delete all files",
+    "edit": "Edit"
+  },
+  "topBar": {
+    "incompatibleModelError": "Cannot change to this model while files are attached. Please remove files first or choose a model that supports file attachments."
+  },
+  "profileTabLinks": {
+    "profileTitle": "Profile",
+    "workspacesLink": "My Workspaces",
+    "customizeChatLink": "Customize DSB Chat",
+    "settingsLink": "Settings",
+    "feedbackLink": "Send Feedback",
+    "guidelinesLink": "Guidelines",
+    "releaseNotesLink": "Release Notes",
+    "eventsLink": "Upcoming Events",
+    "adminDashboardLink": "Admin Dashboard"
+  },
+  "featureHighlights": {
+    "newModels": {
+      "title": "New AI Models Available!",
+      "description": "Introducing GPT-5.1 - OpenAI's newest model with advanced reasoning capabilities for complex tasks.",
+      "buttonText": "Got it"
+    }
+  },
+  "settingsModal": {
+    "title": "Settings",
+    "themeSetting": {
+      "label": "Theme",
+      "dark": "Dark"
+    },
+    "languageSetting": {
+      "label": "Language",
+      "english": {
+        "label": "English",
+        "code": "en"
+      },
+      "danish": {
+        "label": "Danish",
+        "code": "da"
+      }
+    },
+    "exportSetting": {
+      "label": "Export",
+      "btn": "Export Report"
+    },
+    "advancedSection": {
+      "title": "Advanced",
+      "refreshPermissions": {
+        "label": "Refresh Permissions",
+        "description": "Update your access permissions",
+        "button": "Refresh",
+        "refreshing": "Refreshing...",
+        "success": "Permissions refreshed successfully",
+        "error": "Failed to refresh permissions"
+      }
+    }
+  },
+  "sidebarOptions": {
+    "delete": "Delete chat",
+    "export": "Export chat",
+    "download": "Download"
+  },
+  "deleteChatModal": {
+    "title": "Delete chat - are you sure?",
+    "paragraph": "Once you delete a chat, there is no going back.",
+    "cancelBtn": "Cancel",
+    "deleteBtn": "Delete",
+    "notifications": {
+      "success": "The chat has been successfully deleted.",
+      "error": "There was an error while deleting the chat. Please try again later.",
+      "errorNoId": "The chat you attempted to delete could not be found. It may have already been deleted."
+    }
+  },
+  "leavePageModal": {
+    "title": "Leave page - are you sure?",
+    "paragraph": "Once you leave this page, your content will be lost.",
+    "cancelBtn": "Cancel",
+    "confirmBtn": "Leave Page"
+  },
+  "resetPageModal": {
+    "title": "Reset content - are you sure?",
+    "paragraph": "Once you reset, your content will be lost.",
+    "cancelBtn": "Cancel",
+    "confirmBtn": "Reset Content"
+  },
+  "mainNavigation": {
+    "menu": {
+      "label": "Menu Page",
+      "tooltipText": "Menu page"
+    },
+    "search": {
+      "label": "Search Chats",
+      "tooltipText": "Search All Chats"
+    },
+    "newChat": {
+      "label": "New DSB Chat",
+      "tooltipText": "Start a new chat"
+    },
+    "newJobPost": {
+      "label": "New Job Post",
+      "tooltipText": "Create a new job post"
+    },
+    "newWorkspace": {
+      "label": "Create Workspace",
+      "tooltipText": "Create a new workspace"
+    },
+    "workspacesList": {
+      "label": "Workspaces",
+      "tooltipText": "Workspace List"
+    },
+    "codechat": {
+      "label": "Code Chat",
+      "tooltipText": "Generate code documenation"
+    },
+    "aiTrafficInformation": {
+      "label": "AI Traffic Information",
+      "tooltipText": "Generate traffic documentation"
+    },
+    "sidebar": {
+      "open": "Open sidebar",
+      "close": "Close sidebar"
+    },
+    "createSubscription": {
+      "label": "Create New Subscription",
+      "tooltipText": "Create new subscription"
+    },
+    "modelsDiscovery": {
+      "label": "Models Discovery",
+      "tooltipText": "Explore AI models"
+    },
+    "adminDashboard": {
+      "label": "Admin Dashboard",
+      "tooltipText": "Admin Dashboard"
+    }
+  },
+  "sessionExpiredDialog": {
+    "title": "Session expired",
+    "message": "Your sign-in session has expired. Please sign in again to continue.",
+    "buttons": {
+      "cancel": "Cancel",
+      "signIn": "Sign in"
+    }
+  },
+  "handlePasteNotifications": {
+    "errorOCREvaluation": "Failed to process the image during OCR evaluation.",
+    "errorImageLoad": "Failed to load an image",
+    "errorPasteHandling": "Failed to paste content",
+    "placeholderText": "Processing pasted content"
+  }
+}

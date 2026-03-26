@@ -1,0 +1,21 @@
+@startuml
+start
+title Update workspace sidebar visibility flow
+
+:Authorize request;
+
+if (jwt token is valid) then  (yes)
+
+:Retrieve active user details;
+:Retrieve user workspace details;
+:Modify the isHidden flag in the user workspace 
+based on the IsHidden value provided in the request.;
+
+#LightGreen: Ok(recentWorkspaces);
+else  (no)
+#Red: Unathorized;
+endif
+
+stop
+
+@enduml

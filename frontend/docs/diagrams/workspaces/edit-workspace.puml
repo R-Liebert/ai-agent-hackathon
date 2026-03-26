@@ -1,0 +1,58 @@
+@startuml
+start
+title Edit workspace flow
+
+:Authorize request;
+
+if (jwt token is valid) then  (yes)
+
+    :Resolve workspace by id entry from the Workspaces container;
+
+    if(workspace was found in the database) then (yes)
+
+        if(active user is workspace owner) then (yes)
+
+            if(owner is part of the membersToRemove collection) then (yes)
+                #Red: BadRequest ("Owner cannot be removed from the workspace.");
+            else (no)
+
+                :Update the workspace entry, set the new name and icon and persona configuration if they are different from the original value;
+
+                :Create an entry in the UserWorkspaces container for each member in the membersToAdd collection;
+                :Remove all entries from the UserWorkspaces container for each member in the membersToRemove collection;
+
+                :Create folder for the workspace in the azure blob storage account, if is not already created;
+
+                :Upload all files from the filesToAdd collection into the workspace folder;
+
+                :Remove all files from the filesToRemove collection;
+
+                :Trigger indexing process:
+                - Create an index in the azure search index service for the active user
+                - Re-Index all files for the workspace, remove old files & add the new files;
+
+                :Trigger email notification process
+                - notify all new members;
+                - notify all removed members;
+
+                #palegreen: Return Ok(workspace);
+
+                end if
+
+            else (no)
+                #Red: Forbiden;
+                end if
+
+            else (no)
+                #Red: Not Found;
+                end if
+
+
+            else  (no)
+                #Red: Unathorized;
+                end if
+
+
+                stop
+
+                @enduml

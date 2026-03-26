@@ -1,0 +1,28 @@
+{
+  "menuAppBar": {
+    "title": "Allan - AI Teacher"
+  },
+  "chatDialogueBox": {
+    "title": "Allan",
+    "description": "I'm here to help you learn responsible AI usage and develop strong AI literacy skills.",
+    "welcomeMessage": "Hello! I'm Allan, your AI teacher."
+  },
+  "predefinedPrompts": [
+    {
+      "icon": "brain",
+      "description": "What are the key principles of responsible AI use?"
+    },
+    {
+      "icon": "shield",
+      "description": "How can I protect sensitive data when using AI?"
+    },
+    {
+      "icon": "book",
+      "description": "What should I know about AI ethics?"
+    },
+    {
+      "icon": "users",
+      "description": "How do I explain AI concepts to my team?"
+    }
+  ]
+}

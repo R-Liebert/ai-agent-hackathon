@@ -1,0 +1,711 @@
+{
+  "createSubscription": {
+    "title": "Create new subscription",
+    "subtitle": "Set up a new subscription to access AI models for your applications.",
+    "subscriptionInformation": "Subscriptions are tied to applications or use cases, not individual users. Each subscription provides a single API key for accessing multiple models with enforced rate limits and token quotas.",
+    "subscriptionTypeCards": {
+      "label": "Choose Subscription Type",
+      "SANDBOX": {
+        "title": "Sandbox",
+        "features": [
+          "Immediate activation",
+          "Perfect for testing",
+          "Expires in 6 months"
+        ]
+      },
+      "NORMAL": {
+        "title": "Application",
+        "features": ["Requires approval", "High quota rates", "No expiry date"]
+      }
+    },
+    "fields": {
+      "subscriptionName": {
+        "label": "Subscription Name",
+        "placeholder": "Name your subscription",
+        "validation": {
+          "minLength": 3,
+          "maxLength": 50,
+          "messages": {
+            "required": "Subscription name is required.",
+            "minLength": "Subscription name must be at least {{minLength}} characters.",
+            "maxLength": "Subscription name must be at most {{maxLength}} characters."
+          }
+        }
+      },
+      "applicationRef": {
+        "label": "Application Reference",
+        "placeholder": "Choose your application application",
+        "validation": {
+          "required": "Application reference is required.",
+          "messages": {
+            "required": "Application reference is required."
+          }
+        }
+      },
+      "applicationRefFreeText": {
+        "label": "Application Reference",
+        "placeholder": "Describe your application reference",
+        "validation": {
+          "minLength": 3,
+          "maxLength": 100,
+          "messages": {
+            "required": "Application reference is required.",
+            "minLength": "Application reference must be at least {{minLength}} characters.",
+            "maxLength": "Application reference must be at most {{maxLength}} characters."
+          }
+        }
+      },
+      "subscriptionPurpose": {
+        "label": "Subscription Purpose",
+        "placeholder": "Explain what do you need this subscription for",
+        "validation": {
+          "maxLength": 200,
+          "messages": {
+            "maxLength": "Subscription purpose must be at most {{maxLength}} characters.",
+            "required": "Subscription purpose is required."
+          }
+        }
+      },
+      "environment": {
+        "label": "Environment",
+        "placeholder": "Choose your environment",
+        "options": {
+          "PROD": "Production",
+          "NON_PROD": "Non-Production"
+        },
+        "validation": {
+          "required": "Environment is required.",
+          "messages": {
+            "required": "Environment is required."
+          }
+        }
+      },
+      "department": {
+        "label": "Department",
+        "placeholder": "Choose your department reference",
+        "options": {
+          "IT": "IT",
+          "GENAI": "GenAI",
+          "FINANCE": "Finance",
+          "OPERATIONS": "Operations",
+          "DATA": "Data & Analytics",
+          "SECURITY": "Security"
+        },
+        "validation": {
+          "required": "Department is required.",
+          "messages": {
+            "required": "Department is required."
+          }
+        }
+      },
+      "adGroup": {
+        "label": "AD-Group for management",
+        "placeholder": "Choose correct group for subscription management",
+        "validation": {
+          "required": "AD group is required.",
+          "messages": {
+            "required": "AD group is required."
+          }
+        }
+      },
+      "expiryDate": {
+        "label": "Expiry Date"
+      }
+    },
+    "cta": {
+      "createSubscription": "Create Subscription",
+      "submitting": "Submitting"
+    },
+    "notifications": {
+      "successMessage": "Subscription created successfully!",
+      "errorMessage": "There was an error creating the subscription. Please try once again"
+    }
+  },
+  "modelDetails": {
+    "title": "Model Details",
+    "metrix": {
+      "contextWindow": "Context Window",
+      "inputPricePerThousand": "Input Price (DKK)",
+      "outputPricePerThousand": "Output Price (DKK)",
+      "activeSubscriptionsForModel": "Active Subscriptions"
+    },
+    "statusLabel": {
+      "active": "Active",
+      "disabled": "Disabled"
+    },
+    "notFound": {
+      "title": "Model Not Found",
+      "message": "The model you're looking for could not be found."
+    },
+    "actions": {
+      "menu": "Actions",
+      "createSubscription": "Create Subscription",
+      "requestAccess": "Request Access",
+      "modelsDiscovery": "Models Discovery"
+    },
+    "metrics": {
+      "contextWindow": "Context Window",
+      "contextWindowDesc": "Maximum tokens the model can process",
+      "pricingInput": "Input Price",
+      "pricingInputDesc": "Cost per 1k input tokens",
+      "pricingOutput": "Output Price",
+      "pricingOutputDesc": "Cost per 1k output tokens",
+      "activeSubscriptions": "Active Subscriptions",
+      "activeSubscriptionsDesc": "Number of subscriptions using this model"
+    },
+    "tabs": {
+      "overview": "Overview",
+      "subscriptions": "Subscriptions",
+      "guardrails": "Guardrails"
+    },
+    "sections": {
+      "modelOverview": "Model Overview",
+      "endpointUrl": "Endpoint URL",
+      "endpointUrlDesc": "API endpoint for this model",
+      "capabilities": "Details & Capabilities",
+      "activeSubscriptions": "Active Subscriptions",
+      "guardrails": "Available Model Guardrails"
+    },
+    "fields": {
+      "contextWindow": "Context Window",
+      "pricingInput": "Input Pricing",
+      "pricingOutput": "Output Pricing",
+      "maxTokens": "Max Tokens"
+    },
+    "noActiveSubscriptions": "You do not have any active subscriptions. Create new subscription for your application",
+    "noModelActiveSubscriptions": "No active subscriptions are currently using this model. Request model access to one of your existing subscriptions",
+    "noGuardrails": "No guardrails are configured for this model.",
+    "notifications": {
+      "noActiveSubscription": "You need an active subscription to request access to models.",
+      "requestAccessSuccess": "Model access request submitted successfully.",
+      "requestAccessError": "Failed to submit model access request."
+    }
+  },
+  "subscriptionCard": {
+    "created": "Created Date",
+    "department": "Department",
+    "tokenUsage": "Token Usage",
+    "modelsEnabled": "Models",
+    "purpose": "Subscription Purpose",
+    "userLabel": "User Details",
+    "applicationRef": "Application Reference",
+    "environment": "Environment",
+    "rejectionReason": "Rejection reason",
+    "noRejectionReason": "No reason provided.",
+    "id": "Subscription Id",
+    "expiryDate": "Expiry Date",
+    "labelsForAdminActions": {
+      "approve": "Reason for Approval",
+      "reject": "Reason for Rejection",
+      "deactivate": "Reason for Deactivation",
+      "activate": "Reason to Activate",
+      "delete": "Reason to Delete",
+      "expiryDateUpdate": "Reason to Update Expiry Date",
+      "reactivate": "Reason to reactivate"
+    }
+  },
+  "subscriptionDetails": {
+    "title": "Subscription Details",
+    "subtitle": "",
+    "actionsBtn": "Actions",
+    "dismissNotification": "Dismiss Notification",
+    "pendingApproval": {
+      "banner": {
+        "title": "Subscription Request Submitted",
+        "message": "Your subscription request for \"{{subscriptionName}}\" is pending approval. Once approved API keys for access will be available here."
+      }
+    },
+    "noModels": "No models are currently associated with this subscription.",
+    "noUserRequests": "No user requests were submitted for this subscription.",
+    "requestCard": {
+      "labels": {
+        "quotaIncrease": "Quota Increase",
+        "modelAccess": "Model Access",
+        "createdAt": "Created",
+        "newTokenLimit": "tokens",
+        "newRateLimit": "rates",
+        "newRequestLimit": "requests",
+        "requestType": {
+          "models": "Requested Models Access",
+          "quota": "Requested Quota Increase"
+        }
+      },
+      "status": {
+        "pending": "Pending",
+        "approved": "Approved",
+        "declined": "Declined",
+        "blocked": "Blocked"
+      }
+    },
+    "apiRequestsTable": {
+      "simulate": "Simulate API Request",
+      "empty": "No API requests yet for this subscription.",
+      "headers": {
+        "timestamp": "Timestamp",
+        "model": "Model",
+        "tokens": "Tokens",
+        "latencyMs": "Latency (ms)",
+        "status": "Status"
+      },
+      "status": {
+        "success": "Success",
+        "error": "Error"
+      }
+    },
+    "subscriptionStatusLabel": {
+      "active": "Active",
+      "pendingApproval": "Pending Approval",
+      "failed": "Failed",
+      "cancelled": "Cancelled",
+      "deactivated": "Deactivated",
+      "blocked": "Blocked"
+    },
+    "sectionTitles": {
+      "modelUsageDistribution": "Model Usage Distribution",
+      "tokensUsage": "Tokens Usage",
+      "activeGuardrails": "Active Guardrails",
+      "endpointUrl": "Endpoint URL",
+      "capabilities": "Capabilities"
+    },
+    "apiAccess": {
+      "label": "API Key",
+      "noAPIKeyText": "No API key metadata available.",
+      "actions": {
+        "generate": "Generate API Key",
+        "generating": "Generating..",
+        "regenerate": "Regenerate API Key",
+        "regenerating": "Regenerating",
+        "view": "View API Key",
+        "copyAPIKey": "Copy API Key",
+        "copy": "Copy",
+        "loadingKey": "Loading",
+        "hideKey": "Hide API Key",
+        "viewFull": "View Full API Key",
+        "viewFullToCopy": "View full to copy"
+      },
+      "notifications": {
+        "missingSubscriptionId": "Subscription ID is missing. Cannot perform the operation.",
+        "copyAPIKey": {
+          "success": "API key copied successfully!",
+          "error": "Failed to copy the API key."
+        },
+        "copyEndpointUrl": {
+          "success": "Endpoint URL copied successfully!",
+          "error": "Failed to copy the endpoint URL."
+        },
+        "generate": {
+          "success": "API key generated successfully!",
+          "error": "Failed to generate API key."
+        },
+        "regenerate": {
+          "success": "API key regenerated successfully!",
+          "error": "Failed to regenerate API key."
+        }
+      }
+    },
+    "renameSubscriptionDialog": {
+      "title": "Rename Subscription",
+      "label": "New subscription name",
+      "placeholder": "Enter the new subscription name",
+      "buttons": {
+        "cancel": "Cancel",
+        "save": "Save"
+      },
+      "validation": {
+        "minLength": "Name must be at least {{minLength}} characters.",
+        "maxLength": "Name must be at most {{maxLength}} characters."
+      },
+      "notifications": {
+        "success": "Subscription name updated successfully.",
+        "error": "Failed to update the subscription name."
+      },
+      "ariaLabel": "Rename subscription"
+    },
+    "requestAccessToModelsDialog": {
+      "title": "Request Access to New Models",
+      "chooseModelsTitle": "Choose models you would like to have access to - maximum 4 ",
+      "justifyAccessNeed": {
+        "label": "Why would you like to get access for these models?",
+        "placeholder": "Explain why you need access to these models",
+        "validation": {
+          "maxLength": 200,
+          "messages": {
+            "maxLength": "Justification must be at most {{maxLength}} characters.",
+            "required": "Justification is required."
+          }
+        }
+      },
+      "validation": {
+        "modelsRequired": "Select at least one model."
+      },
+      "limitHint": "You can select up to",
+      "remaining": "Remaining",
+      "buttons": {
+        "cancel": "Cancel",
+        "requestAccess": "Request Access"
+      },
+      "notifications": {
+        "successMessage": "Model access request submitted successfully!",
+        "errorMessage": "There was an error submitting the model access request. Please try once again."
+      }
+    },
+    "requestQuotaIncreaseDialog": {
+      "title": "Request Quota Increase",
+      "justifyQuotaIncrease": {
+        "label": "Why would you like to increase quota for subscription?",
+        "placeholder": "Explain how this increase will impact your project",
+        "validation": {
+          "maxLength": 200,
+          "messages": {
+            "maxLength": "Explanation must be at most {{maxLength}} characters.",
+            "required": "Explanation is required."
+          }
+        }
+      },
+      "buttons": {
+        "cancel": "Cancel",
+        "requestAccess": "Request Approval",
+        "tooltips": {
+          "increase": "Increase",
+          "decrease": "Decrease"
+        },
+        "newTokenLimit": "New Token Limit",
+        "newRateLimit": "New Rate Limit",
+        "newRequestLimit": "New Request Limit",
+        "tokens": "tokens",
+        "tokensPerRequest": "tokens/request"
+      },
+      "notifications": {
+        "successMessage": "Quota increase request submitted successfully!",
+        "errorMessage": "There was an error submitting the quota increase request. Please try once again."
+      }
+    },
+    "deactivateSubscriptionDialog": {
+      "title": "Deactivate Subscription",
+      "description": "You are about to deactivate the subscription {{subscriptionName}}. Deactivating this subscription will:",
+      "bulletPoints": [
+        "Pause all active processes that use this subscription.",
+        "Temporarily suspend all associated models.",
+        "Mark the subscription as inactive in the system.",
+        "Retain all data, configurations, and settings for future reactivation.",
+        "Allow you to reactivate the subscription at any time."
+      ],
+      "confirmationMessage": "Are you sure you would like to proceed?",
+      "buttons": {
+        "cancel": "Cancel",
+        "confirm": "Confirm"
+      },
+      "notifications": {
+        "successMessage": "Your subscription has been deactivated successfully.",
+        "errorMessage": "There was an error when deactivating the subscription. Please try once again."
+      }
+    },
+    "activateSubscriptionDialog": {
+      "title": "Activate Subscription",
+      "description": "You are about to activate the subscription {{subscriptionName}}. Activating this subscription will:",
+      "bulletPoints": [
+        "Resume all processes using this subscription.",
+        "Restore access to all associated models.",
+        "Mark the subscription as active in the system."
+      ],
+      "confirmationMessage": "Are you sure you want to proceed?",
+      "buttons": {
+        "cancel": "Cancel",
+        "confirm": "Confirm"
+      },
+      "notifications": {
+        "successMessage": "Your subscription has been successfully activated.",
+        "errorMessage": "An error occurred while activating the subscription. Please try again."
+      }
+    },
+    "extendSubscriptionDialog": {
+      "title": "Extend Subscription",
+      "description": "You are about to submit a request to extend the expiry date for subscription. When would you like this subscription to expire?:",
+      "justificationLabel": "Justify why you need to extend the subscription",
+      "justificationPlaceholder": "Explain here how this extension will impact your project",
+      "confirmationMessage": "Are you sure you want to proceed?",
+      "buttons": { "cancel": "Cancel", "confirm": "Confirm" },
+      "notifications": {
+        "successMessage": "Extend subscription request has been successfully submitted",
+        "errorMessage": "Something went wrong. Please try again."
+      }
+    },
+    "overviewDetails": {
+      "applicationReference": "Application Reference",
+      "subscriptionId": "Subscription ID",
+      "department": "Department",
+      "environment": "Environment",
+      "adGroup": "AD Group",
+      "dateCreated": "Date Created",
+      "expiryDate": "Expiry Date",
+      "apiKey": "API Key",
+      "endpointUrl": "Endpoint URL",
+      "subscriptionPurpose": "Subscription Purpose"
+    },
+    "subscriptionActionButtons": {
+      "create": "New Subscription",
+      "deactivate": "Deactivate",
+      "activate": "Activate",
+      "increaseQuota": "Increase Quota",
+      "requestNewModels": "Request New Models",
+      "configure": "Configure Subscription",
+      "discovery": "Model Discovery",
+      "extendSubscription": "Extend Subscription"
+    },
+    "tabs": {
+      "overview": "Overview",
+      "Models": "Models",
+      "apiRequests": "API Requests"
+    },
+    "metrix": {
+      "totalTokens": "Total Tokens",
+      "totalRequests": "Total Requests",
+      "successfulRequests": "Successful Requests",
+      "failedRequests": "Failed Requests",
+      "totalCost": "Total Estimate Cost",
+      "averageTokensPerRequest": "Average Tokens / Request"
+    }
+  },
+  "adminDashboard": {
+    "title": "Admin Dashboard",
+    "search": {
+      "pending": "Search pending subscriptions...",
+      "approved": "Search approved subscriptions...",
+      "sandbox": "Search sandbox subscriptions...",
+      "rejected": "Search rejected subscriptions...",
+      "deactivated": "Search deactivated subscriptions..."
+    },
+    "metrix": {
+      "totalTokens": "Total tokens",
+      "totalRequests": "Total requests",
+      "totalCost": "Estimated cost",
+      "averageTokensPerRequest": "Avg. tokens per request",
+      "successfulRequests": "Successful requests",
+      "failedRequests": "Failed requests"
+    },
+    "tabs": {
+      "pendingApproval": "Pending approval",
+      "approved": "Approved - Normal",
+      "sandbox": "Approved - Sandbox",
+      "rejected": "Rejected",
+      "deactivated": "Deactivated",
+      "modelManagement": "Model management",
+      "guardrailsManagement": "Guardrails management",
+      "requests": "Requests"
+    },
+    "emptyStates": {
+      "pending": "No pending subscriptions.",
+      "approved": "No approved subscriptions.",
+      "sandbox": "No active sandbox subscriptions.",
+      "rejected": "No rejected subscriptions.",
+      "deactivated": "No deactivated subscriptions.",
+      "modelsNone": "No models for this subscription.",
+      "guardrailsNone": "No guardrails found for the selected scope.",
+      "requestsNone": "No requests available.",
+      "selectSubscription": "Select Subscription",
+      "selectSubscriptionDesc": "Select subscription to view its models.",
+      "selectScope": "Select Subscription or Model",
+      "selectScopeDesc": "Select a subscription or a model to configure guardrails for the relevant scope."
+    },
+    "actions": {
+      "approve": "Approve",
+      "reject": "Reject",
+      "confirmApproval": "Confirm approval",
+      "confirmRejection": "Confirm rejection",
+      "configure": "Configure",
+      "deactivate": "Deactivate",
+      "delete": "Delete",
+      "approveAgain": "Approve again",
+      "createCustomGuardrail": "Create Custom Guardrail",
+      "addNewModels": "Add New Models",
+      "enable": "Enable",
+      "disable": "Disable",
+      "requestModelsAccess": "Request models access",
+      "expiryDateUpdate": "Extend Subscription"
+    },
+    "adminActionModal": {
+      "titles": {
+        "approve": "Approve Subscription",
+        "approveAgain": "Approve Subscription Again",
+        "reject": "Reject Subscription",
+        "deactivate": "Deactivate Subscription",
+        "delete": "Delete Subscription",
+        "configure": "Configure Subscription",
+        "expiryDateUpdate": "Update Expiry Date",
+        "reactivate": "Reactivate Subscription"
+      },
+      "approveInfo": "Approving will activate the subscription  {{subscriptionName}} and notify the user  {{subscriptionConsumer}}.",
+      "approveAgainInfo": "Approving again will move the subscription back to active {{subscriptionName}} and notify the user {{subscriptionConsumer}}.",
+      "rejectInfo": "Rejecting will cancel the subscription {{subscriptionName}} and notify the user {{subscriptionConsumer}}.",
+      "deactivateInfo": "You are about to deactivate the subscription {{subscriptionName}}. Deactivating will suspend access but retain all configurations. The user {{subscriptionConsumer}} will be notified. Are you sure you want to proceed?",
+      "justifyPlaceholder": "Justify your decision",
+      "expiryInfo": "Set an expiration date for this subscription. After this date, the subscription will be automatically deactivated. This is useful for temporary projects or testing purposes.",
+      "deleteInfo": {
+        "intro": "Deleting this subscription will remove it from the system.  Deleting this subscription will result in the following:",
+        "points": [
+          "All associated models and configurations will be permanently deleted.",
+          "Any ongoing API calls will be terminated immediately.",
+          "Users with access to this subscription will no longer be able to use its models or data."
+        ],
+        "summary": "Please note that this action is permanent and cannot be undone. Are you sure you would like to proceed?"
+      },
+      "reactivateInfo": "Reactivating this subscription will restore its active status and allow access to all associated models, services, and configurations. Once reactivated, all applications associated with this subscription will regain access to its features and services. Are you sure you want to reactivate this subscription?",
+      "setExpiryDate": "Set Expiry Date",
+      "expiryDateLabel": "Expiry Date",
+      "unlimitedText": "Unlimited",
+      "unlimitedNotification": "Subscription expiry date set to unlimited.",
+      "expirySetTo": "Expiry set to:",
+      "subscriptionBlocked": "Subscription has been blocked.",
+      "subscriptionRejected": "Subscription has been rejected.",
+      "subscriptionApproved": "Subscription has been approved and is now active",
+      "subscriptionApprovedWithoutJustification": "Subscription has been approved and is now active.",
+      "buttons": {
+        "cancel": "Cancel",
+        "confirm": "Confirm"
+      }
+    }
+  },
+  "addNewModel": {
+    "title": "Add New Model to the Catalog",
+    "subtitle": "Expand available AI options and enhance functionality for users"
+  },
+  "discovery": {
+    "title": "Model Discovery",
+    "subtitle": "Browse AI models and your subscriptions.",
+    "tabs": { "models": "Models", "subscriptions": "Subscriptions" },
+    "search": {
+      "placeholder": "Search by name, provider/department, description/app reference, or ID..."
+    },
+    "filters": {
+      "providers": "Provider",
+      "capabilities": "Capability",
+      "status": "Status",
+      "type": "Type",
+      "environment": "Environment",
+      "all": "All"
+    },
+    "sort": {
+      "label": "Sort by",
+      "name": "Name",
+      "provider": "Provider",
+      "status": "Status",
+      "created": "Created",
+      "updated": "Updated",
+      "utilization": "Utilization",
+      "activeModels": "Active models"
+    },
+    "noModelsFiltered": "No models match your filters. Adjust your search or clear filters.",
+    "noSubscriptions": "No subscriptions found. Create one to get started!",
+    "modelNotFoundTitle": "Model not found",
+    "modelNotFoundMsg": "We couldn't find the model you were looking for.",
+    "detail": { "priceLabel": "Price" },
+    "cards": {
+      "activeModels": "Active Models",
+      "tokensUsage": "Tokens Usage",
+      "tokensGranted": "Tokens Granted",
+      "tokensUtilization": "Token utilization"
+    }
+  },
+  "common": {
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "select": "Select...",
+    "validation": {
+      "justification": "Justification is required and must be within limit."
+    },
+    "emptyStatesDescriptions": {
+      "noModels": "No active catalog models available."
+    },
+    "guardrails": {
+      "azure-prompt-shield": {
+        "title": "Azure Prompt Shield",
+        "description": "Protects against prompt injection and jailbreak attempts before prompts reach the model."
+      },
+      "azure-text-moderation": {
+        "title": "Azure Text Moderation",
+        "description": "Checks inputs and outputs for harmful or toxic content."
+      },
+      "litellm-content-filter": {
+        "title": "LiteLLM Content Filter",
+        "description": "Masks emails, credit cards, and API keys in prompts before sending them to the model."
+      },
+      "bedrock-pre-guard": {
+        "title": "Bedrock Pre Guard",
+        "description": "Applies Bedrock guardrails such as toxicity threshold and PII detection before the model is called."
+      },
+      "safety-alignment": {
+        "title": "Safety Alignment",
+        "description": "Ensures model behavior is aligned with safety policies, reducing harmful or policy-violating outputs."
+      },
+      "embedding-quality-assurance": {
+        "title": "Embedding Quality Assurance",
+        "description": "Validates and monitors embedding quality to maintain reliable semantic search and similarity performance."
+      }
+    }
+  },
+  "subscription-configuration": {
+    "title": "Configure subscription",
+    "subtitle": "Subscription Id:",
+    "sections": {
+      "models": {
+        "title": "Models",
+        "validationMessage": {
+          "noModelSelected": "Select at least one model before saving"
+        }
+      },
+      "guardrails": {
+        "title": "Guardrails",
+        "chooseModelLabel": "Choose model to configure its guardrails. Note you need to activate models for the subscription first to see them in this section and save changes if any. Inactive subscription models will not show.",
+        "validationMessage": {
+          "noModelSelected": "Select a model to configure its guardrails from the Models section above.",
+          "noGuardrailsForModel": "This model does not have any guardrails configured yet."
+        }
+      },
+      "actions": {
+        "deactivate": {
+          "title": "Deactivate Subscription",
+          "description": "Temporarily disables a model, making it inactive while retaining all data and configurations for potential future reactivation.",
+          "button": "Deactivate"
+        },
+        "reactivate": {
+          "title": "Reactivate Subscription",
+          "description": "Reactivates a previously deactivated subscription, making it active and available for use again.",
+          "button": "Reactivate"
+        },
+        "delete": {
+          "title": "Delete Subscription",
+          "description": "Permanently removes a model and all its associated data, ensuring it cannot be recovered or used again.",
+          "button": "Delete"
+        }
+      }
+    },
+    "consumerNotifications": {
+      "subscriptionFieldLabels": {
+        "type": "type to -",
+        "name": "name to -",
+        "purpose": "purpose to -",
+        "departmnet": "department to -",
+        "environment": "environment to -",
+        "applicationRef": "application ref to -",
+        "applicationRefText": "application ref text to -",
+        "added": "added -",
+        "removed": "removed -",
+        "adGroup": "AD Group to"
+      },
+      "notificationsTexts": {
+        "detailsUpdated": "Subscription details updated by admin",
+        "modelsUpdated": "Models updated by admin",
+        "modelsUpdatedGeneral": "Subscription models catalog was updated",
+        "subscriptionApproved": "Subscription has been approved and its active now",
+        "subscriptionBlocked": "Subscription has been blocked by admin: {{justification}}",
+        "subscriptionReactivated": "Subscription has been reactivated by admin",
+        "subscriptionActivated": "Subscription has been activated by admin: {{justification}}",
+        "expiryDateUpdate": "Subscription expiry date has been updated by admin to {{date}}",
+        "consumerSubscriptionNameUpdate": "You have updated subscription name to"
+      }
+    },
+    "validationMessages": {
+      "noModelSelected": "Select at least one model before saving"
+    }
+  }
+}

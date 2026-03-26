@@ -1,0 +1,359 @@
+{
+  "listing": {
+    "textTitle": "Workspaces",
+    "textTagline": "Discover and create workspaces",
+    "searchBar": {
+      "placeholder": "Search workspaces..."
+    },
+    "noWorkspacesText": "You don't have any workspaces.",
+    "mainButton": "Create Workspace",
+    "cardData": {
+      "filesQty": {
+        "single": "file",
+        "plural": "files"
+      },
+      "membersQty": {
+        "single": "member",
+        "plural": "members"
+      }
+    },
+    "filteringAndSorting": {
+      "filtering": {
+        "label": "Filtering",
+        "options": {
+          "allWorkspaces": "All Workspaces",
+          "myWorkspaces": "My Workspaces",
+          "recentlyCreated": "Recently Created - Last 7 days",
+          "recentlyUpdated": "Recently Updated - Last 7 days"
+        },
+        "messages": {
+          "notCreated": "You didn't create any workspaces in the last 7 days",
+          "notUpdated": "You didn't update any workspaces in the last 7 days"
+        }
+      },
+      "sorting": {
+        "label": "Sorting",
+        "options": {
+          "creationDateNewest": "Creation Date - Newest First",
+          "creationDateOldest": "Creation Date - Oldest First",
+          "nameAsc": "Name A-Z",
+          "nameDesc": "Name Z-A"
+        }
+      }
+    }
+  },
+  "create": {
+    "textTitle": "Create Workspace",
+    "textTagline": "Set up your workspace",
+    "createButton": "Create New Workspace",
+    "cancelButton": "Cancel",
+    "notifications": {
+      "success": "The workspace has been successfully created",
+      "error": "We encountered an error while trying to create the workspace. Please try again later."
+    }
+  },
+  "edit": {
+    "textTitle": "Edit Workspace",
+    "textTagline": "Make adjustments to your workspace",
+    "editButton": "Update Workspace",
+    "cancelButton": "Cancel",
+    "notifications": {
+      "success": "The workspace has been successfully updated.",
+      "error": "We encountered an error while trying to edit the workspace. Please try again later.",
+      "atleastoneownerrequired": "A workspace must have at least one owner. You cannot remove all owners.",
+      "concurrentupdateconflict": "The workspace has been updated by someone else. Please refresh the page and try again."
+    }
+  },
+  "singleWorkspace": {
+    "returnButton": "Return",
+    "dropdownLinks": {
+      "about": "About Workspace",
+      "files": "Workspace Files",
+      "edit": "Edit Workspace",
+      "delete": "Delete Workspace",
+      "leave": "Leave Workspace",
+      "hide": "Hide from Sidebar",
+      "pin": "Show on Sidebar",
+      "share": "Share Workspace"
+    },
+    "modals": {
+      "aboutModal": {
+        "title": "About",
+        "ownerInfo": "You are the owner of this workspace",
+        "membersQty": {
+          "single": "member",
+          "plural": "members"
+        }
+      },
+      "filesModal": {
+        "title": "files",
+        "manageBtn": "Manage Files",
+        "addBtn": "Add Files",
+        "noWorkspaceFiles": "There are no files in this workspace",
+        "noFoundFiles": "No files found"
+      },
+      "leaveWorkspaceModal": {
+        "title": "Leave workspace - are you sure?",
+        "paragraph": "Once you leave a workspace, you will have no access to the workspace data.",
+        "cancelBtn": "Cancel",
+        "leaveBtn": "Confirm Leave"
+      },
+      "deleteWorkspaceModal": {
+        "title": "Delete workspace - are you sure?",
+        "paragraph": "Once you delete a workspace, there is no going back.",
+        "cancelBtn": "Cancel",
+        "deleteBtn": "Delete",
+        "notifications": {
+          "success": "The workspace has been successfully deleted.",
+          "error": "There was an error while deleting the workspace. Please try again later.",
+          "errorNoId": "The workspace you attempted to delete could not be found. It may have already been deleted."
+        }
+      },
+      "shareWorkspace": {
+        "successNotification": "Workspace link was copied",
+        "errorNotification": "Failed to copy workspace link"
+      },
+      "filesUploadModal": {
+        "title": "File with the same name detected",
+        "paragraph": {
+          "textOne": "The file",
+          "textTwo": "already exists.",
+          "textThree": "What would you like to do?"
+        },
+        "buttons": {
+          "ignore": "Ignore",
+          "add": "Add",
+          "replace": "Replace"
+        },
+        "notifications": {
+          "add": "The file was added and renamed to",
+          "replace": {
+            "textOne": "The file",
+            "textTwo": "has been replaced"
+          },
+          "addFilesSummary": "All files were added",
+          "replaceFilesSummary": "All files were replaced"
+        }
+      },
+      "removeAdvancedFilesModal": {
+        "title": "Disable Advanced File Analysis",
+        "warningMessage": "You have files uploaded that require Advanced File Analysis.",
+        "warningAction": "If you continue, these files will be removed.",
+        "buttons": {
+          "cancel": "Cancel",
+          "confirm": "Confirm"
+        }
+      }
+    }
+  },
+  "common": {
+    "table": {
+      "headers": {
+        "status": "Status",
+        "name": "File Name",
+        "size": "Size",
+        "type": "Type",
+        "actions": "Actions"
+      }
+    },
+    "status": {
+      "uploaded": "Uploaded",
+      "inProgress": "In Progress",
+      "processing": "Processing",
+      "indexed": "Indexed",
+      "cancelled": "Cancelled",
+      "failed": "Failed",
+      "pending": "Attached",
+      "replacing": "Replacing"
+    },
+    "tooltips": {
+      "customInstruction": "Chat Instructions tells the chatbot how to act, speak, and answer so it gives good and clear responses every time.",
+      "toneOfVoice": "Tone of voice refers to the style and manner in which the chatbot replies during conversations in the workspace.",
+      "image": "Select Workspace Image",
+      "workspaceLink": "Workspace information"
+    },
+    "notifications": {
+      "serverError": "An error occured. Please try again.",
+      "leaveWorkspace": "You have left the workspace.",
+      "removeFile": {
+        "textOne": "File",
+        "textTwo": "removed - remember to click update workspace"
+      },
+      "fileValidations": {
+        "fileType": {
+          "textOne": "The file type of",
+          "textTwo": "is not supported"
+        },
+        "maxQuantity": {
+          "textOne": "You can upload a maximum of",
+          "textTwo": "files"
+        },
+        "fileSize": {
+          "textOne": "The file",
+          "textTwo": "exceeds the maximum allowed size of"
+        },
+        "maxQuota": "The total file size exceeds the maximum allowed quota of",
+        "success": "File was successuly added"
+      }
+    },
+    "sidebarWorkspacesLink": "Explore Workspaces",
+    "form": {
+      "toggleButtons": {
+        "sources": {
+          "header": "Display Sources",
+          "description": "Turn this on to display the sources or references for the information the chatbot provides."
+        },
+        "mode": {
+          "header": "Source Based Answers",
+          "description": "Turn this on to have the chatbot give answers based on the provided documents, focusing only on those specific areas."
+        },
+        "fileAccess": {
+          "header": "Restrict File Access",
+          "description": "Turn this on to restrict member access to files uploaded in the workspace."
+        },
+        "emailNotificationsDisabled": {
+          "header": "Disable Email Invitations",
+          "description": "Turn this on to disable invitations to the members of this workspace via email."
+        },
+        "advancedFileAnalysis": {
+          "header": "Advanced Analysis Mode",
+          "description": "Unlock detailed file analysis with advanced scanning. Analyze up to 20 files at once and enable support for Excel files. Note: Display Sources will be disabled in this mode."
+        },
+        "systemMessageOverride": {
+          "header": "Override Base Chat Instructions",
+          "description": "If enabled, the workspace’s custom chat instructions are used without the default identity, language policy, or tone/detail instructions."
+        },
+        "applyToAll": "Apply on all duplicate files"
+      },
+      "systemMessageOverride": {
+        "note": "When override is enabled, these chat instructions are primary.",
+        "emptyWarning": "Override is enabled but the chat instructions are empty. Tool instructions and policies will still apply, but there will be no base identity or language rules.",
+        "disabledHint": "Add chat instructions to enable override.",
+        "toneLengthDisabled": "Override is enabled, so tone of voice and response length are disabled.",
+        "confirmModal": {
+          "title": "Override Enabled With Empty Chat Instructions",
+          "message": "Override is enabled but the chat instructions are empty. If you continue, the workspace will have no base identity, language policy, or tone/detail instructions. Do you want to continue?",
+          "cancel": "Go Back",
+          "confirm": "Continue Anyway"
+        }
+      },
+      "labels": {
+        "image": "Select Workspace Image",
+        "name": "Workspace name",
+        "description": "Workspace description",
+        "members": "Add members",
+        "files": "Add files or folders",
+        "chatInstructions": "Chat Instructions",
+        "toneOfVoice": "Tone of voice",
+        "responceLength": "Response lenght",
+        "uploadFilesBtn": "Upload Files",
+        "uploadFoldersBtn": "Upload Folders",
+        "dropLabel": "Drop your Files or Folders here"
+      },
+      "placeholders": {
+        "name": "Name your workspace…",
+        "description": "Describe your workspace…",
+        "members": "Type the name of a member…",
+        "files": {
+          "header": "Drag or Drop Files or Folders",
+          "subheader": "per file",
+          "filesSubHeader": "File types supported:"
+        },
+        "chatInstructions": "Instruct the AI on its role, for example: 'You are an advisor helping me with travel decisions. Be friendly, practical, and use clear language. Offer step-by-step guidance to make my travel easy…"
+      },
+      "nameValidations": {
+        "minCharacters": "Name must be at least 3 characters long.",
+        "maxCharacters": "Name must be less than 50 characters long.",
+        "noData": "Please provide a name for your workspace."
+      },
+      "navigationTabs": {
+        "general": "General Details",
+        "files": "Files",
+        "members": "Members",
+        "advanced": "Advanced Settings"
+      }
+    },
+    "saveChangesButton": "Save Changes",
+    "sharePointPicker": {
+      "title": "Select files from SharePoint",
+      "button": "Add from SharePoint",
+      "back": "Back",
+      "cancel": "Cancel",
+      "confirm": "Add selected files",
+      "recent": "Recent files",
+      "search": "Search...",
+      "selectedFiles": "Selected files",
+      "inChannels": "In channels",
+      "inSiteLibrary": "In site library",
+      "loadMore": "Load More Results",
+      "pagination": {
+        "showing": "Showing {{start}}-{{end}} of {{total}} results",
+        "page": "Page {{current}} of {{total}}",
+        "previous": "Previous",
+        "next": "Next"
+      },
+      "notifications": {
+        "filesAdded": "Files successfully added from SharePoint",
+        "noFilesAdded": "No files were added",
+        "errorLoadingMoreResults": "Failed to load more search results"
+      },
+      "filters": {
+        "viewAll": "View all",
+        "word": "Word",
+        "spreadsheets": "Spreadsheets",
+        "pdfs": "PDFs"
+      },
+      "columns": {
+        "fileName": "File name",
+        "size": "Size",
+        "lastModified": "Last modified"
+      },
+      "sharePointsearch": {
+        "errorTitle": "Search Error",
+        "errorMessage": "An error occurred while searching. Please try again.",
+        "noResultsTitle": "No Results Found",
+        "noResultsMessage": "No files match your search criteria."
+      }
+    },
+    "starterPrompts": {
+      "placeholder": "Example: Create a presentation based on the available documents",
+      "label": "Start Prompts",
+      "labelTooltip": "Suggest ways to start conversations",
+      "dragTooltip": "Drag to change order",
+      "btnText": "Add Start Prompt",
+      "icons": {
+        "clearIcon": "Clear Field",
+        "deleteIcon": "Delete Field"
+      },
+      "errorMessage": "Maximum length allowed is 80 characters"
+    }
+  },
+  "imagePicker": {
+    "selectButtonLabel": "Choose Avatar/Image",
+    "dialogTitle": "Select Workspace Image",
+    "loadingText": "Loading images",
+    "noImagesText": "No more images to display",
+    "loadMoreButton": "Load more images",
+    "uploadImage": "Upload Image",
+    "processing": "Processing...",
+    "uploadSuccess": "Image processed successfully!",
+    "uploadError": "Failed to process image. Please try again.",
+    "uploadLimitations": "Upload Limitations",
+    "allowedFileTypes": "Allowed file types",
+    "maxFileSize": "Max file size",
+    "errors": {
+      "invalidFileType": "Invalid file type. Allowed formats: {{allowedTypes}}",
+      "fileTooLarge": "File is too large. Maximum size allowed is {{maxSize}}MB"
+    }
+  },
+  "workspaceFiles": {
+    "modals": {
+      "deletAllFilesModal": {
+        "title": "Delete all files",
+        "message": "Are you sure you want to delete all files?",
+        "cancelBtn": "Cancel",
+        "deleteBtn": "Confirm"
+      }
+    }
+  }
+}

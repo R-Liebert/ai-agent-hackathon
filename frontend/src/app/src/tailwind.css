@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Editor Wrapper */
+
+  .toastui-editor-defaultUI {
+    @apply bg-gray-600 text-gray-300 !font-body rounded-2xl p-[1px];
+  }
+  .toastui-editor {
+    @apply bg-gray-700 text-gray-300 !font-body;
+  }
+
+  .toastui-editor-ww-container {
+    @apply !rounded-bl-2xl !rounded-br-2xl;
+  }
+
+  /* Toolbar */
+  .toastui-editor-defaultUI-toolbar,
+  .toastui-editor-md-tab-container,
+  .toastui-editor-toolbar {
+    @apply !bg-gray-650 text-gray-300 p-0 w-full !rounded-t-xl  !rounded-b-none border-none;
+  }
+
+  .toastui-editor-toolbar-icons {
+    @apply !border-none !outline-none hover:!bg-gray-400;
+  }
+
+  .toastui-editor-defaultUI-toolbar {
+    @apply !p-1 !m-0 flex place-items-center place-content-center bg-gray-400;
+  }
+
+  .toastui-editor-toolbar button {
+    @apply text-gray-300 hover:bg-gray-600 hover:text-white-100 rounded-md px-2 py-1;
+  }
+
+  .toastui-editor-toolbar .active {
+    @apply bg-gray-600 text-white-100;
+  }
+
+  /* Editor Area */
+  .toastui-editor div,
+  .toastui-editor-contents {
+    @apply !font-body text-[14px];
+  }
+  .toastui-editor-contents {
+    @apply bg-gray-700 !px-4;
+  }
+
+  /* Markdown Preview */
+
+  .toastui-editor-md-container {
+    @apply !rounded-bl-2xl !rounded-br-2xl;
+  }
+  .toastui-editor-md-preview {
+    @apply bg-gray-600 text-gray-300;
+  }
+
+  .toastui-editor .md-mode .active div {
+    @apply !px-0;
+  }
+
+  .toastui-editor-md-tab-container,
+  .toastui-editor-mode-switch {
+    @apply hidden;
+  }
+
+  .toastui-editor-md-tab-container {
+    display: none !important;
+  }
+
+  /* If there's a leftover tab-based preview style */
+  .toastui-editor-tab {
+    display: none !important;
+  }
+
+  /* Hide the actual preview area if it's still somehow included */
+  .toastui-editor-md-preview {
+    display: none !important;
+  }
+
+  .toastui-editor-popup,
+  .toastui-editor-popup-add-heading {
+    @apply !bg-gray-650 text-gray-300 p-0 !rounded-xl border-2 border-gray-500 mt-2 !font-body;
+  }
+
+  .toastui-editor-popup ul li,
+  .toastui-editor-popup-add-heading ul li {
+    @apply hover:!bg-gray-400 hover:text-white-100;
+  }
+
+  .toastui-editor-tooltip div,
+  .toastui-editor-tooltip {
+    @apply !bg-gray-900 !font-body !font-medium;
+  }
+}
+@layer utilities {
+  .no-number-spin::-webkit-outer-spin-button,
+  .no-number-spin::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .no-number-spin[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+}

@@ -1,0 +1,21 @@
+name: MAX Workflow
+
+on:
+  push:
+    paths-ignore:
+      - .gitignore
+      - 'docs/**'
+      - '.github/**'
+      - README.md
+
+  pull_request:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  main:
+    name: ''
+    uses: DanskeStatsbaner/max-workflow/.github/workflows/workloads.yaml@main
+    secrets: inherit

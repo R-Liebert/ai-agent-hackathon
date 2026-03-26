@@ -1,0 +1,164 @@
+.modal-edit-jobpost {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 576px;
+  height: 80vh;
+  background-color: #212121;
+  border-radius: 12px;
+}
+
+.modal-edit-jobpost__title {
+  padding: 12px 24px;
+  border-bottom: 1px solid #51525d;
+  height: 10%;
+}
+
+.modal-edit-jobpost__inputs-wrapper {
+  height: 70%;
+  overflow-y: auto;
+  padding: 32px 24px;
+}
+
+.modal-edit-jobpost__bot-wrapper {
+  height: 80%;
+  overflow-y: auto;
+  padding: 32px 24px;
+  box-sizing: border-box;
+}
+.modal-edit-jobpost__bot-wrapper p {
+  margin-bottom: 4px;
+}
+.modal-edit-jobpost__buttons-wrapper {
+  margin: 0 24px;
+  display: flex;
+  padding: 0px;
+  justify-content: flex-end;
+}
+.modal-edit-jobpost__buttons-wrapper > button {
+  border-radius: 8px;
+  text-transform: none;
+}
+
+.modal-edit-jobpost__buttons-wrapper > button:first-child {
+  border-color: #fff;
+  color: #fff;
+  font-weight: 400;
+}
+
+.modal-edit-jobpost__buttons-wrapper > button:last-child {
+  margin-left: 12px;
+  background-color: #d600cd;
+}
+
+.bot-wrapper-response {
+  position: relative;
+  height: 100%;
+}
+
+.bot-wrapper-response__textarea {
+  width: 100%;
+  height: 100%;
+  padding: 16px 16px 60px;
+  font-weight: 300;
+  resize: none;
+  background-color: #212121;
+  border: 1px solid #51525d;
+  border-radius: 4px;
+}
+.bot-wrapper-response__textarea::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 9999px;
+}
+
+.bot-wrapper-response__textarea::-webkit-scrollbar {
+  height: 1rem;
+  width: 0.5rem;
+}
+.bot-wrapper-response__textarea::-webkit-scrollbar-thumb {
+  --tw-border-opacity: 1;
+  background-color: hsla(0, 0%, 89%, 0.8);
+  border-color: rgba(255, 255, 255, var(--tw-border-opacity));
+  border-radius: 9999px;
+  border-width: 1px;
+}
+
+.bot-wrapper-response__controllers {
+  font-size: 14px;
+  position: absolute;
+  bottom: 0px;
+  background-color: #212121;
+  padding: 12px;
+  left: 1px;
+  width: calc(100% - 22px);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #51525d;
+  border-radius: 8px;
+}
+
+.regenerate-button {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  margin-left: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+
+.regenerate-button__icon.rotate {
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.responses-controller {
+  display: flex;
+  flex-direction: row;
+  font-weight: 300;
+}
+
+.responses-controller svg.active path {
+  stroke: #fff;
+}
+
+.responses-controller p {
+  margin: 0 5.5px;
+}
+
+.bot-wrapper-response__prompt-wrapper {
+  position: relative;
+}
+
+.prompt {
+  width: 100%;
+}
+
+.prompt input {
+  color: #9a9aa0;
+  padding: 12px 18px;
+}
+
+.prompt fieldset {
+  width: 100%;
+  height: 54px;
+  border: 1px solid #555661;
+  border-radius: 16px;
+}
+
+.send-prompt-icon {
+  position: absolute;
+  right: 12px;
+  bottom: 8px;
+}

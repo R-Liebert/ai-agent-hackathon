@@ -1,0 +1,5 @@
+.meeting-notes-output .MuiAvatar-root,
+.meeting-notes-output .author,
+.meeting-notes-output .message-content {
+  display: none;
+}

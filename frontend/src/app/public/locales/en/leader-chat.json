@@ -1,0 +1,34 @@
+{
+  "menuAppBar": {
+    "title": "Leader Chat",
+    "button": {
+      "title": "Show chat history"
+    }
+  },
+  "chatDialogueBox": {
+    "title": "Leader Chat",
+    "ratingDialogMessage": "Please comment on this message. If the sources are wrong, please provide the correct ones for updating our database.",
+    "description": "Ask about HR-related topics at DSB."
+  },
+  "predefinedPrompts": [
+    {
+      "icon": "bulb",
+      "description": "Tell me how we at DSB make use of our insights tool"
+    
+    },
+    {
+      "icon": "steps",
+      "description": "Explain how I, as a leader, should prepare for MUS"
+    
+    },
+    {
+      "icon": "graduation",
+      "description": "Explain how I can create a recruitment request step by step"
+   
+    },
+    {
+      "icon": "report",
+      "description": "Describe the process for how I should report a work accident"
+    }
+  ]
+}

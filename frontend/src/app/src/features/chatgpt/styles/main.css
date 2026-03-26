@@ -1,0 +1,161 @@
+:root {
+  --xsmall: 4px;
+  --small: 8px;
+  --medium: 12px;
+  --large: 16px;
+  --xlarge: 20px;
+}
+
+/* buttons */
+.btn-success {
+  color: #fff;
+  background-color: #5ddab4 !important;
+  border-color: #5ddab4 !important;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #ff7976 !important;
+  border-color: #ff7976 !important;
+}
+
+.btn-secondary {
+  color: #fff;
+  background-color: #959fa7 !important;
+  border-color: #959fa7 !important;
+}
+
+/* alignment */
+.align-right {
+  text-align: right;
+}
+
+/* text */
+.bold {
+  font-weight: bold;
+}
+
+/* margins xsmall */
+.m-xsmall {
+  margin: var(--xsmall);
+}
+.mx-xsmall {
+  margin-left: var(--xsmall);
+  margin-right: var(--xsmall);
+}
+.my-xsmall {
+  margin-top: var(--xsmall);
+  margin-bottom: var(--xsmall);
+}
+.ml-xsmall {
+  margin-left: var(--xsmall);
+}
+.mr-xsmall {
+  margin-right: var(--xsmall);
+}
+.mt-xsmall {
+  margin-top: var(--xsmall);
+}
+.mb-xsmall {
+  margin-bottom: var(--xsmall);
+}
+
+/* margins small */
+.m-small {
+  margin: var(--small);
+}
+.mx-small {
+  margin-left: var(--small);
+  margin-right: var(--small);
+}
+.my-small {
+  margin-top: var(--small);
+  margin-bottom: var(--small);
+}
+.ml-small {
+  margin-left: var(--small);
+}
+.mr-small {
+  margin-right: var(--small);
+}
+.mt-small {
+  margin-top: var(--small);
+}
+.mb-small {
+  margin-bottom: var(--small);
+}
+
+/* margins medium */
+.m {
+  margin: var(--medium);
+}
+.mx {
+  margin-left: var(--medium);
+  margin-right: var(--medium);
+}
+.my {
+  margin-top: var(--medium);
+  margin-bottom: var(--medium);
+}
+.ml {
+  margin-left: var(--medium);
+}
+.mr {
+  margin-right: var(--medium);
+}
+.mt {
+  margin-top: var(--medium);
+}
+.mb {
+  margin-bottom: var(--medium);
+}
+
+/* margins large */
+.m-large {
+  margin: var(--large);
+}
+.mx-large {
+  margin-left: var(--large);
+  margin-right: var(--large);
+}
+.my-large {
+  margin-top: var(--large);
+  margin-bottom: var(--large);
+}
+.ml-large {
+  margin-left: var(--large);
+}
+.mr-large {
+  margin-right: var(--large);
+}
+.mt-large {
+  margin-top: var(--large);
+}
+.mb-large {
+  margin-bottom: var(--large);
+}
+
+/* margins xlarge */
+.m-xlarge {
+  margin: var(--xlarge);
+}
+.mx-xlarge {
+  margin-left: var(--xlarge);
+  margin-right: var(--xlarge);
+}
+.my-xlarge {
+  margin-top: var(--xlarge);
+  margin-bottom: var(--xlarge);
+}
+.ml-xlarge {
+  margin-left: var(--xlarge);
+}
+.mr-xlarge {
+  margin-right: var(--xlarge);
+}
+.mt-xlarge {
+  margin-top: var(--xlarge);
+}
+.mb-xlarge {
+  margin-bottom: var(--xlarge);
+}

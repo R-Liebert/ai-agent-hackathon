@@ -1,0 +1,73 @@
+{
+  "moduleName": "AI Traffic Information",
+  "menuAppBar": {
+    "title": "AI Traffic Information",
+    "showHistory": {
+      "title": "Show chat history"
+    }
+  },
+  "welcomeMessage": "Hi",
+  "description": "enter your BOS data",
+  "chatContent": {
+    "chatDialogueBox": {
+      "description": "Enter your BOS data to generate traffic information for all platforms"
+    }
+  },
+  "inputLabel": "BOS Data Input",
+  "inputPlaceholder": "Enter your BOS data here...",
+  "generating": "Generating content...",
+  "promptSettingsActionDialog": {
+    "title": "System Prompt Settings",
+    "cancelBtn": "Cancel",
+    "confirmBtn": "Update System Prompt",
+    "notifications": {
+      "success": "The system prompt has been successfully updated.",
+      "error": "There was an error while updating the system prompt. Please try again later."
+    }
+  },
+  "outputInstructions": "Select the desired output tab to view the generated content for that platform. The content will display immediately upon selection.",
+  "generatingContent": "Generating Content...",
+  "noOutputContent": "No content available",
+  "regenerateNotifications": {
+    "success": "Content successfully regenerated.",
+    "error": "Failed to regenerate content. Please try again later."
+  },
+  "editTabOutputActionDialog": {
+    "title": "Edit",
+    "cancelBtn": "Cancel",
+    "confirmBtn": "Save Changes",
+    "regenerateBtn": "Generate new version",
+    "regeneratingContent": "Generating content...",
+    "saveSuccess": "Content saved successfully for {{tab}} ({{language}})",
+    "notifications": {
+      "success": "The output has been successfully updated.",
+      "error": "There was an error updating the output. Please try again later."
+    }
+  },
+  "inputForm": {
+    "settingsBtn": "Settings",
+    "editMessageTooltip": "Edit message"
+  },
+  "languages": {
+    "Danish": "Danish",
+    "English": "English"
+  },
+  "errors": {
+    "authentication": "Authentication required. Please log in again.",
+    "tooManyRequests": "Too many requests. Please wait a moment and try again.",
+    "serverError": "Server error. Please try again later.",
+    "connectionLost": "Connection lost. Please check your internet connection and try again.",
+    "processingError": "Error processing server response. Please try again.",
+    "loadSystemPrompts": "Failed to load system prompts. Please refresh the page.",
+    "updateSystemPrompt": "Failed to update system prompt{{platform}}. Please try again.",
+    "generic": "An error occurred in {{context}}. Please try again.",
+    "regenerateTabContentParse": "Failed to process regenerated content. Please try again.",
+    "regenerateTabContentStream": "Connection error during content regeneration. Please try again.",
+    "regenerateTabContentRequest": "Failed to start content regeneration. Please try again.",
+    "loading system prompts": "Failed to load system prompts. Please refresh the page.",
+    "updating system prompt": "Failed to update system prompt. Please try again.",
+    "generating content": "Failed to generate content. Please try again.",
+    "regenerating content": "Failed to regenerate content. Please try again."
+  },
+  "returnToEditor": "Return"
+}

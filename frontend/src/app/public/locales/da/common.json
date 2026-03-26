@@ -1,0 +1,152 @@
+{
+  "pageTitle": "DSB AI Launchpad",
+  "stickyWarning": {
+    "azureConnectivity": "Vi oplever i øjeblikket periodiske forbindelsesproblemer med Azure-tjenester. Vores team arbejder aktivt på at genoprette fuld funktionalitet."
+  },
+  "and": "og",
+  "models": [
+    {
+      "key": "GPT-4o",
+      "name": "Hurtigt Svar",
+      "description": "Responderer med det samme. Optimeret til hastighed."
+    },
+    {
+      "key": "GPT-5.1",
+      "name": "Dybere Refleksion",
+      "description": "Tager længere tid for at levere bedre svar."
+    }
+  ],
+  "languageOptions": {
+    "danish": "Dansk",
+    "english": "Engelsk"
+  },
+  "sharePointPicker": {
+    "tabs": {
+      "recent": "Seneste",
+      "teams": "Teams"
+    },
+    "breadcrumbs": {
+      "myFiles": "Mine filer"
+    }
+  },
+  "surveys": {
+    "buttons": {
+      "yes": "Ja",
+      "no": "Nej",
+      "remindme": "Påmind mig senere"
+    }
+  },
+  "inputNotes": "Find mere information om",
+  "guidelines": "retningslinjer",
+  "releaseNotes": "udgivelses notater",
+  "footerNotes": {
+    "description": "AI kan lave fejl. Dobbelttjek oplysningerne, og læs",
+    "linkText": "retningslinjerne her",
+    "descriptionMobile": "AI kan lave fejl. Og læs"
+  },
+  "copyContent": {
+    "error": "Kunne ikke kopiere indhold",
+    "success": "Indholdet blev kopieret til udklipsholderen"
+  },
+  "genericPages": {
+    "notFound": {
+      "title": "Hov! Siden virker ikke",
+      "description": "Vi kan desværre ikke finde den side, du har søgt."
+    },
+    "accessDenied": {
+      "title": "Tilladelse Påkrævet",
+      "description": "Du har ikke tilladelse til at se denne side."
+    },
+    "serverError": {
+      "title": "Serverfejl - Prøv venligst igen",
+      "description": "Vi har fundet en fejl. Prøv venligst igen senere"
+    },
+    "newChatButton": "Start ny chat",
+    "menuPageButton": "Se applikationer",
+    "errorText": "Fejl"
+  },
+  "chatActionIconTooltips": {
+    "regenerate": "Regenerer",
+    "edit": "Rediger",
+    "copyOutput": "Kopiér output",
+    "danish": "Skift til dansk",
+    "english": "Skift til engelsk",
+    "download": "Hent",
+    "delete": "Slet",
+    "cannotDelete": "Kan ikke slette den eneste besked",
+    "goodResponse": "Godt svar",
+    "badResponse": "Dårligt svar"
+  },
+  "chatMessage": {
+    "deleteModal": {
+      "title": "Slet denne besked?",
+      "warningMessage": "Vil du fjerne dit sidste spørgsmål og AI'ens svar?",
+      "whatWillHappen": "Hvad vil ske:",
+      "bulletPoint1": "Dit sidste spørgsmål bliver slettet",
+      "bulletPoint2": "AI'ens svar bliver også fjernet",
+      "additionalInfo": "Denne handling kan ikke fortrydes.",
+      "buttons": {
+        "cancel": "Behold det",
+        "confirm": "Slet"
+      }
+    }
+  },
+  "chatEditMessageButtons": {
+    "cancel": "Annuller",
+    "save": "Gem opdatering"
+  },
+  "canvasNavigationIconButtons": {
+    "regenerate": "Gendan",
+    "previous": "Forrige",
+    "noPrevious": "Ingen forrige version",
+    "next": "Næste",
+    "noNext": "Ingen næste version",
+    "copy": "Kopiér",
+    "download": "Download",
+    "close": "Luk Canvas",
+    "options": "Indstillinger",
+    "archive": "Arkivér",
+    "delete": "Slet"
+  },
+  "canvasTitleEdit": "Omdøb",
+  "canvasEditIconButtons": {
+    "suggestEdits": "Foreslå ændringer",
+    "textLength": "Tekstlængde",
+    "finalPolish": "Tilføj sidste finpudsning",
+    "keepCurrent": "Behold nuværende",
+    "shorter": "Kortere",
+    "longer": "Længere",
+    "stopGenerating": "Stop Generering"
+  },
+  "canvasDotIcon": {
+    "label": "Indstillinger",
+    "options": {
+      "delete": "Slet",
+      "archive": "Arkiver"
+    }
+  },
+  "canvasNotifications": {
+    "copy": {
+      "success": "Canvas content copied successfully",
+      "error": "There was an error when copying content, please try again later"
+    },
+    "regenerate": {
+      "success": "Canvas content regenerated successfully",
+      "error": "There was an error when regenerating content, please try again later"
+    },
+    "polish": {
+      "success": "",
+      "error": ""
+    },
+    "makeContentShorter": {
+      "success": "",
+      "error": ""
+    },
+    "makeContentLonger": {
+      "success": "",
+      "error": ""
+    }
+  },
+  "updating": "Opdaterer…",
+  "saving": "Gemmer…"
+}
