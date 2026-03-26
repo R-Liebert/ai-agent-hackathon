@@ -25,23 +25,20 @@ class CapabilityDomainInfo(BaseModel):
 class IssueCreate(BaseModel):
     title: str
     description: str
-    business_process: str
-    impact_description: str
-    impact_level: str
-    urgency: str
-    data_types: List[str]
-    data_sources: str
-    current_workaround: str
-    capability_domains: List[CapabilityDomainInfo]
+    category: str
+    required_skills: List[str] = []
+    sender_name: str
+    department: str
 
 class IssueSchema(BaseModel):
     id: str
     title: str
     description: str
-    business_process: str
-    impact_level: str
-    urgency: str
-    status: str
+    category: str
+    required_skills: List[str] = []
+    sender_name: str
+    department: str
     created_at: datetime
-    recommended_teams: List[str] = []
-    capability_domains: List[str] = []
+    status: str
+    is_processed: bool = False
+    notified_experts: List[str] = []
