@@ -4,10 +4,13 @@ from app.services.llm_service import llm_service
 import uuid
 from datetime import datetime
 
+from app.models.schemas import IssueCreate
+
 router = APIRouter()
 
-@router.post("/finalize/{conversation_id}")
-async def finalize_issue(conversation_id: str):
+@router.get("/proposal/{conversation_id}")
+async def get_issue_proposal(conversation_id: str):
+    """Generate a summary and classification proposal from the LLM, but do not persist it yet."""
     # 1. Get conversation history
     history_query = """
     MATCH (c:Conversation {id: $conv_id})-[:HAS_MESSAGE]->(m:Message)
@@ -15,18 +18,25 @@ async def finalize_issue(conversation_id: str):
     ORDER BY m.timestamp ASC
     """
     history = graph_service.run_query(history_query, {"conv_id": conversation_id})
+    if not history:
+        raise HTTPException(status_code=404, detail="Conversation not found")
+        
     transcript = "\n".join([f"{m['role']}: {m['content']}" for m in history])
     
     # 2. Summarize and classify with LLM
-    structured_data = await llm_service.summarize_and_classify(transcript)
-    if not structured_data:
-        raise HTTPException(status_code=500, detail="Failed to summarize conversation")
+    structured_proposal = await llm_service.summarize_and_classify(transcript)
+    if not structured_proposal:
+        raise HTTPException(status_code=500, detail="Failed to generate proposal from LLM")
     
-    # 3. Persist to Graph
+    return structured_proposal
+
+@router.post("/confirm/{conversation_id}")
+async def confirm_issue(conversation_id: str, issue_data: IssueCreate):
+    """Receive the confirmed/edited issue data and persist it to the graph."""
     issue_id = str(uuid.uuid4())
     now = datetime.utcnow().isoformat()
     
-    # Create Issue node
+    # 1. Create Issue node
     issue_query = """
     MERGE (i:Issue {id: $id})
     SET i += $props, i.status = 'new', i.created_at = $now, i.updated_at = $now
@@ -35,7 +45,8 @@ async def finalize_issue(conversation_id: str):
     MERGE (i)-[:HAS_CONVERSATION]->(c)
     RETURN i
     """
-    props = {k: v for k, v in structured_data.items() if k != 'capability_domains'}
+    # Prepare properties (exclude the nested list)
+    props = issue_data.dict(exclude={'capability_domains'})
     graph_service.run_query(issue_query, {
         "id": issue_id,
         "props": props,
@@ -43,8 +54,8 @@ async def finalize_issue(conversation_id: str):
         "conv_id": conversation_id
     })
     
-    # Link Capability Domains and Recommended Teams
-    for domain in structured_data.get('capability_domains', []):
+    # 2. Link Capability Domains and Recommended Teams
+    for domain in issue_data.capability_domains:
         domain_query = """
         MATCH (i:Issue {id: $issue_id})
         MATCH (c:CapabilityDomain {name: $domain_name})
@@ -55,12 +66,12 @@ async def finalize_issue(conversation_id: str):
         """
         graph_service.run_query(domain_query, {
             "issue_id": issue_id,
-            "domain_name": domain['name'],
-            "confidence": domain['confidence'],
-            "rationale": domain['rationale']
+            "domain_name": domain.name,
+            "confidence": domain.confidence,
+            "rationale": domain.rationale
         })
     
-    return {"issue_id": issue_id, "summary": structured_data}
+    return {"issue_id": issue_id, "status": "persisted"}
 
 @router.get("/")
 async def list_issues(domain: str = None, team: str = None, status: str = None, search: str = None):

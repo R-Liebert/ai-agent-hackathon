@@ -68,17 +68,22 @@ async def send_message(conversation_id: str, message: MessageCreate):
     # 3. Call LLM
     assistant_content = await llm_service.get_chat_response(history)
     
+    # 3a. Detect completion marker
+    is_completed = "[COMPLETE]" in assistant_content
+    # Clean up content for the user
+    clean_content = assistant_content.replace("[COMPLETE]", "").strip()
+    
     # 4. Save assistant message
     asst_msg_id = str(uuid.uuid4())
     graph_service.run_query(save_msg_query, {
         "conv_id": conversation_id,
         "msg_id": asst_msg_id,
         "role": "assistant",
-        "content": assistant_content,
+        "content": clean_content,
         "timestamp": datetime.utcnow().isoformat()
     })
     
-    return {"content": assistant_content}
+    return {"content": clean_content, "completed": is_completed}
 
 @router.get("/{conversation_id}/history")
 async def get_history(conversation_id: str):
