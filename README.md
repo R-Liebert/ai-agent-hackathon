@@ -51,10 +51,10 @@ AZURE_OPENAI_DEPLOYMENT_NAME=your_model_deployment_name
 ```
 
 ### 3. Run the Application
-Start the FastAPI server using Uvicorn:
+Start the FastAPI server using `uv run`:
 
 ```bash
-uvicorn app.main:app --reload
+uv run uvicorn app.main:app --reload
 ```
 
 **Automatic Data Seeding:** Upon startup, the application will automatically connect to your Neo4j database and seed the initial constraints, capability domains, departments, and teams.
