@@ -32,7 +32,7 @@ graph TD
         Gateway[LiteLLM Gateway]
     end
 
-    database Neo4j["Neo4j (Graph DB)"]
+    Neo4j[(Neo4j Graph DB)]
 
     UI --> Axios
     Axios -.-> Auth
