@@ -48,6 +48,57 @@ graph TD
     Graph --> Neo4j
 ```
 
+## Database Schema (Neo4j)
+
+The application uses a graph database to manage the discovery process and routing.
+
+```mermaid
+erDiagram
+    Conversation ||--o{ Message : HAS_MESSAGE
+    Issue ||--|| Conversation : HAS_CONVERSATION
+    Team ||--o{ CapabilityDomain : OWNS_DOMAIN
+    
+    Conversation {
+        string id
+        datetime started_at
+    }
+    
+    Message {
+        string id
+        string role
+        string content
+        datetime timestamp
+    }
+    
+    Issue {
+        string id
+        string title
+        string description
+        string category
+        string department
+        string sender_name
+        string status
+        datetime created_at
+    }
+    
+    CapabilityDomain {
+        string id
+        string name
+        string description
+    }
+    
+    Team {
+        string id
+        string name
+    }
+    
+    Department {
+        string id
+        string name
+        string description
+    }
+```
+
 ## Setup Instructions
 
 ### Prerequisites
