@@ -32,7 +32,7 @@ type UserConfigurationProviderProps = {
 
 const DEFAULT_LANGUAGE_CODE = "en";
 
-export const UserConfigurationProvider: FC<UserConfigurationProviderProviderProps> = ({ children }) => {
+export const UserConfigurationProvider: FC<UserConfigurationProviderProps> = ({ children }) => {
   const { i18n } = useTranslation();
   const { accounts } = useMsal();
   const account = accounts[0] || null;

@@ -1,7 +1,6 @@
 import pytest
-from unittest.mock import AsyncMock, patch
+from unittest.mock import MagicMock, patch
 from app.services.llm_service import LLMService
-import httpx
 
 @pytest.mark.asyncio
 async def test_get_chat_response_success():
@@ -18,13 +17,14 @@ async def test_get_chat_response_success():
         ]
     }
     
-    mock_response = AsyncMock(spec=httpx.Response)
+    mock_response = MagicMock()
     mock_response.status_code = 200
     mock_response.json.return_value = mock_response_data
     mock_response.raise_for_status.return_value = None
 
-    with patch("httpx.AsyncClient.post", return_value=mock_response) as mock_post:
+    with patch("requests.post", return_value=mock_response) as mock_post:
         messages = [{"role": "user", "content": "Hi"}]
+        # Even though we use requests (sync), the method is still async
         response = await llm_service.get_chat_response(messages)
         
         assert response == "Hello! How can I help you today?"
@@ -37,7 +37,7 @@ async def test_get_chat_response_success():
 async def test_get_chat_response_failure():
     llm_service = LLMService()
     
-    with patch("httpx.AsyncClient.post", side_effect=Exception("Connection error")):
+    with patch("requests.post", side_effect=Exception("Connection error")):
         messages = [{"role": "user", "content": "Hi"}]
         response = await llm_service.get_chat_response(messages)
         

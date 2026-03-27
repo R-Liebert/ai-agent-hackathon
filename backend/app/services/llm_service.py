@@ -1,4 +1,4 @@
-import httpx
+import requests
 from app.config import settings
 import json
 import logging
@@ -48,15 +48,15 @@ class LLMService:
         }
 
         try:
-            async with httpx.AsyncClient(timeout=60.0) as client:
-                response = await client.post(
-                    f"{self.base_url}/chat/completions",
-                    headers=self.headers,
-                    json=payload
-                )
-                response.raise_for_status()
-                data = response.json()
-                return data["choices"][0]["message"]["content"]
+            response = requests.post(
+                f"{self.base_url}/chat/completions",
+                headers=self.headers,
+                json=payload,
+                timeout=60.0
+            )
+            response.raise_for_status()
+            data = response.json()
+            return data["choices"][0]["message"]["content"]
         except Exception as e:
             logger.error(f"LLM Chat Error: {e}")
             if hasattr(e, 'response') and e.response:
@@ -92,15 +92,15 @@ class LLMService:
         }
 
         try:
-            async with httpx.AsyncClient(timeout=60.0) as client:
-                response = await client.post(
-                    f"{self.base_url}/chat/completions",
-                    headers=self.headers,
-                    json=payload
-                )
-                response.raise_for_status()
-                data = response.json()
-                return json.loads(data["choices"][0]["message"]["content"])
+            response = requests.post(
+                f"{self.base_url}/chat/completions",
+                headers=self.headers,
+                json=payload,
+                timeout=60.0
+            )
+            response.raise_for_status()
+            data = response.json()
+            return json.loads(data["choices"][0]["message"]["content"])
         except Exception as e:
             logger.error(f"LLM Summarization Error: {e}")
             if hasattr(e, 'response') and e.response:
