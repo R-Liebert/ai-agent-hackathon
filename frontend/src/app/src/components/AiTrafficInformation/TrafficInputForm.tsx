@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { TbArrowUp, TbSettingsSpark, TbX, TbCheck } from "react-icons/tb";
 import { motion, AnimatePresence } from "framer-motion";
-import { useMsal } from "@azure/msal-react";
+import { useMsal } from "../../hooks/useMsalMock";
 import Tooltip from "../Global/Tooltip";
 import { useIsTrafficInformationAdmin } from "../../contexts/AuthProvider";
 import { HiOutlinePencil } from "react-icons/hi";

@@ -1,4 +1,4 @@
-import { AuthenticationResult, EventType, InteractionType, PublicClientApplication } from "@azure/msal-browser";
+import { AuthenticationResult, EventType, InteractionType, PublicClientApplication } from "./hooks/useMsalMock";
 import axiosInstance from "./services/axiosInstance";
 
 let lastIssuedAt: number | undefined;

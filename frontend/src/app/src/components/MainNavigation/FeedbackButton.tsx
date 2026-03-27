@@ -5,7 +5,7 @@ import Tooltip from "../Global/Tooltip";
 import { useTranslation } from "react-i18next";
 import launchpadMetrics from "../../services/launchpadMetrics";
 import { useNavigate } from "react-router-dom";
-import { useMsal } from "@azure/msal-react";
+import { useMsal } from "../../hooks/useMsalMock";
 import { useCanvas } from "../../hooks/useCanvas";
 
 const FeedbackButton = () => {

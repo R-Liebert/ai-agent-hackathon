@@ -10,7 +10,7 @@ import MainNav from "../MainNavigation/MainNavigation";
 import { UnsentAttachmentsSummary } from "./ChatInput";
 import WorkspaceDropdown from "../Workspaces/workspace-dropdown";
 import { useNavigate } from "react-router-dom";
-import { useMsal } from "@azure/msal-react";
+import { useMsal } from "../../hooks/useMsalMock";
 import Tooltip from "../Global/Tooltip";
 import { useTranslation } from "react-i18next";
 import { TbPencilStar, TbChevronRight } from "react-icons/tb";

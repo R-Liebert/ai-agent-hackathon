@@ -15,7 +15,7 @@ import { IconType } from "react-icons";
 import { Skeleton } from "@mui/material";
 import { workspacesService } from "../../services/workspacesService";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { useMsal } from "@azure/msal-react";
+import { useMsal } from "../../hooks/useMsalMock";
 import { Config } from "../../interfaces/interfaces";
 import WorkspaceDetailsDialog from "./workspace-details-modal";
 import { notificationsService } from "../../services/notificationsService";

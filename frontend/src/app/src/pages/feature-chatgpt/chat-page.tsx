@@ -4,7 +4,7 @@ import { ChatComponent } from "../../components/Chat/ChatComponent";
 import { MdChat } from "react-icons/md";
 import { Helmet } from "react-helmet-async";
 import { useWorkspaces } from "../../hooks/useWorkspaces";
-import { useMsal } from "@azure/msal-react";
+import { useMsal } from "../../hooks/useMsalMock";
 import { useLocation } from "react-router-dom";
 
 // Utility function to pick a random item from an array

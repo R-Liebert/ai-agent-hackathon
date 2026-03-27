@@ -15,7 +15,7 @@ import DropdownMenuButton from "../../components/Global/DropdownMenuButton";
 import ConfirmActionDialog from "../../components/Global/ConfirmActionDialog";
 import { useSearchParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useMsal } from "@azure/msal-react";
+import { useMsal } from "../../hooks/useMsalMock";
 import { Config } from "../../interfaces/interfaces";
 import PageTransitionContainer from "../../components/Global/PageTransitionContainer";
 

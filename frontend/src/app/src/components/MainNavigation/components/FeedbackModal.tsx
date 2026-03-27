@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FeedbackForm, FeedbackState } from "./FeedbackModalForm";
 import axiosInstance from "../../../services/axiosInstance";
-import { useMsal } from "@azure/msal-react";
+import { useMsal } from "../../hooks/useMsalMock";
 import { useMsalApi } from "../../../services/auth";
 import { useTranslation } from "react-i18next";
 import ModalContainer from "../../Global/ModalContainer";

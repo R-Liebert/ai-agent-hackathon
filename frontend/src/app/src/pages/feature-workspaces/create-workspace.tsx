@@ -17,7 +17,7 @@ import { workspacesService } from "../../services/workspacesService";
 import Loader from "../../components/app-loader";
 import { useTranslation } from "react-i18next";
 import { notificationsService } from "../../services/notificationsService";
-import { useMsal } from "@azure/msal-react";
+import { useMsal } from "../../hooks/useMsalMock";
 import { generateHighContrastColor } from "../../utils/colorUtils";
 import { AxiosError } from "axios";
 import { useMutation, useQueryClient } from "@tanstack/react-query";

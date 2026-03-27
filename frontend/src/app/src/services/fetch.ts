@@ -1,4 +1,4 @@
-import { SilentRequest } from "@azure/msal-browser";
+import { SilentRequest } from "../hooks/useMsalMock";
 import { msalInstance } from "../App";
 import { getAccessToken } from "./msalToken";
 import { useSessionStore } from "../stores/sessionStore";

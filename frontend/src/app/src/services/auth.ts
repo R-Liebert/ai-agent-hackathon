@@ -1,4 +1,4 @@
-import { useMsal } from "@azure/msal-react";
+import { useMsal } from "../hooks/useMsalMock";
 import { getAccessToken } from "./msalToken";
 
 export const useMsalApi = () => {

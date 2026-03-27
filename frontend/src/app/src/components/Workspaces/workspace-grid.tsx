@@ -5,7 +5,7 @@ import SearchField from "../Global/AppSearchField";
 import WorkspaceOrganizer from "./workspace-organizer";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { useMsal } from "@azure/msal-react";
+import { useMsal } from "../../hooks/useMsalMock";
 
 type WorkspaceGridDto = {
   workspaceId: string;

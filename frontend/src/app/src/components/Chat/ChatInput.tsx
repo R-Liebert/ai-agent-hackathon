@@ -33,7 +33,7 @@ import ImageButtonTab from "./ChatInputImageButton";
 import RightControlButtons from "./ChatInputRightControls";
 import useAgentsStore from "../../stores/agentsStore";
 import featureHighlightService from "../../services/featureHighlightService";
-import { useMsal } from "@azure/msal-react";
+import { useMsal } from "../../hooks/useMsalMock";
 import ToolsMenu, { ToolsMenuRef } from "./ChatInputToolsMenu";
 
 // Define allowed file extensions

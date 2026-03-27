@@ -6,7 +6,7 @@ import React, {
   useCallback,
   useMemo,
 } from "react";
-import { useMsal } from "@azure/msal-react";
+import { useMsal } from "../../hooks/useMsalMock";
 import { Box, CircularProgress } from "@mui/material";
 import { v4 as uuidv4 } from "uuid";
 import { useTranslation } from "react-i18next";
@@ -69,7 +69,6 @@ import {
   DATA_ANALYST_AGENT_TOOL,
   normalizeAgentFromSnapshot,
 } from "../../models/agent-model";
-import { spaCodeAndNativeAccountIdPresent } from "node_modules/@azure/msal-browser/dist/error/BrowserAuthErrorCodes";
 
 const config = window.env;
 

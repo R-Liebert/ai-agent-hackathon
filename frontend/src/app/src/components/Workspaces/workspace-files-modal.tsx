@@ -2,7 +2,7 @@ import React, { useState, useCallback } from "react";
 import ModalContainer from "../Global/ModalContainer";
 import { CircularProgress } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { useMsal } from "@azure/msal-react";
+import { useMsal } from "../../hooks/useMsalMock";
 import { WorkspaceDetailsResponse } from "../../models/workspace-model";
 import { workspacesService } from "../../services/workspacesService";
 import { useQuery } from "@tanstack/react-query";

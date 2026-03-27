@@ -1,7 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { workspacesService } from "../services/workspacesService";
 import { WorkspaceDto } from "../models/workspace-model";
-import { useMsal } from "@azure/msal-react";
+import { useMsal } from "./useMsalMock";
 import { useCallback, useMemo } from "react";
 
 interface UpdateWorkspaceInteractionParams {

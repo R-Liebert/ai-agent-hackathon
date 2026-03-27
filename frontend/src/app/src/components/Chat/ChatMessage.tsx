@@ -16,7 +16,7 @@ import {
   ImageGenerationItem,
   ChatStreamItem,
 } from "../../models/chat-message";
-import { useMsal } from "@azure/msal-react";
+import { useMsal } from "../../hooks/useMsalMock";
 import { v4 as uuidv4 } from "uuid";
 import { useTranslation } from "react-i18next";
 import SimpleCitations from "../SimpleCitations";

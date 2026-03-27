@@ -15,7 +15,7 @@ import { useTranslation } from "react-i18next";
 import { FiCheckCircle } from "react-icons/fi";
 import axiosInstance from "../../../services/axiosInstance";
 import { PersonaConfig, UserSettings } from "../../../models/persona-config";
-import { useMsal } from "@azure/msal-react";
+import { useMsal } from "../../hooks/useMsalMock";
 import { useUserConfiguration } from "../../../contexts/UserConfigurationProvider";
 import ModalContainer from "../../Global/ModalContainer";
 import { motion, AnimatePresence } from "framer-motion";

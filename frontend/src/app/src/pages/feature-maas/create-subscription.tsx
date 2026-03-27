@@ -15,7 +15,7 @@ import { notificationsService } from "../../services/notificationsService";
 import PageHeader from "../../components/MaaS/global/PageHeader";
 import useSidebarStore from "../../stores/navigationStore";
 import { useUserStore } from "../../stores/userStore";
-import { useMsal } from "@azure/msal-react";
+import { useMsal } from "../../hooks/useMsalMock";
 import type {
   SubscriptionEntity,
   ApplicationReference,

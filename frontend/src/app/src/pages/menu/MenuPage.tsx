@@ -18,7 +18,7 @@ import {
   useCanUseTrafficInformation,
   usePermissions,
 } from "../../contexts/AuthProvider";
-import { useMsal } from "@azure/msal-react";
+import { useMsal } from "../../hooks/useMsalMock";
 import { IoLayers, IoLibrary } from "react-icons/io5";
 import { HiMiniUserGroup, HiMiniNewspaper } from "react-icons/hi2";
 import { TbBrain } from "react-icons/tb";

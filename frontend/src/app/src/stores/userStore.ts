@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import type { AccountInfo } from "@azure/msal-browser";
+import type { AccountInfo } from "../hooks/useMsalMock";
 
 export interface UserProfile {
   name?: string;

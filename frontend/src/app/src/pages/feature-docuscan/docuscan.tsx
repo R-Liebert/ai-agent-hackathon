@@ -18,7 +18,7 @@ import { ChatFooter } from "../../components/Chat/ChatFooter";
 //import { ChatConversation } from "../../models/chat-conversation";
 import { ChatdialogueBox } from "../../components/Chat/ChatDialogueBox";
 import { useMsalApi } from "../../services/auth";
-import { useMsal } from "@azure/msal-react";
+import { useMsal } from "../../hooks/useMsalMock";
 import { MdOutlineDocumentScanner } from "react-icons/md";
 import { notificationsService } from "../../services/notificationsService";
 import { Helmet } from "react-helmet-async";

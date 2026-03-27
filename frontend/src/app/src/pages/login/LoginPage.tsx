@@ -3,7 +3,7 @@ import "./LoginPage.css";
 import { FC } from "react";
 import DsbLogo from "../../images/dsblogo.png";
 import { Paper } from "@mui/material";
-import { useMsal, useIsAuthenticated } from "@azure/msal-react";
+import { useMsal, useIsAuthenticated } from "../../hooks/useMsalMock";
 import { loginRequest } from "../../config";
 import { Navigate } from "react-router-dom";
 

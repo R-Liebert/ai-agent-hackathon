@@ -15,7 +15,7 @@ import { AxiosError } from "axios";
 import MainNav from "../../components/MainNavigation/MainNavigation";
 import Heading from "../../components/Global/AppHeading";
 import { useRouteChanger } from "../../utils/navigation";
-import { useMsal } from "@azure/msal-react";
+import { useMsal } from "../../hooks/useMsalMock";
 import EditWorkspaceForm from "../../components/Workspaces/edit-workspace-form";
 import Loader from "../../components/app-loader";
 import { useTranslation } from "react-i18next";

@@ -16,7 +16,7 @@ import { useMsGraphApi } from "../../services/graph";
 import { useTranslation } from "react-i18next";
 import { useRouteChanger } from "../../utils/navigation";
 import axiosInstance from "../../services/axiosInstance";
-import { useMsal } from "@azure/msal-react";
+import { useMsal } from "../../hooks/useMsalMock";
 import { useQuery } from "@tanstack/react-query";
 import ModelSelector from "../Chat/ChatModelSelector";
 import { UnsentAttachmentsSummary } from "../Chat/ChatInput";
