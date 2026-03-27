@@ -3,14 +3,14 @@ from app.models.schemas import MessageCreate, ConversationSchema
 from app.services.graph_service import graph_service
 from app.services.llm_service import llm_service
 import uuid
-from datetime import datetime
+from datetime import datetime, timezone
 
 router = APIRouter()
 
 @router.post("/start")
 async def start_conversation():
     conv_id = str(uuid.uuid4())
-    now = datetime.utcnow().isoformat()
+    now = datetime.now(timezone.utc).isoformat()
     
     query = """
     CREATE (c:Conversation {id: $id, started_at: $started_at})
@@ -41,7 +41,7 @@ async def start_conversation():
 async def send_message(conversation_id: str, message: MessageCreate):
     # 1. Save user message
     msg_id = str(uuid.uuid4())
-    now = datetime.utcnow().isoformat()
+    now = datetime.now(timezone.utc).isoformat()
     
     save_msg_query = """
     MATCH (c:Conversation {id: $conv_id})
@@ -75,12 +75,13 @@ async def send_message(conversation_id: str, message: MessageCreate):
     
     # 4. Save assistant message
     asst_msg_id = str(uuid.uuid4())
+    asst_now = datetime.now(timezone.utc).isoformat()
     graph_service.run_query(save_msg_query, {
         "conv_id": conversation_id,
         "msg_id": asst_msg_id,
         "role": "assistant",
         "content": clean_content,
-        "timestamp": datetime.utcnow().isoformat()
+        "timestamp": asst_now
     })
     
     return {"content": clean_content, "completed": is_completed}

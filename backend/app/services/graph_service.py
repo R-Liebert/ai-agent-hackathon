@@ -26,12 +26,21 @@ class GraphService:
             self.driver.close()
 
     def get_session(self):
+        if not self.driver:
+            raise Exception("Neo4j driver not initialized. Check database connectivity.")
         return self.driver.session()
 
     def run_query(self, query, parameters=None):
-        with self.get_session() as session:
-            result = session.run(query, parameters)
-            return [record.data() for record in result]
+        if not self.driver:
+            logger.error("Attempted to run query but Neo4j driver is not initialized.")
+            return []
+        try:
+            with self.get_session() as session:
+                result = session.run(query, parameters)
+                return [record.data() for record in result]
+        except Exception as e:
+            logger.error(f"Neo4j Query Error: {e}")
+            return []
 
     def seed_initial_data(self):
         """Seed capability domains, departments, and teams."""
