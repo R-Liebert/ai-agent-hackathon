@@ -50,27 +50,22 @@ graph TD
 
 ## Database Schema (Neo4j)
 
-The application uses a graph database to manage the discovery process and routing.
+The application uses a graph database to manage the discovery process and routing. This diagram is oriented in **landscape mode** (Left-to-Right) for easier inclusion in presentations.
 
 ```mermaid
-erDiagram
-    Conversation ||--o{ Message : HAS_MESSAGE
-    Issue ||--|| Conversation : HAS_CONVERSATION
-    Team ||--o{ CapabilityDomain : OWNS_DOMAIN
-    
-    Conversation {
+classDiagram
+    direction LR
+    class Conversation {
         string id
         datetime started_at
     }
-    
-    Message {
+    class Message {
         string id
         string role
         string content
         datetime timestamp
     }
-    
-    Issue {
+    class Issue {
         string id
         string title
         string description
@@ -78,25 +73,24 @@ erDiagram
         string department
         string sender_name
         string status
-        datetime created_at
     }
-    
-    CapabilityDomain {
+    class CapabilityDomain {
         string id
         string name
         string description
     }
-    
-    Team {
+    class Team {
         string id
         string name
     }
-    
-    Department {
+    class Department {
         string id
         string name
-        string description
     }
+
+    Conversation "1" -- "*" Message : HAS_MESSAGE
+    Issue "1" -- "1" Conversation : HAS_CONVERSATION
+    Team "*" -- "*" CapabilityDomain : OWNS_DOMAIN
 ```
 
 ## Setup Instructions
