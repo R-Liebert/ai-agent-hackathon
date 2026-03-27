@@ -1,0 +1,50 @@
+@startuml
+title AI Painpoint Discovery Assistant - Architecture
+
+skinparam componentStyle rectangle
+skinparam monochrome true
+skinparam packageStyle frame
+
+package "Frontend (React + Vite)" {
+    [Chat UI] as UI
+    [MSAL Mock] as Auth
+    [Axios Client] as Axios
+}
+
+package "Backend (FastAPI)" {
+    [Chat Router] as ChatAPI
+    [Issues Router] as IssuesAPI
+    [LLM Service (Requests)] as LLMService
+    [Graph Service (Neo4j Driver)] as GraphService
+}
+
+database "Neo4j" {
+    folder "Graph Data" {
+        [Conversations]
+        [Messages]
+        [Issues]
+        [Teams]
+        [Capability Domains]
+    }
+}
+
+cloud "External Services" {
+    [LiteLLM Gateway] as Gateway
+}
+
+' Relationships
+UI --> Axios : Request
+Axios ..> Auth : Bypass Login
+Axios --> ChatAPI : /api/chat/*
+Axios --> IssuesAPI : /api/issues/*
+
+ChatAPI --> LLMService : get_chat_response
+ChatAPI --> GraphService : run_query (Persistence)
+
+IssuesAPI --> LLMService : summarize_and_classify
+IssuesAPI --> GraphService : run_query (Persistence)
+
+LLMService --> Gateway : POST /chat/completions
+GraphService --> Neo4j : Cypher (Bolt)
+
+@enduml

@@ -4,28 +4,23 @@ from app.api import chat, issues
 from app.services.graph_service import graph_service
 import logging
 
+from contextlib import asynccontextmanager
+
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-app = FastAPI(title="AI Painpoint Discovery Assistant")
-
-# CORS Configuration
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-# Startup event to seed data
-@app.on_event("startup")
-async def startup_event():
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Startup event to seed data
     try:
         graph_service.seed_initial_data()
     except Exception as e:
         logger.error(f"Failed to seed data: {e}")
+    yield
+    # Shutdown logic if needed
+
+app = FastAPI(title="AI Painpoint Discovery Assistant", lifespan=lifespan)
 
 # Include Routers
 app.include_router(chat.router, prefix="/api/chat", tags=["Chat"])
