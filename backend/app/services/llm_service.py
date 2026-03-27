@@ -1,4 +1,4 @@
-from openai import OpenAI
+import httpx
 from app.config import settings
 import json
 import logging
@@ -7,12 +7,13 @@ logger = logging.getLogger(__name__)
 
 class LLMService:
     def __init__(self):
-        # We use a custom base URL and a custom header for LiteLLM as per the curl example.
-        self.client = OpenAI(
-            api_key=settings.OPENAI_API_KEY,
-            base_url=settings.OPENAI_BASE_URL,
-            default_headers={"x-litellm-api-key": settings.OPENAI_API_KEY}
-        )
+        # We use a custom base URL and a custom header for LiteLLM
+        self.base_url = settings.OPENAI_BASE_URL.rstrip("/")
+        self.headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {settings.OPENAI_API_KEY}",
+            "x-litellm-api-key": settings.OPENAI_API_KEY
+        }
         self.model_name = settings.OPENAI_MODEL_NAME
 
     async def get_chat_response(self, messages):
@@ -40,15 +41,26 @@ class LLMService:
         if not messages or messages[0]["role"] != "system":
             messages.insert(0, system_prompt)
 
+        payload = {
+            "model": self.model_name,
+            "messages": messages,
+            "temperature": 0.7
+        }
+
         try:
-            response = self.client.chat.completions.create(
-                model=self.model_name,
-                messages=messages,
-                temperature=0.7
-            )
-            return response.choices[0].message.content
+            async with httpx.AsyncClient(timeout=60.0) as client:
+                response = await client.post(
+                    f"{self.base_url}/chat/completions",
+                    headers=self.headers,
+                    json=payload
+                )
+                response.raise_for_status()
+                data = response.json()
+                return data["choices"][0]["message"]["content"]
         except Exception as e:
             logger.error(f"LLM Chat Error: {e}")
+            if hasattr(e, 'response') and e.response:
+                logger.error(f"Response content: {e.response.text}")
             return "I'm sorry, I'm having trouble connecting to my brain right now. Please try again later."
 
     async def summarize_and_classify(self, transcript):
@@ -72,16 +84,27 @@ class LLMService:
         
         user_prompt = {"role": "user", "content": f"Transcript:\n{transcript}"}
 
+        payload = {
+            "model": self.model_name,
+            "messages": [system_prompt, user_prompt],
+            "response_format": {"type": "json_object"},
+            "temperature": 0.0
+        }
+
         try:
-            response = self.client.chat.completions.create(
-                model=self.model_name,
-                messages=[system_prompt, user_prompt],
-                response_format={"type": "json_object"},
-                temperature=0.0
-            )
-            return json.loads(response.choices[0].message.content)
+            async with httpx.AsyncClient(timeout=60.0) as client:
+                response = await client.post(
+                    f"{self.base_url}/chat/completions",
+                    headers=self.headers,
+                    json=payload
+                )
+                response.raise_for_status()
+                data = response.json()
+                return json.loads(data["choices"][0]["message"]["content"])
         except Exception as e:
             logger.error(f"LLM Summarization Error: {e}")
+            if hasattr(e, 'response') and e.response:
+                logger.error(f"Response content: {e.response.text}")
             return None
 
 llm_service = LLMService()
